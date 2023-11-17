@@ -17,10 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-[#242424] ${inter.className}`}>
-        <Header />
-        <div className="flex justify-center items-center">{children}</div>
-        <Footer />
+      <body className={`bg-dark-gray flex justify-center overflow-x-hidden ${inter.className}`}>
+        <div className="flex flex-col justify-between w-full max-w-[88rem] min-h-screen p-6 lg:pt-12">
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
