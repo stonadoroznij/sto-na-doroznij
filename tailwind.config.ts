@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: [
@@ -8,11 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
         "accent-yellow" : "#FCEA10",
         "coal-800" : "#242424",
@@ -20,8 +16,11 @@ const config: Config = {
         "coal-600": "#484848"
       },
       fontFamily : {
-        'sans': ['"Montserrat"'],
-        'title': ["'Russo One'"],
+        sans: ["'Montserrat'", ...defaultTheme.fontFamily.sans],
+        title: ["'Russo One'"],
+      },
+      fontSize: {
+        '7xxl': '5rem'
       },
       boxShadow: {
         'dark': '0px 4px 16px 0px rgba(0, 0, 0, 0.80)',

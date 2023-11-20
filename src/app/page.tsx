@@ -4,7 +4,8 @@ export default function Home() {
     return (
         <main className="max-w-352 m-auto p-6">
             <section className="text-white">
-                <h2 className="font-title text-4xl md:text-5xl mb-6">
+                <h1>СТО на<br/>Дорожній</h1>
+                <h2 className="mb-6">
                     Послуги
                 </h2>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

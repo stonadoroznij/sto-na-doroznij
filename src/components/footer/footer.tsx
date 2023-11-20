@@ -13,45 +13,45 @@ const Footer = () => {
                 <div className="max-w-352 m-auto p-6 pt-12 pb-20">
                     <div className="flex flex-col justify-start items-center gap-12 text-white lg:flex-row lg:justify-between">
                         <div className="flex-1 flex flex-col gap-8 max-w-lg">
-                            <div className="font-sans text-2xl font-semibold">
+                            <div className="">
                                 Зв’язатися з нами
                             </div>
                             <input
                                 type="text"
                                 placeholder="Ім’я*"
-                                className="font-sans text-lg bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white"
+                                className=" bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white"
                             />
                             <input
                                 type="text"
                                 placeholder="Номер телефону*"
-                                className="font-sans text-lg bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white"
+                                className=" bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white"
                             />
-                            <button className="bg-accent-yellow rounded-full p-2 pl-12 pr-12 w-fit text-coal-800 font-sans font-medium text-lg">
+                            <button className="bg-accent-yellow rounded-full p-2 pl-12 pr-12 w-fit text-coal-800">
                                 Надіслати
                             </button>
                         </div>
                         <div className="flex-1 flex flex-col gap-8 max-w-xs">
                             <div className="flex flex-col gap-3">
-                                <div className="font-sans text-2xl font-semibold">
+                                <div className="">
                                     Контакти
                                 </div>
-                                <div className="font-sans text-lg">
+                                <div className="">
                                     Макарів, вул. Дорожня, 33
                                     <br /> +38 (096) 973 37 54
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <div className="font-sans text-2xl font-semibold">
+                                <div className="">
                                     Графік роботи
                                 </div>
-                                <div className="font-sans text-lg">
+                                <div className="">
                                     Пн-Пт 9.00-18.00
                                     <br />
                                     Сб 9.00-14.00
                                 </div>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <div className="font-sans text-2xl font-semibold">
+                                <div className="">
                                     Соціальні мережі
                                 </div>
                                 <div className="flex gap-2 justify-start items-center">
