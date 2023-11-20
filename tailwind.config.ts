@@ -15,9 +15,9 @@ const config: Config = {
       },
       colors: {
         "accent-yellow" : "#FCEA10",
-        "dark-gray" : "#242424",
-        "light-gray" : "#3C3C3B",
-        "stroke-gray": "#484848"
+        "coal-800" : "#242424",
+        "coal-700" : "#3C3C3B",
+        "coal-600": "#484848"
       },
       fontFamily : {
         'sans': ['"Montserrat"'],
@@ -27,6 +27,9 @@ const config: Config = {
         'dark': '0px 4px 16px 0px rgba(0, 0, 0, 0.80)',
         'accent': '0px 4px 16px 0px rgba(255, 224, 64, 0.20)',
       },
+      maxWidth: {
+        '352': '88rem',
+      }
     }
   },
   plugins: [],
