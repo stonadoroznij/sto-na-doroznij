@@ -18,9 +18,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div className="bg-coal-800">
-                    <Header />
-                    <div>{children}</div>
+                <div className="bg-coal-800 min-h-screen flex flex-col justify-between">
+                    <div>
+                        <Header />
+                        <div>{children}</div>
+                    </div>
                     <Footer />
                 </div>
             </body>
