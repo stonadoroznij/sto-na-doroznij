@@ -1,14 +1,17 @@
-/*
-  Warnings:
+-- CreateTable
+CREATE TABLE "Request" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "phoneNumber" TEXT NOT NULL,
+    "email" TEXT,
+    "carBrand" TEXT,
+    "carModel" TEXT,
+    "carYear" INTEGER,
+    "vinCode" TEXT,
+    "message" TEXT,
 
-  - You are about to drop the column `carMake` on the `Request` table. All the data in the column will be lost.
-  - You are about to drop the column `services` on the `Request` table. All the data in the column will be lost.
-
-*/
--- AlterTable
-ALTER TABLE "Request" DROP COLUMN "carMake",
-DROP COLUMN "services",
-ADD COLUMN     "carBrand" TEXT;
+    CONSTRAINT "Request_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "Service" (
