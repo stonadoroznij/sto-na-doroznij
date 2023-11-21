@@ -28,5 +28,8 @@
 }
 
 @layer components {
+    .btn {
+        @apply rounded-full p-3 pl-12 pr-12 font-semibold;
+    }
 }
 
