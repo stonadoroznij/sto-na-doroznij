@@ -16,10 +16,16 @@ model Request {
   name        String
   phoneNumber String
   email       String?
-  carMake     String?
+  carBrand    String?
   carModel    String?
   carYear     Int?
   vinCode     String?
   message     String?
-  services    String[] @default([])
+  services    Service[]
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  name        String
+  requests    Request[] 
 }
