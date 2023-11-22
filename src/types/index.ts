@@ -1,3 +1,3 @@
-import type { requestType } from "./requestType";
+import type { requestType } from './requestType'
 
-export type { requestType };
+export type { requestType }

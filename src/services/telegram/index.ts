@@ -1,6 +1,3 @@
-import sendMessage from "./sendMessage";
+import sendMessage from './sendMessage'
 
-export {
-  sendMessage
-}
-
+export { sendMessage }
