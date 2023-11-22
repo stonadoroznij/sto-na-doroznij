@@ -1,5 +1,5 @@
 import { Telegraf } from "telegraf";
-import { createNewRequestMessage } from "../utils";
+import { RequestMessage } from "../utils";
 import type { requestType } from "../../types";
 
 const TELEGRAM_BOT_TOKEN: string | undefined = process.env.TELEGRAM_BOT_TOKEN;
@@ -9,9 +9,11 @@ const bot = new Telegraf(TELEGRAM_BOT_TOKEN as string);
 
 const sendMessage = async (requestData: requestType) => {
   try {
+    const requestMessage = new RequestMessage(requestData);
+
     await bot.telegram.sendMessage(
       TELEGRAM_CHAT_ID as string,
-      createNewRequestMessage(requestData),
+      requestMessage.markdown(),
       {
         parse_mode: "Markdown",
       }
