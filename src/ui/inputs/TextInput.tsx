@@ -1,18 +1,19 @@
 import React from 'react'
+import { Path, UseFormRegister } from 'react-hook-form'
 
-interface PropsType {
-    placeholder: string;
-    value: string;
-    handleChange: (value: string) => void;
+type InputProps<T extends object> = {
+    label: Path<T>
+    register: UseFormRegister<T>
+    required: boolean | string
+    placeholder: string
 }
 
-const TextInput = ({placeholder, value, handleChange} : PropsType) => {
+const TextInput = function<T extends object>({ label, register, required, placeholder }: InputProps<T>) {
     return (
         <input
             placeholder={placeholder}
-            value={value}
             className=" bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white focus:border-accent-yellow"
-            onChange={(e) => handleChange(e.target.value)}
+            {...register(label, { required: required })}
         />
     )
 }

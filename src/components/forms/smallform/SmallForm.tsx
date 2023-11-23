@@ -1,36 +1,40 @@
 'use client'
 import { Button, TextInput } from '@/ui'
-import React, { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+interface IFormValues {
+    name: string
+    phone: number
+}
 
 const SmallForm = () => {
-    const [name, setName] = useState<string>('')
-    const [phoneNumber, setPhoneNumber] = useState<string>('')
+    const { register, handleSubmit, reset, formState: {errors} } = useForm<IFormValues>()
 
-    const handleChangeName = (value: string) => {
-        setName(value)
-    }
-
-    const handleChangePhoneNumber = (value: string) => {
-        setPhoneNumber(value)
+    const onSubmit: SubmitHandler<IFormValues> = (data) => {
+        console.log(JSON.stringify(data))
+        console.log(errors);
     }
 
     return (
-        <div className="flex flex-col gap-8 w-full pl-12 pr-12 lg:pl-0 lg:pr-0 lg:max-w-lg">
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-8 w-full pl-12 pr-12 lg:pl-0 lg:pr-0 lg:max-w-lg"
+        >
             <div className="text-2xl font-semibold">Зв’язатися з нами</div>
-            <TextInput
-                placeholder="Ім'я"
-                value={name}
-                handleChange={handleChangeName}
+            <TextInput<IFormValues>
+                placeholder="Iм'я"
+                label="name"
+                register={register}
+                required="Iм'я обов'язкове!"
             />
-            <TextInput
-                placeholder="Номер телефону"
-                value={phoneNumber}
-                handleChange={handleChangePhoneNumber}
+            <TextInput<IFormValues>
+                placeholder="Телефон"
+                label="phone"
+                register={register}
+                required
             />
-            <div className="flex">
-                <Button>Надіслати</Button>
-            </div>
-        </div>
+            <Button>Надіслати</Button>
+        </form>
     )
 }
 
