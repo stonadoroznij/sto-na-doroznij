@@ -1,5 +1,6 @@
 'use client'
 import { Button, TextInput } from '@/ui'
+import { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 interface IFormValues {
@@ -8,11 +9,26 @@ interface IFormValues {
 }
 
 const SmallForm = () => {
-    const { register, handleSubmit, reset, formState: {errors} } = useForm<IFormValues>()
+    const [showSuccessfulMessage, setShowSuccessfulMessage] =
+        useState<boolean>(false)
 
-    const onSubmit: SubmitHandler<IFormValues> = (data) => {
-        console.log(JSON.stringify(data))
-        console.log(errors);
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors, isSubmitSuccessful },
+    } = useForm<IFormValues>()
+
+    const onSubmit: SubmitHandler<IFormValues> = async (data) => {
+        const response = await new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(data)
+            }, 2000)
+        })
+        setShowSuccessfulMessage(true)
+        setTimeout(() => setShowSuccessfulMessage(false), 3000)
+        console.log(response)
+        reset()
     }
 
     return (
@@ -25,15 +41,32 @@ const SmallForm = () => {
                 placeholder="Iм'я"
                 label="name"
                 register={register}
-                required="Iм'я обов'язкове!"
+                options={{
+                    required: "Ім'я обо'язкове!",
+                    minLength: {
+                        value: 3,
+                        message: "Ім'я не може бути менше 3 символів",
+                    },
+                }}
+                error={errors.name?.message}
             />
             <TextInput<IFormValues>
                 placeholder="Телефон"
                 label="phone"
                 register={register}
-                required
+                options={{
+                    required: "Телефон обо'язковий!",
+                }}
+                error={errors.phone?.message}
             />
-            <Button>Надіслати</Button>
+            <div className="relative flex justify-center">
+                <Button>Надіслати</Button>
+                {isSubmitSuccessful && showSuccessfulMessage && (
+                    <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-green-400">
+                        Ваш запит успішно надіслано!
+                    </div>
+                )}
+            </div>
         </form>
     )
 }
