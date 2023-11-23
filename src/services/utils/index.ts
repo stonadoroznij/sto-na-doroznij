@@ -4,7 +4,7 @@ type FieldType = string | null | undefined
 type FormatType = 'markdown' | 'html' | 'text'
 
 class RequestMessage {
-    private readonly NA_STRING = 'Не вказано'
+    private readonly NA_STRING = '---'
 
     constructor(private readonly requestData: requestType) {}
 

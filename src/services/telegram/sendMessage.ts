@@ -15,11 +15,12 @@ const sendMessage = async (requestData: requestType) => {
 
         const requestMessage = new RequestMessage(requestData)
 
-        await bot.telegram.sendMessage(chatId, requestMessage.markdown(), {
+        return await bot.telegram.sendMessage(chatId, requestMessage.markdown(), {
             parse_mode: 'Markdown',
         })
     } catch (error) {
         console.log(error)
+        return null
     }
 }
 
