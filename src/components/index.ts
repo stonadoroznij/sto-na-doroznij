@@ -1,5 +1,5 @@
-import Header from './header/Header'
-import Footer from './footer/Footer'
+import Header from './header/header'
+import Footer from './footer/footer'
 import ServiceCard from './servicecard/ServiceCard'
 import SmallForm from './forms/smallform/SmallForm'
 
