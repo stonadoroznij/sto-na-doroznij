@@ -1,6 +1,8 @@
 
 import { z } from 'zod'
 
+const preprocessPhoneNumber = (value: string) => value.replace(/[()-\s]/g, '');
+
 export const smallFromSchema = z.object({
     name: z
         .string()
@@ -10,7 +12,9 @@ export const smallFromSchema = z.object({
     phone: z
         .string({ required_error: "Телефон обо'язковий!" })
         .min(1, { message: "Телефон обов'язкове поле!" })
-        .min(10, { message: 'Невірний телефон!' }),
+        .min(10, { message: 'Невірний телефон!' }).refine((value) => /^(?:\+38)?0\d{9}$/.test(preprocessPhoneNumber(value)), {
+            message: 'Формат: +380999999999, 0999999999.',
+        }),
 })
  
 export type TSmallFormValues = z.infer<typeof smallFromSchema>
