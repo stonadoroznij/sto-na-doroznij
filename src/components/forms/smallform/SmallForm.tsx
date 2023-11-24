@@ -1,4 +1,5 @@
 'use client'
+import { smallFormRequest } from '@/app/actions'
 import { TSmallFormValues, smallFromSchema } from '@/types'
 import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -6,8 +7,8 @@ import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 const SmallForm = () => {
-    const [showSuccessfulMessage, setShowSuccessfulMessage] =
-        useState<boolean>(false)
+    
+    const [message, setMessage] = useState<string>(''); 
 
     const {
         register,
@@ -19,14 +20,11 @@ const SmallForm = () => {
     })
 
     const onSubmit: SubmitHandler<TSmallFormValues> = async (data) => {
-        const response = await new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000)
-        })
-        setShowSuccessfulMessage(true)
-        setTimeout(() => setShowSuccessfulMessage(false), 3000)
-        console.log(response)
+        const response = await smallFormRequest(data)
+        if (response.message) {
+            setMessage(response.message)
+        }
+        setTimeout(() => setMessage(''), 3000)
         reset()
     }
 
@@ -50,9 +48,9 @@ const SmallForm = () => {
             />
             <div className="relative flex justify-center">
                 <Button>Надіслати</Button>
-                {isSubmitSuccessful && showSuccessfulMessage && (
-                    <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-green-400">
-                        Ваш запит успішно надіслано!
+                { message && (
+                    <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-accent-yellow">
+                        {message}
                     </div>
                 )}
             </div>
