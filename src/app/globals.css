@@ -6,30 +6,39 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        overflow-x: hidden;
-    }
-    
-    h1, h2 {
-        @apply font-title;
-    }
+  body {
+    overflow-x: hidden;
+  }
 
-    h1 {
-        @apply text-5xl md:text-7xxl;
-    }
+  h1,
+  h2 {
+    @apply font-title;
+  }
 
-    h2 {
-        @apply text-4xl md:text-5xl;
-    }
+  h1 {
+    @apply text-5xl md:text-7xxl;
+  }
 
-    div, p, span, h3, h4, h5 {
-        @apply font-sans;
-    }
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  div,
+  p,
+  span,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans;
+  }
+  /* input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 0s 600000s, color 0s 600000s;
+    } */
 }
 
 @layer components {
-    .btn {
-        @apply rounded-full p-3 pl-12 pr-12 font-semibold;
-    }
+  .btn {
+    @apply rounded-full p-3 pl-12 pr-12 font-semibold;
+  }
 }
-
