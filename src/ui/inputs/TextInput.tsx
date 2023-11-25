@@ -22,7 +22,7 @@ const TextInput = function <T extends FieldValues>({
         <div className="relative flex">
             <input
                 placeholder={`${placeholder}`}
-                className="flex-1 bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white focus:border-accent-yellow"
+                className="flex-1 bg-transparent pb-2 outline-none border-b border-white focus:border-accent-yellow"
                 {...register(label)}
             />
             {error && (

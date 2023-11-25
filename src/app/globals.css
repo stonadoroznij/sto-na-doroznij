@@ -25,6 +25,10 @@
     div, p, span, h3, h4, h5 {
         @apply font-sans;
     }
+    /* input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 0s 600000s, color 0s 600000s;
+    } */
 }
 
 @layer components {

@@ -1,6 +1,6 @@
-import { smallFromSchema, TSmallFormValues } from "./zod-schemas";
+import { quickFormSchema, TQuickFormValues } from "./zod-schemas";
 
 export {
-    smallFromSchema,
-    type TSmallFormValues
+    quickFormSchema,
+    type TQuickFormValues
 }

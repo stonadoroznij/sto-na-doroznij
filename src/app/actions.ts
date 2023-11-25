@@ -1,8 +1,8 @@
 'use server'
-import { TSmallFormValues, smallFromSchema } from '@/types'
+import { TQuickFormValues, quickFormSchema } from '@/types'
 
-export async function smallFormRequest(formData: TSmallFormValues) {
-    const parse = smallFromSchema.safeParse(formData)
+export async function QuickFormRequest(formData: TQuickFormValues) {
+    const parse = quickFormSchema.safeParse(formData)
 
     if (!parse.success) {
         return { message: 'Помилка запису даних форми' }

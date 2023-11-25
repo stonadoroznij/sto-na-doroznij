@@ -1,12 +1,12 @@
 'use client'
-import { smallFormRequest } from '@/app/actions'
-import { TSmallFormValues, smallFromSchema } from '@/types'
+import { QuickFormRequest } from '@/app/actions'
+import { TQuickFormValues, quickFormSchema } from '@/types'
 import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-const SmallForm = () => {
+const QuickForm = () => {
     
     const [message, setMessage] = useState<string>(''); 
 
@@ -14,13 +14,13 @@ const SmallForm = () => {
         register,
         handleSubmit,
         reset,
-        formState: { errors, isSubmitSuccessful },
-    } = useForm<TSmallFormValues>({
-        resolver: zodResolver(smallFromSchema),
+        formState: { errors },
+    } = useForm<TQuickFormValues>({
+        resolver: zodResolver(quickFormSchema),
     })
 
-    const onSubmit: SubmitHandler<TSmallFormValues> = async (data) => {
-        const response = await smallFormRequest(data)
+    const onSubmit: SubmitHandler<TQuickFormValues> = async (data) => {
+        const response = await QuickFormRequest(data)
         if (response.message) {
             setMessage(response.message)
         }
@@ -34,13 +34,13 @@ const SmallForm = () => {
             className="flex flex-col gap-8 w-full pl-12 pr-12 lg:pl-0 lg:pr-0 lg:max-w-lg"
         >
             <div className="text-2xl font-semibold">Зв’язатися з нами</div>
-            <TextInput<TSmallFormValues>
+            <TextInput<TQuickFormValues>
                 placeholder="Iм'я"
                 label="name"
                 register={register}
                 error={errors.name?.message}
             />
-            <TextInput<TSmallFormValues>
+            <TextInput<TQuickFormValues>
                 placeholder="Телефон"
                 label="phone"
                 register={register}
@@ -58,4 +58,4 @@ const SmallForm = () => {
     )
 }
 
-export default SmallForm
+export default QuickForm

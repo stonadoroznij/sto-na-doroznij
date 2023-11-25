@@ -5,7 +5,7 @@ import TikTokIcon from '../../../public/socialMediaIcons/TikTok.svg'
 import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
 import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
 import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
-import { SmallForm } from '../../components'
+import { QuickForm } from '..'
 
 const Footer = () => {
     return (
@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="bg-coal-700 w-screen mt-16">
                 <div className="max-w-352 m-auto p-6 pt-12 pb-20">
                     <div className="flex flex-col justify-start items-center gap-12 text-white lg:flex-row lg:justify-between">
-                        <SmallForm />
+                        <QuickForm/>
                         <div className='flex flex-col justify-start items-center gap-12 md:flex-row md:justify-between'>
                             <div className="flex-1 flex flex-col gap-8 max-w-xs">
                                 <div className="flex flex-col gap-3">

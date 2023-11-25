@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 const preprocessPhoneNumber = (value: string) => value.replace(/[()-\s]/g, '');
 
-export const smallFromSchema = z.object({
+export const quickFormSchema = z.object({
     name: z
         .string()
         .min(1, { message: "Ім'я обов'язкове поле!" })
@@ -17,4 +17,4 @@ export const smallFromSchema = z.object({
         }),
 })
  
-export type TSmallFormValues = z.infer<typeof smallFromSchema>
+export type TQuickFormValues = z.infer<typeof quickFormSchema>
