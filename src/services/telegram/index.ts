@@ -1,3 +1,5 @@
-import sendMessage from './sendMessage'
+import sendMessages from './sendMessage'
+import startBot from './startBot'
+import bot from './initBot'
 
-export { sendMessage }
+export { sendMessages, startBot, bot }

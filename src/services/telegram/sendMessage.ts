@@ -1,27 +1,38 @@
-import { Telegraf } from 'telegraf'
-import { RequestMessage } from '../utils'
-import type { requestType } from '../../types'
+import { bot } from '.'
+import { RequestMessage } from '@/services/utils'
+import { prisma } from '@/services/db'
+import type { requestType } from '@/types'
 
-const sendMessage = async (requestData: requestType) => {
-    try {
-        const botToken: string | undefined = process.env.TELEGRAM_BOT_TOKEN
-        const chatId: string | undefined = process.env.TELEGRAM_CHAT_ID
-
-        if (!botToken || !chatId) {
-            throw new Error('Telegram bot token or chat id is not defined')
-        }
-
-        const bot = new Telegraf(botToken)
-
-        const requestMessage = new RequestMessage(requestData)
-
-        return await bot.telegram.sendMessage(chatId, requestMessage.markdown(), {
-            parse_mode: 'Markdown',
-        })
-    } catch (error) {
-        console.log(error)
-        return null
+const sendMessages = async (requestData: requestType) => {
+  try {
+    if (!bot) {
+      throw new Error('Telegram bot token is not defined')
     }
+
+    const cathList = await prisma.telegramChat.findMany({
+      select: {
+        chatId: true,
+      },
+    })
+
+    const chatIdList = cathList.map((item) => item.chatId)
+
+    const requestMessage = new RequestMessage(requestData)
+
+    return await Promise.allSettled(
+      chatIdList.map((chatId) => {
+        if (!bot) {
+          throw new Error('Telegram bot token is not defined')
+        }
+        return bot.telegram.sendMessage(chatId, requestMessage.markdown(), {
+          parse_mode: 'Markdown',
+        })
+      })
+    )
+  } catch (error) {
+    console.log(error)
+    return []
+  }
 }
 
-export default sendMessage
+export default sendMessages
