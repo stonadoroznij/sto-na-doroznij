@@ -1,6 +1,6 @@
 'use client'
 import { QuickFormRequest } from '@/app/actions'
-import { TQuickFormValues, quickFormSchema } from '@/types'
+import { QuickFormValues, quickFormSchema } from '@/schemas/zod-schemas'
 import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
@@ -15,11 +15,11 @@ const QuickForm = () => {
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm<TQuickFormValues>({
+    } = useForm<QuickFormValues>({
         resolver: zodResolver(quickFormSchema),
     })
 
-    const onSubmit: SubmitHandler<TQuickFormValues> = async (data) => {
+    const onSubmit: SubmitHandler<QuickFormValues> = async (data) => {
         const response = await QuickFormRequest(data)
         if (response.message) {
             setMessage(response.message)
@@ -34,13 +34,13 @@ const QuickForm = () => {
             className="flex flex-col gap-8 w-full pl-12 pr-12 lg:pl-0 lg:pr-0 lg:max-w-lg"
         >
             <div className="text-2xl font-semibold">Зв’язатися з нами</div>
-            <TextInput<TQuickFormValues>
+            <TextInput<QuickFormValues>
                 placeholder="Iм'я"
                 label="name"
                 register={register}
                 error={errors.name?.message}
             />
-            <TextInput<TQuickFormValues>
+            <TextInput<QuickFormValues>
                 placeholder="Телефон"
                 label="phone"
                 register={register}

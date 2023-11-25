@@ -17,4 +17,4 @@ export const quickFormSchema = z.object({
         }),
 })
  
-export type TQuickFormValues = z.infer<typeof quickFormSchema>
+export type QuickFormValues = z.infer<typeof quickFormSchema>

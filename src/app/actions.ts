@@ -1,7 +1,7 @@
 'use server'
-import { TQuickFormValues, quickFormSchema } from '@/types'
+import { QuickFormValues, quickFormSchema } from '@/schemas/zod-schemas'
 
-export async function QuickFormRequest(formData: TQuickFormValues) {
+export async function QuickFormRequest(formData: QuickFormValues) {
     const parse = quickFormSchema.safeParse(formData)
 
     if (!parse.success) {
