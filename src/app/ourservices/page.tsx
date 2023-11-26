@@ -19,7 +19,7 @@ const OurServices = () => {
           <ServiceCard />
         </div>
         <div className="flex justify-center mt-12 flex-wrap gap-4">
-          <Button>`Зв’язатись з нами`</Button>
+          <Button>Зв’язатись з нами</Button>
           <Button type={ButtonType.outline}>Замовити послугу</Button>
         </div>
       </section>
