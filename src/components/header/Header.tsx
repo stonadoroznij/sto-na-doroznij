@@ -1,21 +1,24 @@
 import React from 'react'
-import Logo from '../../../public/Logo_CTO.svg'
 import LocationIcon from '../../../public/LocationIcon.svg'
 import Image from 'next/image'
 import { SocialMedia } from '..'
+import MenuItem from './MenuItem'
+import { Logo } from '../../ui'
 
 const Header = () => {
   return (
     <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12">
       <div className="flex justify-between items-center gap-6 text-white">
-        <Image src={Logo} alt="Logo" />
+        <div className="w-28 h-28">
+          <Logo />
+        </div>
         <div className="hidden lg:flex lg:gap-6">
-          <a>Послуги</a>
-          <a>Про нас</a>
-          <a>Контакти</a>
+          <MenuItem href="/ourservices">Послуги</MenuItem>
+          <MenuItem href="/aboutus">Про нас</MenuItem>
+          <MenuItem href="/contacts">Контакти</MenuItem>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
-          <SocialMedia/>
+          <SocialMedia />
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
             <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
             <div className="flex flex-col justify-center items-center">

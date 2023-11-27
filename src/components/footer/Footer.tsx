@@ -1,11 +1,6 @@
 import React from 'react'
-import Logo from '../../../public/Logo_CTO.svg'
-import Image from 'next/image'
-import TikTokIcon from '../../../public/socialMediaIcons/TikTok.svg'
-import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
-import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
-import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
-import { QuickForm } from '..'
+import { QuickForm, SocialMedia } from '..'
+import { Logo } from '../../ui'
 
 const Footer = () => {
   return (
@@ -33,16 +28,11 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col gap-3">
                   <div className="text-2xl font-semibold">Соціальні мережі</div>
-                  <div className="flex gap-2 justify-start items-center">
-                    <Image src={TikTokIcon} alt="icon tiktok" />
-                    <Image src={InstagramIcon} alt="icon instagram" />
-                    <Image src={FacebookIcon} alt="icon facebook" />
-                    <Image src={TelegramIcon} alt="icon telegram" />
-                  </div>
+                  <SocialMedia/>
                 </div>
               </div>
               <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-64 lg:h-64">
-                <Image src={Logo} alt="Logo" width={250} height={250} />
+                <Logo/>
               </div>
             </div>
           </div>
