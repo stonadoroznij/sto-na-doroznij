@@ -1,4 +1,4 @@
-import { bot } from '.'
+import { bot } from './'
 import { RequestMessage } from '@/services/utils'
 import { prisma } from '@/services/db'
 import type { requestType } from '@/types'

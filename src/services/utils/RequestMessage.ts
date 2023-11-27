@@ -43,9 +43,8 @@ class RequestMessage {
   }
 
   private generateMessage(format: FormatType) {
-    const keys: FieldNameType[] = Object.keys(
-      this.fieldLabels
-    ) as FieldNameType[]
+    const keys = Object.keys(this.fieldLabels) as FieldNameType[]
+    
     const messageTitleList = {
       markdown: '*Нова заявка на сайті*\n\n',
       html: '<b>Нова заявка на сайті</b><br/><br/>',
