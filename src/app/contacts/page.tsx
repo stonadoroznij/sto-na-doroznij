@@ -1,11 +1,6 @@
-import TikTokIcon from '../../../public/socialMediaIcons/TikTok.svg'
-import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
-import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
-import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
-import Image from 'next/image'
+import { SocialMedia } from '@/components'
 
 const Contacts = () => {
-
   return (
     <main className="max-w-352 m-auto p-6">
       <section className="flex flex-col items-center gap-14 text-white">
@@ -29,12 +24,7 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">Слідкуйте</h3>
-            <div className="flex gap-2 justify-start items-center flex-wrap">
-            <Image src={TikTokIcon} alt="icon tiktok" />
-            <Image src={InstagramIcon} alt="icon instagram" />
-            <Image src={FacebookIcon} alt="icon facebook" />
-            <Image src={TelegramIcon} alt="icon telegram" />
-          </div>
+            <SocialMedia/>
           </div>
         </div>
         <h2 className="mb-6 text-center">Побудувати маршрут в Google maps</h2>

@@ -1,11 +1,8 @@
 import React from 'react'
 import Logo from '../../../public/Logo_CTO.svg'
 import LocationIcon from '../../../public/LocationIcon.svg'
-import TikTokIcon from '../../../public/socialMediaIcons/TikTok.svg'
-import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
-import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
-import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
 import Image from 'next/image'
+import { SocialMedia } from '..'
 
 const Header = () => {
   return (
@@ -18,12 +15,7 @@ const Header = () => {
           <a>Контакти</a>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
-          <div className="flex gap-2 justify-start items-center flex-wrap">
-            <Image src={TikTokIcon} alt="icon tiktok" />
-            <Image src={InstagramIcon} alt="icon instagram" />
-            <Image src={FacebookIcon} alt="icon facebook" />
-            <Image src={TelegramIcon} alt="icon telegram" />
-          </div>
+          <SocialMedia/>
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
             <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
             <div className="flex flex-col justify-center items-center">
