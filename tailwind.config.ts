@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'xs': '540px' 
+        xs: "540px",
       },
       colors: {
         "accent-yellow": "#FCEA10",

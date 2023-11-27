@@ -3,5 +3,6 @@ import Footer from './footer/Footer'
 import ServiceCard from './servicecard/ServiceCard'
 import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
+import PopUpForm from './forms/PopUpForm'
 
-export { Header, Footer, ServiceCard, QuickForm, SocialMedia }
+export { Header, Footer, ServiceCard, QuickForm, SocialMedia, PopUpForm }

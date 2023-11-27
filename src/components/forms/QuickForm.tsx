@@ -28,11 +28,7 @@ const QuickForm = () => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-8 w-full pl-12 pr-12 lg:pl-0 lg:pr-0 lg:max-w-lg"
-    >
-      <div className="text-2xl font-semibold">Зв’язатися з нами</div>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
       <TextInput<QuickFormValues>
         placeholder="Iм'я"
         label="name"

@@ -24,7 +24,7 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">Слідкуйте</h3>
-            <SocialMedia/>
+            <SocialMedia />
           </div>
         </div>
         <h2 className="mb-6 text-center">Побудувати маршрут в Google maps</h2>
