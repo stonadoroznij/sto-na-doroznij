@@ -8,7 +8,7 @@ import { Logo } from '../../ui'
 const Header = () => {
   return (
     <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12">
-      <div className="flex justify-between items-center gap-6 text-white">
+      <div className="flex justify-between items-center gap-6 text-white font-bold">
         <div className="w-28 h-28">
           <Logo />
         </div>
