@@ -24,10 +24,8 @@ const ServiceCard = () => {
       <a className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100">
         Read more
       </a>
-      <Button type={ButtonType.outline}>
-        Замовити послугу
-      </Button>
-      <div className='absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl'>
+      <Button type={ButtonType.outline}>Замовити послугу</Button>
+      <div className="absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl">
         від 300 грн
       </div>
     </div>
