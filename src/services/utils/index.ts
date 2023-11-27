@@ -1,3 +1,3 @@
-import RequestMessage from "./RequestMessage";
+import RequestMessage from './RequestMessage'
 
-export { RequestMessage };
+export { RequestMessage }
