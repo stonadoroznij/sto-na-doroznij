@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import ServiceImage1 from '../../../public/images/service_1.png'
+import { Button } from '@/ui'
+import { ButtonType } from '@/ui/buttons/Button'
 
 const ServiceCard = () => {
   return (
-    <div className="w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:cursor-pointer hover:-translate-y-1 p-6 flex flex-col gap-3 items-center transition-all duration-200 ease-in">
+    <div className="relative w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:cursor-pointer hover:-translate-y-1 p-6 flex flex-col gap-3 items-center transition-all duration-200 ease-in group">
       <Image
         src={ServiceImage1}
         alt="Ходова частина"
@@ -19,9 +21,15 @@ const ServiceCard = () => {
           Est leo eget dolor natoque ultricies neque ultrices aliquam ac.
         </p>
       </div>
-      <a className="text-sm text-accent-yellow underline font-bold">
+      <a className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100">
         Read more
       </a>
+      <Button type={ButtonType.outline}>
+        Замовити послугу
+      </Button>
+      <div className='absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl'>
+        від 300 грн
+      </div>
     </div>
   )
 }
