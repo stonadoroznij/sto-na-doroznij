@@ -28,7 +28,14 @@ const Contacts = () => {
           </div>
         </div>
         <h2 className="mb-6 text-center">Побудувати маршрут в Google maps</h2>
-        <div className="w-64 h-64 bg-coal-600" />
+        <div className="mapouter w-full h-1/2">
+          <div className="gmap_canvas w-full h-1/2">
+            <iframe
+              src="https://maps.google.com/maps?q=50.4510623,%2029.8011723&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              style={{ width: '100%', aspectRatio: 'auto 4 / 2' }}
+            ></iframe>
+          </div>
+        </div>
       </section>
     </main>
   )
