@@ -1,4 +1,4 @@
-import { SocialMedia } from '@/components'
+import { GoogleMap, SocialMedia } from '@/components'
 
 const Contacts = () => {
   return (
@@ -28,14 +28,7 @@ const Contacts = () => {
           </div>
         </div>
         <h2 className="mb-6 text-center">Побудувати маршрут в Google maps</h2>
-        <div className="mapouter w-full h-1/2">
-          <div className="gmap_canvas w-full h-1/2">
-            <iframe
-              src="https://maps.google.com/maps?q=50.4510623,%2029.8011723&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-              style={{ width: '100%', aspectRatio: 'auto 4 / 2' }}
-            ></iframe>
-          </div>
-        </div>
+        <GoogleMap />
       </section>
     </main>
   )

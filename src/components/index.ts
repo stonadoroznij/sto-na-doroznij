@@ -4,5 +4,14 @@ import ServiceCard from './servicecard/ServiceCard'
 import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
 import PopUpForm from './forms/PopUpForm'
+import GoogleMap from './map/GoogleMap'
 
-export { Header, Footer, ServiceCard, QuickForm, SocialMedia, PopUpForm }
+export {
+  Header,
+  Footer,
+  ServiceCard,
+  QuickForm,
+  SocialMedia,
+  PopUpForm,
+  GoogleMap,
+}
