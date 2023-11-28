@@ -4,7 +4,6 @@ import { Button } from '../../ui'
 import React from 'react'
 
 const OurServices = () => {
-  
   return (
     <main className="max-w-352 m-auto p-6">
       <section className="text-white">

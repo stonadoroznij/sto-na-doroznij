@@ -6,4 +6,12 @@ import SocialMedia from './socialmedia/SocialMedia'
 import PopUpForm from './forms/PopUpForm'
 import AdvantagesCard from './advantagescard/AdvantagesCard'
 
-export { Header, Footer, ServiceCard, QuickForm, SocialMedia, PopUpForm, AdvantagesCard }
+export {
+  Header,
+  Footer,
+  ServiceCard,
+  QuickForm,
+  SocialMedia,
+  PopUpForm,
+  AdvantagesCard,
+}
