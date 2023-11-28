@@ -1,20 +1,30 @@
-import React from 'react'
+import { FieldValues, Path, UseFormRegister } from 'react-hook-form'
 
-interface PropsType {
-    placeholder: string;
-    value: string;
-    handleChange: (value: string) => void;
+type InputProps<T extends FieldValues> = {
+  label: Path<T>
+  register: UseFormRegister<T>
+  error?: string
+  placeholder: string
 }
 
-const TextInput = ({placeholder, value, handleChange} : PropsType) => {
-    return (
-        <input
-            placeholder={placeholder}
-            value={value}
-            className=" bg-coal-800 bg-opacity-0 pb-2 outline-none border-b border-white focus:border-accent-yellow"
-            onChange={(e) => handleChange(e.target.value)}
-        />
-    )
+const TextInput = function <T extends FieldValues>({
+  label,
+  register,
+  error,
+  placeholder,
+}: InputProps<T>) {
+  return (
+    <div className="relative flex">
+      <input
+        placeholder={`${placeholder}`}
+        className="flex-1 bg-transparent pb-2 outline-none border-b border-white focus:border-accent-yellow"
+        {...register(label)}
+      />
+      {error && (
+        <div className="flex-1 text-red-400 text-xs absolute -bottom-5 left-0">{`${error}`}</div>
+      )}
+    </div>
+  )
 }
 
 export default TextInput
