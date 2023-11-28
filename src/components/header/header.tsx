@@ -10,7 +10,7 @@ import Image from 'next/image'
 const Header = () => {
     return (
         <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12">
-            <div className="flex justify-between items-center gap-6 text-white font-sans">
+            <div className="flex justify-between items-center gap-6 text-white">
                 <Image src={Logo} alt="Logo" />
                 <div className="hidden lg:flex lg:gap-6">
                     <a>Послуги</a>

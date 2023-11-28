@@ -5,6 +5,31 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    overflow-x: hidden;
+@layer base {
+    body {
+        overflow-x: hidden;
+    }
+    
+    h1, h2 {
+        @apply font-title;
+    }
+
+    h1 {
+        @apply text-5xl md:text-7xxl;
+    }
+
+    h2 {
+        @apply text-4xl md:text-5xl;
+    }
+
+    div, p, span, h3, h4, h5 {
+        @apply font-sans;
+    }
 }
+
+@layer components {
+    .btn {
+        @apply rounded-full p-3 pl-12 pr-12 font-semibold;
+    }
+}
+
