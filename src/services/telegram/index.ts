@@ -1,5 +1,3 @@
-import sendMessages from './sendMessages'
-import startBot from './startBot'
-import bot from './initBot'
+import bot from '@/services/telegram/Bot'
 
-export { sendMessages, startBot, bot }
+export { bot }

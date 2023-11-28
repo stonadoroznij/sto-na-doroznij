@@ -1,43 +1,40 @@
 import { Request } from '@prisma/client'
+import { TelegramBot } from '@/i18n/uk'
+import { MessageData } from '@/types'
 
-interface IMessageConfig {
-  rBold: string
-  lBold: string
-  newLine: string
-}
+const { requestTemplate } = TelegramBot
 
 class RequestMessage {
   private readonly NA_STRING = '---'
 
   constructor(private readonly requestData: Request) {}
 
-  private generateMessage(config: IMessageConfig) {
-    const { rBold, lBold, newLine } = config
+  private dataToSrt = (requestData: Request): MessageData => {
     const {
+      name,
+      phoneNumber,
+      email = this.NA_STRING,
+      carBrand = this.NA_STRING,
+      carModel = this.NA_STRING,
+      carYear = this.NA_STRING,
+      vinCode = this.NA_STRING,
+      message = this.NA_STRING,
+    } = requestData
+
+    return {
       name,
       phoneNumber,
       email,
       carBrand,
       carModel,
-      carYear,
+      carYear: carYear ? carYear.toString() : this.NA_STRING,
       vinCode,
       message,
-    } = this.requestData
-
-    return `
-    ${rBold}Нова заявка з сайту!${lBold}${newLine}
-    ${rBold}Ім'я:${lBold} ${name}
-    ${rBold}Телефон:${lBold} ${phoneNumber}
-    ${rBold}Email:${lBold} ${email || this.NA_STRING}
-    ${rBold}Марка авто:${lBold} ${carBrand || this.NA_STRING}
-    ${rBold}Модель авто:${lBold} ${carModel || this.NA_STRING}
-    ${rBold}Рік авто:${lBold} ${carYear || this.NA_STRING}
-    ${rBold}VIN код:${lBold} ${vinCode || this.NA_STRING}
-    ${rBold}Повідомлення:${lBold} ${message || this.NA_STRING}`
+    }
   }
 
   markdown() {
-    return this.generateMessage({
+    return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '*',
       lBold: '*',
       newLine: '\n',
@@ -45,7 +42,7 @@ class RequestMessage {
   }
 
   html() {
-    return this.generateMessage({
+    return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '<b>',
       lBold: '</b>',
       newLine: '<br/><br/>',
@@ -53,7 +50,7 @@ class RequestMessage {
   }
 
   text() {
-    return this.generateMessage({
+    return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '',
       lBold: '',
       newLine: '\n',

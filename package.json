@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "cz",
-    "migrate": "npx dotenv -e .env.development.local -- npx prisma migrate dev",
+    "migrate": "dotenv -e .env.development.local -- npx prisma migrate dev",
     "format": "prettier . --write"
   },
   "dependencies": {

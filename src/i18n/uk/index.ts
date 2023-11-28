@@ -1,3 +1,3 @@
-import telegramBot from './telegramBot'
+import TelegramBot from './telegramBot'
 
-export { telegramBot }
+export { TelegramBot }
