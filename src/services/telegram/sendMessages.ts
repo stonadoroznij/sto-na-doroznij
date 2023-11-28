@@ -1,19 +1,11 @@
-import { bot } from './'
+import { bot } from '.'
 import { RequestMessage } from '@/services/utils'
-import { prisma } from '@/services/db'
-import type { requestType } from '@/types'
+import { getAllChats } from '@/services/tgBotDBService'
+import { Request } from '@prisma/client'
 
-const sendMessages = async (requestData: requestType) => {
+const sendMessages = async (requestData: Request) => {
   try {
-    if (!bot) {
-      throw new Error('Telegram bot token is not defined')
-    }
-
-    const cathList = await prisma.telegramChat.findMany({
-      select: {
-        chatId: true,
-      },
-    })
+    const cathList = await getAllChats()
 
     const chatIdList = cathList.map((item) => item.chatId)
 
@@ -21,9 +13,6 @@ const sendMessages = async (requestData: requestType) => {
 
     return await Promise.allSettled(
       chatIdList.map((chatId) => {
-        if (!bot) {
-          throw new Error('Telegram bot token is not defined')
-        }
         return bot.telegram.sendMessage(chatId, requestMessage.markdown(), {
           parse_mode: 'Markdown',
         })

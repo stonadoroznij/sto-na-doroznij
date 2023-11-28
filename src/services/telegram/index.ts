@@ -1,4 +1,4 @@
-import sendMessages from './sendMessage'
+import sendMessages from './sendMessages'
 import startBot from './startBot'
 import bot from './initBot'
 

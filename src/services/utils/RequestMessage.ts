@@ -1,75 +1,63 @@
-import type { requestType } from '@/types'
+import { Request } from '@prisma/client'
 
-type FieldValueType = string | null | undefined
-type FormatType = 'markdown' | 'html' | 'text'
-type FieldNameType = keyof requestType
+interface IMessageConfig {
+  rBold: string
+  lBold: string
+  newLine: string
+}
 
 class RequestMessage {
   private readonly NA_STRING = '---'
 
-  private readonly fieldLabels: Record<FieldNameType, string> = {
-    id: 'ID',
-    name: "Ім'я",
-    phoneNumber: 'Телефон',
-    email: 'Email',
-    carBrand: 'Марка авто',
-    carModel: 'Модель авто',
-    carYear: 'Рік авто',
-    vinCode: 'VIN код',
-    message: 'Повідомлення',
-  }
+  constructor(private readonly requestData: Request) {}
 
-  constructor(private readonly requestData: requestType) {}
+  private generateMessage(config: IMessageConfig) {
+    const { rBold, lBold, newLine } = config
+    const {
+      name,
+      phoneNumber,
+      email,
+      carBrand,
+      carModel,
+      carYear,
+      vinCode,
+      message,
+    } = this.requestData
 
-  private formatField(
-    fieldName: FieldNameType,
-    fieldValue: FieldValueType,
-    format: FormatType
-  ) {
-    if (fieldName === 'id') return ''
-
-    const label = this.fieldLabels[fieldName]
-    const value = fieldValue || this.NA_STRING
-
-    if (format === 'markdown') {
-      return `*${label}:* ${value}\n`
-    }
-
-    if (format === 'html') {
-      return `<b>${label}:</b> ${value}<br/>`
-    }
-
-    return `${label}: ${value}\n`
-  }
-
-  private generateMessage(format: FormatType) {
-    const keys = Object.keys(this.fieldLabels) as FieldNameType[]
-    
-    const messageTitleList = {
-      markdown: '*Нова заявка на сайті*\n\n',
-      html: '<b>Нова заявка на сайті</b><br/><br/>',
-      text: 'Нова заявка на сайті\n\n',
-    }
-
-    return keys.reduce((message, fieldName): string => {
-      if (fieldName === 'id') return message
-
-      const value: FieldValueType = this.requestData[fieldName]
-      const formattedField = this.formatField(fieldName, value, format)
-      return `${message}${formattedField}`
-    }, messageTitleList[format])
+    return `
+    ${rBold}Нова заявка з сайту!${lBold}${newLine}
+    ${rBold}Ім'я:${lBold} ${name}
+    ${rBold}Телефон:${lBold} ${phoneNumber}
+    ${rBold}Email:${lBold} ${email || this.NA_STRING}
+    ${rBold}Марка авто:${lBold} ${carBrand || this.NA_STRING}
+    ${rBold}Модель авто:${lBold} ${carModel || this.NA_STRING}
+    ${rBold}Рік авто:${lBold} ${carYear || this.NA_STRING}
+    ${rBold}VIN код:${lBold} ${vinCode || this.NA_STRING}
+    ${rBold}Повідомлення:${lBold} ${message || this.NA_STRING}`
   }
 
   markdown() {
-    return this.generateMessage('markdown')
+    return this.generateMessage({
+      rBold: '*',
+      lBold: '*',
+      newLine: '\n',
+    })
   }
 
   html() {
-    return this.generateMessage('html')
+    return this.generateMessage({
+      rBold: '<b>',
+      lBold: '</b>',
+      newLine: '<br/><br/>',
+    })
   }
 
   text() {
-    return this.generateMessage('text')
+    return this.generateMessage({
+      rBold: '',
+      lBold: '',
+      newLine: '\n',
+    })
   }
 }
 

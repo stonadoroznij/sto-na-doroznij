@@ -1,101 +1,77 @@
 import { bot } from './'
-import { prisma } from '@/services/db'
+import { getChatById, addChat, deleteChatById } from '@/services/tgBotDBService'
+import { telegramBot } from '@/i18n/uk'
 
 const startBot = () => {
   const password = process.env.TELEGRAM_SUBSCRIBE_PASSWORD
 
-  if (!bot || !password) {
-    throw new Error('Telegram bot is not defined or password is not defined')
+  if (!password) {
+    throw new Error('Password is not defined')
   }
 
-  const isSubscribing = new Map()
+  const isSubscribing = new Set()
+
+  bot.telegram.setMyShortDescription(telegramBot.commandList)
 
   bot.start((ctx) => {
-    ctx.reply(
-      `Привіт! Я бот, який буде надсилати тобі повідомлення про заявки на послуги в "СТО на Дорожній". 
-
-    Список команд:
-      /start показати це повідомлення
-      /join підписатись на розсилку
-      /leave відписатись від розсилки
-
-Щоб не загубити команди, закріпи це повідомлення в чаті!`
-    )
+    ctx.reply(`${telegramBot.startMessage} ${telegramBot.commandList}`)
   })
 
   bot.command('join', async (ctx) => {
     const { chat } = ctx.message
 
-    const isChatExist = await prisma.telegramChat.findUnique({
-      where: {
-        chatId: chat.id.toString(),
-      },
-    })
+    const isChatExist = await getChatById(chat.id.toString())
 
     if (isChatExist) {
-      ctx.reply('Ви вже підписані на розсилку!')
+      ctx.reply(telegramBot.allredySubscribed)
       return
     }
 
-    if (!isSubscribing.get(chat.id)) {
-      isSubscribing.set(chat.id, true)
+    if (!isSubscribing.has(chat.id)) {
+      isSubscribing.add(chat.id)
     }
 
-    ctx.reply('Введіть пароль!')
+    ctx.reply(telegramBot.writePassword)
   })
 
   bot.command('leave', async (ctx) => {
     const { chat } = ctx.message
 
-    const isChatExist = await prisma.telegramChat.findUnique({
-      where: {
-        chatId: chat.id.toString(),
-      },
-    })
+    const isChatExist = await getChatById(chat.id.toString())
 
     if (!isChatExist) {
-      ctx.reply('Ви не підписані на розсилку!')
+      ctx.reply(telegramBot.dontSubscribed)
       return
     }
 
-    await prisma.telegramChat.delete({
-      where: {
-        chatId: chat.id.toString(),
-      },
-    })
+    await deleteChatById(chat.id.toString())
 
-    ctx.reply('Ви відписались від розсилки')
+    ctx.reply(telegramBot.unsubscribe)
   })
 
   bot.on('message', async (ctx) => {
     if ('text' in ctx.update.message === false) return
     const { chat, text } = ctx.update.message
 
-    if (!isSubscribing.get(chat.id)) return
+    if (!isSubscribing.has(chat.id)) return
 
     if (text === password) {
-      await prisma.telegramChat.create({
-        data: {
-          chatId: chat.id.toString(),
-        },
+      await addChat({
+        chatId: chat.id.toString(),
       })
-      ctx.reply('Ви підписались на розсилку!')
-      isSubscribing.set(chat.id, false)
+      ctx.reply(telegramBot.subscribe)
+      isSubscribing.delete(chat.id)
       return
     }
 
-    ctx.reply('Неправильний пароль!')
+    ctx.reply(telegramBot.falsePassword)
   })
 
   bot.on('my_chat_member', async (ctx) => {
     const { my_chat_member } = ctx.update
 
     if (my_chat_member.new_chat_member.status === 'kicked') {
-      await prisma.telegramChat.delete({
-        where: {
-          chatId: my_chat_member.chat.id.toString(),
-        },
-      })
+      await deleteChatById(my_chat_member.chat.id.toString())
     }
   })
 
