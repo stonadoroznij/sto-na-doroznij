@@ -4,6 +4,7 @@ import { Button } from '../../ui'
 import React from 'react'
 
 const OurServices = () => {
+  
   return (
     <main className="max-w-352 m-auto p-6">
       <section className="text-white">
@@ -19,7 +20,7 @@ const OurServices = () => {
           <ServiceCard />
         </div>
         <div className="flex justify-center mt-12 flex-wrap gap-4">
-          <Button>Зв’язатись з нами</Button>
+          <Button>Зв&apos;язатись з нами</Button>
           <Button type={ButtonType.outline}>Замовити послугу</Button>
         </div>
       </section>
