@@ -33,7 +33,7 @@ class RequestMessage {
     return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '<b>',
       lBold: '</b>',
-      newLine: '<br/><br/>',
+      newLine: '<br/>',
     })
   }
 
