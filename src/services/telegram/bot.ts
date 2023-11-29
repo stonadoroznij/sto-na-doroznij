@@ -30,7 +30,6 @@ class Bot {
 
     this.setup()
     this.start()
-    console.log('Telegram bot is running')
   }
 
   public async sendMessage(requestData: Request) {
