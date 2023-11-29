@@ -6,7 +6,7 @@ import { ButtonType } from '@/ui/buttons/Button'
 
 const ServiceCard = () => {
   return (
-    <div className="relative w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:cursor-pointer hover:-translate-y-1 p-6 flex flex-col gap-3 items-center transition-all duration-200 ease-in group">
+    <div className="relative w-72 bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:cursor-pointer hover:-translate-y-1 p-6 flex flex-col gap-3 items-center transition-all duration-200 ease-in group">
       <Image
         src={ServiceImage1}
         alt="Ходова частина"

@@ -8,9 +8,16 @@ import { AdvantagesCard } from '@/components'
 
 export default function Home() {
   return (
-    <main className="max-w-352 m-auto p-6 mt-60">
-      <Image src={BgImage} alt="фон" className="absolute -mt-52 -z-10" />
-      <section className="text-white z-10 flex">
+    <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between">
+      <Image src={BgImage} alt="фон"  className='shadow-2xl' placeholder="blur"
+      quality={100}
+      fill
+      sizes="100vw" style={{
+        objectFit: 'cover',
+        filter: "grayscale(50%)",
+        filter: "blur(2px) grayscale(50%) brightness(50%)",
+      }} />
+      <section className="text-white z-40 flex relative mb-14">
         <div className="w-1/2">
           <h1>
             СТО на
@@ -22,25 +29,14 @@ export default function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="pt-8">
-            <Button children="Зв’язатись з нами" />
-            <Button children="Замовити послугу" type="outline" />
+            <Button >Зв’язатись з нами</Button>
+            <Button type='outline'>Замовити послугу</Button>
           </div>
         </div>
-        <button className="w-16 h-16 fixed right-16 bottom-20 z-20">
-          <Image src={CallBtn} alt="Кнопка зв'язку" />
-        </button>
       </section>
-      <section className="mt-14 font-bold font-serif flex flex-col z-20">
+      <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14">
         <h2 className="flex justify-center">Послуги</h2>
-        <div className="flex pt-6">
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
+        <div className="flex pt-6 justify-between">
           <ServiceCard />
           <ServiceCard />
           <ServiceCard />
