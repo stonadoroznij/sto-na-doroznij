@@ -5,6 +5,7 @@ import { RequestMessage } from '@/services/utils'
 import { TelegramBot } from '@/i18n/uk'
 import { timingSafeEqual } from 'crypto'
 import { Request } from '@prisma/client'
+import { decl } from 'postcss'
 
 class Bot {
   private bot: Telegraf
@@ -29,6 +30,7 @@ class Bot {
 
     this.setup()
     this.start()
+    console.log('Telegram bot is running')
   }
 
   public async sendMessage(requestData: Request) {
@@ -128,6 +130,13 @@ class Bot {
   }
 }
 
-const bot = new Bot()
+
+declare global {
+  var bot: Bot
+}
+
+const bot = globalThis.bot ?? new Bot()
 
 export default bot
+
+if (process.env.NODE_ENV !== 'production') globalThis.bot = bot
