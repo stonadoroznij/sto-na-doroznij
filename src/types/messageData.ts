@@ -1,7 +1,6 @@
 import { Request } from '@prisma/client'
 
-interface MessageData extends Omit<Request, 'id' | 'phoneNumber' | 'carYear'> {
-  phoneNumber: string
+interface MessageData extends Omit<Request, 'id' | 'carYear'> {
   carYear: string
 }
 
