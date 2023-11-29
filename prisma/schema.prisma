@@ -12,7 +12,7 @@ datasource db {
 }
 
 model Request {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   name        String
   phoneNumber String
   email       String?
@@ -25,7 +25,15 @@ model Request {
 }
 
 model Service {
-  id          Int      @id @default(autoincrement())
-  name        String
-  requests    Request[] 
+  id       Int       @id @default(autoincrement())
+  name     String
+  requests Request[]
+}
+
+model TelegramChat {
+  id        Int     @id @default(autoincrement())
+  chatId    String  @unique
+  firstName String?
+  lastName  String?
+  username  String?
 }

@@ -22,10 +22,24 @@ CREATE TABLE "Service" (
 );
 
 -- CreateTable
+CREATE TABLE "TelegramChat" (
+    "id" SERIAL NOT NULL,
+    "chatId" TEXT NOT NULL,
+    "firstName" TEXT,
+    "lastName" TEXT,
+    "username" TEXT,
+
+    CONSTRAINT "TelegramChat_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "_RequestToService" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "TelegramChat_chatId_key" ON "TelegramChat"("chatId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "_RequestToService_AB_unique" ON "_RequestToService"("A", "B");
