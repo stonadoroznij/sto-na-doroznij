@@ -1,3 +1,3 @@
-import bot from '@/services/telegram/tdBot'
+import bot from '@/services/telegram/bot'
 
 export { bot }
