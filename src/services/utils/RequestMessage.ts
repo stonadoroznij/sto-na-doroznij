@@ -10,27 +10,15 @@ class RequestMessage {
   constructor(private readonly requestData: Request) {}
 
   private dataToSrt = (requestData: Request): MessageData => {
-    const {
-      name,
-      phoneNumber,
-      email = this.NA_STRING,
-      carBrand = this.NA_STRING,
-      carModel = this.NA_STRING,
-      carYear = this.NA_STRING,
-      vinCode = this.NA_STRING,
-      message = this.NA_STRING,
-    } = requestData
+    const keys = Object.keys(requestData) as (keyof Request)[]
 
-    return {
-      name,
-      phoneNumber,
-      email,
-      carBrand,
-      carModel,
-      carYear: carYear ? carYear.toString() : this.NA_STRING,
-      vinCode,
-      message,
-    }
+    return keys.reduce((acc, key) => {
+      const value = requestData[key]
+      if (key === 'id') return acc
+      acc[key] = value ? value.toString() : this.NA_STRING
+
+      return acc
+    }, {} as MessageData)
   }
 
   markdown() {
