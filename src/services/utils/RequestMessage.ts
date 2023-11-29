@@ -9,13 +9,13 @@ class RequestMessage {
 
   constructor(private readonly requestData: Request) {}
 
-  private dataToSrt = (requestData: Request): MessageData => {
-    const keys = Object.keys(requestData) as (keyof Request)[]
+  private dataToSrt(requestData: Request): MessageData {
+    const { id, ...restData } = requestData
+    const keys = Object.keys(restData) as (keyof Omit<Request, 'id'>)[]
 
-    return keys.reduce((acc, key) => {
-      const value = requestData[key]
-      if (key === 'id') return acc
-      acc[key] = value ? value.toString() : this.NA_STRING
+    return keys.reduce<MessageData>((acc, key) => {
+      const value = restData[key]
+      acc[key] = value || this.NA_STRING
 
       return acc
     }, {} as MessageData)

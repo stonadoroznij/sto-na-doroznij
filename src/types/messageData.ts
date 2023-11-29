@@ -1,7 +1,5 @@
 import { Request } from '@prisma/client'
 
-interface MessageData extends Omit<Request, 'id' | 'carYear'> {
-  carYear: string
-}
+type MessageData = Record<keyof Omit<Request, 'id'>, string | number>
 
 export default MessageData

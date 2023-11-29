@@ -32,6 +32,6 @@ class Chat {
   }
 }
 
-const dbChat = new Chat()
+const chatRepo = new Chat()
 
-export default dbChat
+export default chatRepo
