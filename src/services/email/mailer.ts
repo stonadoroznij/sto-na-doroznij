@@ -35,7 +35,7 @@ class Mailer {
     const message = new RequestMessage(request)
 
     return await this.transporter.sendMail({
-      from: 'STO na Doroznij',
+      from: `STO na Doroznij ${this.user}`,
       to: this.user,
       subject: Email.newRequestSubject,
       text: message.text(),
