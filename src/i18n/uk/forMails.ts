@@ -1,5 +1,5 @@
 const forMails = {
-  newRequestSubject: 'Новий запит',
+  newRequestSubject: 'Нова заявка',
 }
 
 export default forMails

@@ -25,7 +25,7 @@ class RequestMessage {
     return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '*',
       lBold: '*',
-      newLine: '\n',
+      newLine: '',
     })
   }
 
@@ -41,7 +41,7 @@ class RequestMessage {
     return requestTemplate(this.dataToSrt(this.requestData), {
       rBold: '',
       lBold: '',
-      newLine: '\n',
+      newLine: '',
     })
   }
 }
