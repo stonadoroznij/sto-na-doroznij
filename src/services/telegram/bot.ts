@@ -128,13 +128,12 @@ class Bot {
   }
 }
 
-
 declare global {
   var bot: Bot
 }
 
 const bot = globalThis.bot ?? new Bot()
 
-export default bot
-
 if (process.env.NODE_ENV !== 'production') globalThis.bot = bot
+
+export default bot
