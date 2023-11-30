@@ -1,6 +1,6 @@
 'use client'
 import { QuickFormRequest } from '@/app/actions'
-import { QuickFormValues, quickFormSchema } from '@/schemas/zod-schemas'
+import { BigFormValues, bigFormSchema } from '@/schemas/zod-schemas'
 import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
@@ -14,11 +14,11 @@ const BigForm = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<QuickFormValues>({
-    resolver: zodResolver(quickFormSchema),
+  } = useForm<BigFormValues>({
+    resolver: zodResolver(bigFormSchema),
   })
 
-  const onSubmit: SubmitHandler<QuickFormValues> = async (data) => {
+  const onSubmit: SubmitHandler<BigFormValues> = async (data) => {
     const response = await QuickFormRequest(data)
     if (response.message) {
       setMessage(response.message)
@@ -29,18 +29,57 @@ const BigForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
-      <TextInput<QuickFormValues>
-        placeholder="Iм'я"
-        label="name"
-        register={register}
-        error={errors.name?.message}
-      />
-      <TextInput<QuickFormValues>
-        placeholder="Телефон"
-        label="phone"
-        register={register}
-        error={errors.phone?.message}
-      />
+      <div className="flex flex-col gap-4">
+        <div className="font-bold">Контактні дані</div>
+        <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex-1">
+            <TextInput<BigFormValues>
+              placeholder="Iм'я"
+              label="name"
+              register={register}
+              error={errors.name?.message}
+            />
+          </div>
+          <div className="flex-1">
+            <TextInput<BigFormValues>
+              placeholder="Телефон"
+              label="phone"
+              register={register}
+              error={errors.phone?.message}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4">
+        <div className="font-bold">Автомобіль</div>
+        <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex-1">
+            <TextInput<BigFormValues>
+              placeholder="Iм'я"
+              label="name"
+              register={register}
+              error={errors.name?.message}
+            />
+          </div>
+          <div className="flex-1">
+            <TextInput<BigFormValues>
+              placeholder="Телефон"
+              label="phone"
+              register={register}
+              error={errors.phone?.message}
+            />
+          </div>
+          <div className="flex-1">
+            <TextInput<BigFormValues>
+              placeholder="Телефон"
+              label="phone"
+              register={register}
+              error={errors.phone?.message}
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="relative flex justify-center">
         <Button>Надіслати</Button>
         {message && (
