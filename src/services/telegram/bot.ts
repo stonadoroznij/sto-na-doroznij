@@ -5,7 +5,6 @@ import { RequestMessage } from '@/services/utils'
 import { TelegramBot } from '@/i18n/uk'
 import { timingSafeEqual } from 'crypto'
 import { Request } from '@prisma/client'
-import { decl } from 'postcss'
 
 class Bot {
   private bot: Telegraf
