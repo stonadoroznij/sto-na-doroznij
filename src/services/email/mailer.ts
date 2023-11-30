@@ -2,7 +2,7 @@ import { createTransport } from 'nodemailer'
 import { RequestMessage } from '@/services/utils'
 import { Transporter } from 'nodemailer'
 import { Request } from '@prisma/client'
-import { forMails } from '@/i18n/uk'
+import { Email } from '@/i18n/uk'
 
 class Mailer {
   private transporter: Transporter
@@ -35,9 +35,9 @@ class Mailer {
     const message = new RequestMessage(request)
 
     return await this.transporter.sendMail({
-      from: this.user,
+      from: 'STO na Doroznij',
       to: this.user,
-      subject: forMails.newRequestSubject,
+      subject: Email.newRequestSubject,
       text: message.text(),
       html: message.html(),
     })

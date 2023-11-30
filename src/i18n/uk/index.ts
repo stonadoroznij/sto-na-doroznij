@@ -1,4 +1,4 @@
 import TelegramBot from './telegramBot'
-import forMails from './forMails'
+import Email from './Email'
 
-export { TelegramBot, forMails }
+export { TelegramBot, Email }

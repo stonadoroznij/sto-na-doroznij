@@ -1,5 +1,5 @@
-const forMails = {
+const Email = {
   newRequestSubject: 'Нова заявка',
 }
 
-export default forMails
+export default Email
