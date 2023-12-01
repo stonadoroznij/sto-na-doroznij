@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import BgImage from '../../public/images/MainBg.jpg'
 import { Button } from '@/ui'
-import { ServiceCard } from '@/components'
+import { FaqCards, ServiceCard, Step } from '@/components'
 import { BgPicture } from '../../public/Coleso.svg'
 import { AdvantagesCard } from '@/components'
 import AboutUs from '../../public/images/aboutus_2.png'
@@ -11,6 +11,9 @@ import Advantages3 from '../../public/AdvantagesIcons/Advantages-3.svg'
 import Advantages4 from '../../public/AdvantagesIcons/Advantages-4.svg'
 import Advantages5 from '../../public/AdvantagesIcons/Advantages-5.svg'
 import Advantages6 from '../../public/AdvantagesIcons/Advantages-6.svg'
+import YellowDot from '../../public/yellowDot.svg'
+import ClearDot from '../../public/clearDot.svg'
+import YellowCar from '../../public/YellowCar.svg'
 
 export default function Home() {
   return (
@@ -39,13 +42,13 @@ export default function Home() {
             Наша мета - забезпечити нашим клієнтам якісний, безпечний ремонт і
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
-          <div className="pt-8">
+          <div className="w-[28.5rem] flex justify-between pt-6">
             <Button>Зв’язатись з нами</Button>
             <Button type="outline">Замовити послугу</Button>
           </div>
         </div>
       </section>
-      <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
+      <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
         <div className="flex pt-6 justify-between">
           <ServiceCard />
@@ -57,7 +60,7 @@ export default function Home() {
           <Button children="Усі послуги" type="outline" />
         </div>
       </section>
-      <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
+      <section className="font-bold font-serif flex flex-col z-20 mt-[3.5rem] pt-14 text-white">
         <h2 className="flex justify-center">Переваги</h2>
         <div className="flex flex-wrap justify-center">
           <AdvantagesCard
@@ -88,32 +91,58 @@ export default function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="flex justify-center">Як відбувається процес</h2>
-        <div className="mt-6 mb-6 flex justify-center">
+        <div className="mt-12 mb-[6.875rem] flex justify-center">
           <hr className="w-[56.25rem]" />
+          <span className="flex absolute justify-between w-[57rem] -mt-2">
+            <Image src={YellowDot} alt="yellowDot" />
+            <Image src={YellowDot} alt="yellowDot" />
+            <Image src={ClearDot} alt="ClearDot" />
+            <Image src={ClearDot} alt="ClearDot" />
+            <Image src={ClearDot} alt="ClearDot" />
+          </span>
+          <Image src={YellowCar} alt="YellowCar" className="absolute -mt-3" />
+          <span className="flex mt-[2rem] absolute justify-between w-[59rem]">
+            <Step name="Етап 1" about="Опис" />
+            <Step name="Етап 2" about="Опис" />
+            <Step name="Етап 3" about="Опис" />
+            <Step name="Етап 4" about="Опис" />
+            <Step name="Етап 5" about="Опис" />
+          </span>
         </div>
-        <Button type="outline">Зв'язатися з нами</Button>
+        <div className="flex justify-center">
+          <Button type="outline">Зв'язатися з нами</Button>
+        </div>
       </section>
-      <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <div>
-          <h2>Про нас</h2>
-          <p>
+      <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
+        <div className="w-[26.25rem] h-[36rem] pt-[10.5rem] mr-[8.375rem]">
+          <h2 className="flex justify-start">Про нас</h2>
+          <p className="mt-[1.5rem] mb-[3rem] font-normal text-sm">
             “СТО на Дорожній” — це новий автосервіс, який заснований на засадах
             сімейного бізнесу. Молода команда професіоналів, які постійно
             розвиваються і впроваджують нові технології для досягнення найкращих
             результатів на всіх етапах виконання робіт.
           </p>
-          <Button type="outline">Read more</Button>
+          <div className="flex justify-end">
+            <Button type="outline">Read more</Button>
+          </div>
         </div>
         <div>
           <Image src={AboutUs} alt="Про нас" />
         </div>
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2>Побудувати маршрут в GOOGLE MAPS</h2>
+        <h2 className="flex justify-center">
+          Побудувати маршрут в GOOGLE MAPS
+        </h2>
         MAP
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2>Питання / Відповіді</h2>
+        <h2 className="flex justify-center">Питання / Відповіді</h2>
+        <FaqCards
+          question="Навіщо потрібно проводити діагностику авто регулярно?"
+          answer="Комплексна діагностика автомобіля (включаючи ходову) означає, що необхідно витратити трохи часу та відвідати станцію технічного обслуговування для проведення повної перевірки вузлів та механізмів. Після проведення діагностики ви знатимете про стан усіх деталей підвіски, приводних механізмів, стан технічних рідин та інших елементів і при необхідності можна буде їх замінити. Таким чином, ви зможете заощадити пристойну суму, якщо зробите це заздалегідь але і будете впевнені в тому, що ви не потрапите в аварійну ситуацію через деталі, що різко вийшла з ладу."
+          open="none"
+        />
       </section>
     </main>
   )

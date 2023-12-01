@@ -5,6 +5,8 @@ import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
 import PopUpForm from './forms/PopUpForm'
 import AdvantagesCard from './advantagescard/AdvantagesCard'
+import FaqCards from './faq/FaqCards'
+import Step from './Step/Step'
 
 export {
   Header,
@@ -14,4 +16,6 @@ export {
   SocialMedia,
   PopUpForm,
   AdvantagesCard,
+  FaqCards,
+  Step,
 }
