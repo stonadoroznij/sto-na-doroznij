@@ -1,8 +1,6 @@
 import { createTransport } from 'nodemailer'
-import { RequestMessage } from '@/services/utils'
 import { Transporter } from 'nodemailer'
-import { Request } from '@prisma/client'
-import { Email } from '@/i18n/uk'
+import { EmailData } from '@/types'
 
 class Mailer {
   private transporter: Transporter
@@ -31,16 +29,20 @@ class Mailer {
     this.user = mailUser
   }
 
-  public async sendMe(request: Request) {
-    const message = new RequestMessage(request)
-
+  public async sendMessage(emailData: EmailData, recipient: string) {
     return await this.transporter.sendMail({
       from: `STO na Doroznij ${this.user}`,
-      to: this.user,
-      subject: Email.newRequestSubject,
-      text: message.text(),
-      html: message.html(),
+      to: recipient,
+      subject: emailData.subject,
+      text: emailData.text,
+      html: emailData.html,
     })
+  }
+
+  public async sendMessageToAdmin(emailData: EmailData) {
+    const admin = this.user
+
+    this.sendMessage(emailData, admin)
   }
 }
 
