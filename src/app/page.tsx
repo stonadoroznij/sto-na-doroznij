@@ -14,6 +14,7 @@ import Advantages6 from '../../public/AdvantagesIcons/Advantages-6.svg'
 import YellowDot from '../../public/yellowDot.svg'
 import ClearDot from '../../public/clearDot.svg'
 import YellowCar from '../../public/YellowCar.svg'
+import Slider from '@/components'
 
 export default function Home() {
   return (
@@ -50,12 +51,34 @@ export default function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
-        <div className="flex pt-6 justify-between">
+        <Slider/>
+        {/*<div className="flex pt-6 justify-between w-[240rem]">
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
+          <ServiceCard />
           <ServiceCard />
           <ServiceCard />
           <ServiceCard />
           <ServiceCard />
         </div>
+        <div className='flex justify-end mt-[2rem]'>
+          <span className='flex w-[13rem] justify-between text-2xl'>
+            <button className='text-2xl hover:text-accent-yellow'>
+            &lt;
+            </button>
+            <span className='-mt-0/5'>•</span>
+            <span className='-mt-0/5'>•</span>
+            <span className='-mt-0/5'>•</span>
+            <button className='hover:text-accent-yellow text-2xl'>
+            &gt;
+            </button>
+          </span>
+      </div>*/}
         <div className="pt-6 flex justify-center">
           <Button children="Усі послуги" type="outline" />
         </div>
