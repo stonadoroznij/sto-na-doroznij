@@ -18,6 +18,6 @@ export {
   PopUpForm,
   BigForm,
   MultiSelect,
-  Select
+  Select,
   GoogleMap
 }
