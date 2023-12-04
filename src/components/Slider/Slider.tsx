@@ -1,4 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
+import { Button } from '@/ui'
+import ServiceImage1 from '../../../public/images/service_1.png'
 
 const Slider = () => {
   return (

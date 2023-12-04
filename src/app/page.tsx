@@ -14,7 +14,7 @@ import Advantages6 from '../../public/AdvantagesIcons/Advantages-6.svg'
 import YellowDot from '../../public/yellowDot.svg'
 import ClearDot from '../../public/clearDot.svg'
 import YellowCar from '../../public/YellowCar.svg'
-import Slider from '@/components'
+import SliderComponent from '@/components'
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
-        <Slider/>
+        {/*<SliderComponent/>*/}
         {/*<div className="flex pt-6 justify-between w-[240rem]">
           <ServiceCard />
           <ServiceCard />
@@ -123,7 +123,9 @@ export default function Home() {
             <Image src={ClearDot} alt="ClearDot" />
             <Image src={ClearDot} alt="ClearDot" />
           </span>
-          <Image src={YellowCar} alt="YellowCar" className="absolute -mt-3" />
+          <span className='w-[57rem] absolute'>
+            <Image src={YellowCar} alt="YellowCar" className="absolute -mt-3 transition ease-in-out delay-150 pl-100" />
+          </span>
           <span className="flex mt-[2rem] absolute justify-between w-[59rem]">
             <Step name="Етап 1" about="Опис" />
             <Step name="Етап 2" about="Опис" />

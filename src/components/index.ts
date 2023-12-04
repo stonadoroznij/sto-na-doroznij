@@ -7,7 +7,7 @@ import PopUpForm from './forms/PopUpForm'
 import AdvantagesCard from './advantagescard/AdvantagesCard'
 import FaqCards from './faq/FaqCards'
 import Step from './Step/Step'
-import Slider from './Slider/Slider'
+import SliderComponent from './slider/Slider'
 
 export {
   Header,
@@ -19,5 +19,5 @@ export {
   AdvantagesCard,
   FaqCards,
   Step,
-  Slider,
+  SliderComponent,
 }
