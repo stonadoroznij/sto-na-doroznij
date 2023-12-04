@@ -28,10 +28,26 @@
   h5 {
     @apply font-sans;
   }
-  /* input:-webkit-autofill,
-    input:-webkit-autofill:focus {
-        transition: background-color 0s 600000s, color 0s 600000s;
-    } */
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-coal-600 rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-coal-300 rounded-md;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-coal-300;
+  }
 }
 
 @layer components {

@@ -19,6 +19,7 @@ const config: Config = {
           "800": "#242424",
           "700": "#3C3C3B",
           "600": "#484848",
+          "300": "#AFAFAF",
         },
       },
       fontFamily: {
@@ -35,7 +36,7 @@ const config: Config = {
       },
       maxWidth: {
         "352": "88rem",
-        "159": "39.75rem"
+        "171": "42.25rem",
       },
     },
   },
