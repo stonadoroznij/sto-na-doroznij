@@ -10,8 +10,8 @@ class Bot {
   private password: string
 
   constructor() {
-    const token = process.env.TELEGRAM_BOT_TOKEN || ' '
-    const password = process.env.TELEGRAM_BOT_PASSWORD || ' '
+    const token = process.env.TELEGRAM_BOT_TOKEN
+    const password = process.env.TELEGRAM_BOT_PASSWORD
 
     if (!token) {
       throw new Error('TELEGRAM_BOT_TOKEN is not defined')
