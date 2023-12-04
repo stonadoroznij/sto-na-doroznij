@@ -38,4 +38,29 @@
   .btn {
     @apply rounded-full p-3 pl-6 pr-6 font-semibold;
   }
+
+  .mapouter {
+    position: relative;
+    height: 400px;
+    width: 590px;
+    background: #fff;
+  }
+
+  .maprouter a {
+    color: #fff !important;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 0 !important;
+  }
+
+  .gmap_canvas {
+    overflow: hidden;
+    height: 400px;
+    width: 590px;
+  }
+
+  .gmap_canvas iframe {
+    position: relative;
+    z-index: 2;
+  }
 }
