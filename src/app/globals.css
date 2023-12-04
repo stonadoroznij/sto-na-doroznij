@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 @layer base {
+  
   body {
     overflow-x: hidden;
   }
@@ -40,5 +41,10 @@
 @layer components {
   .btn {
     @apply rounded-full p-3 pl-6 pr-6 font-semibold;
+  }
+  .moving-object {
+    @apply animate-rider;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;/* Только один раз */
   }
 }

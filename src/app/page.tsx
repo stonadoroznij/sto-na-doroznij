@@ -118,13 +118,13 @@ export default function Home() {
           <hr className="w-[56.25rem]" />
           <span className="flex absolute justify-between w-[57rem] -mt-2">
             <Image src={YellowDot} alt="yellowDot" />
-            <Image src={YellowDot} alt="yellowDot" />
+            <Image src={ClearDot} alt="ClearDot" />
             <Image src={ClearDot} alt="ClearDot" />
             <Image src={ClearDot} alt="ClearDot" />
             <Image src={ClearDot} alt="ClearDot" />
           </span>
-          <span className='w-[57rem] absolute'>
-            <Image src={YellowCar} alt="YellowCar" className="absolute -mt-3 transition ease-in-out delay-150 pl-100" />
+          <span className='w-[57rem] absolute '>
+            <Image src={YellowCar} alt="YellowCar" className="absolute -mt-3 moving-object" />
           </span>
           <span className="flex mt-[2rem] absolute justify-between w-[59rem]">
             <Step name="Етап 1" about="Опис" />

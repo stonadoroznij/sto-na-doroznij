@@ -10,6 +10,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        rider: {
+          '1%' : {transform: "translateX(0)", opacity: "1"},
+          '50%': {transform: "translateX(435px)",opacity: "1"},
+          "99%": {transform: "translateX(870px)",opacity: "1"},
+          "100%": {opacity: '0'},
+        },
+      },
+      animation: {
+        "rider": 'rider 10s linear ',
+      },
       screens: {
         xs: "540px",
       },
