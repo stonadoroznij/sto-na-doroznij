@@ -1,10 +1,8 @@
 import { Telegraf } from 'telegraf'
 import { message } from 'telegraf/filters'
 import { chatRepo } from '@/repository'
-import { RequestMessage } from '@/services/utils'
 import { TelegramBot } from '@/i18n/uk'
 import { timingSafeEqual } from 'crypto'
-import { Request } from '@prisma/client'
 
 class Bot {
   private bot: Telegraf
@@ -31,22 +29,16 @@ class Bot {
     this.start()
   }
 
-  public async sendMessage(requestData: Request) {
+  public async sendMessage(text: string) {
     try {
       const chatList = await chatRepo.getAll()
       const chatIdList = chatList.map((item) => item.chatId)
 
-      const requestMessage = new RequestMessage(requestData)
-
       return await Promise.allSettled(
         chatIdList.map((chatId) => {
-          return this.bot.telegram.sendMessage(
-            chatId,
-            requestMessage.markdown(),
-            {
-              parse_mode: 'Markdown',
-            }
-          )
+          return this.bot.telegram.sendMessage(chatId, text, {
+            parse_mode: 'Markdown',
+          })
         })
       )
     } catch (error) {

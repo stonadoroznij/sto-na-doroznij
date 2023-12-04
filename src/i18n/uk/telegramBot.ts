@@ -23,14 +23,15 @@ const TelegramBot = {
     } = messageData
 
     return `
-      ${rBold}Нова заявка з сайту!${lBold}${newLine}
-      ${rBold}Ім'я:${lBold} ${name}
-      ${rBold}Телефон:${lBold} ${phoneNumber}
-      ${rBold}Email:${lBold} ${email}
-      ${rBold}Марка авто:${lBold} ${carBrand}
-      ${rBold}Модель авто:${lBold} ${carModel}
-      ${rBold}Рік авто:${lBold} ${carYear}
-      ${rBold}VIN код:${lBold} ${vinCode}
+      ${rBold}Нова заявка з сайту!${lBold}${newLine}${newLine}
+
+      ${rBold}Ім'я:${lBold} ${name}${newLine}
+      ${rBold}Телефон:${lBold} ${phoneNumber}${newLine}
+      ${rBold}Email:${lBold} ${email}${newLine}
+      ${rBold}Марка авто:${lBold} ${carBrand}${newLine}
+      ${rBold}Модель авто:${lBold} ${carModel}${newLine}
+      ${rBold}Рік авто:${lBold} ${carYear}${newLine}
+      ${rBold}VIN код:${lBold} ${vinCode}${newLine}
       ${rBold}Повідомлення:${lBold} ${message}`
   },
 }
