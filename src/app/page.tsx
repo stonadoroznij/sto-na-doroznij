@@ -2,17 +2,10 @@ import Image from 'next/image'
 import BgImage from '../../public/images/MainBg.jpg'
 import { Button } from '@/ui'
 import {
-  FaqCards,
   ProcesSection,
-  ServiceCard,
-  Step,
   AboutUs,
   FaqSection,
 } from '@/components'
-import YellowDot from '../../public/yellowDot.svg'
-import ClearDot from '../../public/clearDot.svg'
-import YellowCar from '../../public/YellowCar.svg'
-import { Slider } from '@/components'
 import { AdvantageSection } from '@/components'
 
 export default function Home() {
@@ -52,7 +45,7 @@ export default function Home() {
         <h2 className="flex justify-center">Послуги</h2>
         {/*<Slider/>*/}
         <div className="pt-6 flex justify-center">
-          <Button children="Усі послуги" type="outline" />
+          <Button type="outline">Усі послуги</Button>
         </div>
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[3.5rem] pt-14 text-white">
