@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  
   body {
     overflow-x: hidden;
   }
@@ -41,7 +40,7 @@
   }
   .moving-object {
     @apply animate-rider;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards;/* Только один раз */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /* Только один раз */
   }
 }

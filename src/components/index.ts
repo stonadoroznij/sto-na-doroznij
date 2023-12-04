@@ -4,10 +4,14 @@ import ServiceCard from './servicecard/ServiceCard'
 import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
 import PopUpForm from './forms/PopUpForm'
-import AdvantagesCard from './advantagescard/AdvantagesCard'
-import FaqCards from './faq/FaqCards'
+import FaqCards from './FaqSection/faq/FaqCards'
 import Step from './Step/Step'
-import SliderComponent from './slider/Slider'
+import AdvantageSection from './Advantages/AdvantageSection'
+import Slider from './Slider/Slider'
+import ProcesSection from './ProcesSection/ProcesSection'
+import AdvantagesCard from './Advantages/advantagescard/AdvantagesCard'
+import AboutUs from './AboutUs/AboutUs'
+import FaqSection from './FaqSection/FaqSection'
 
 export {
   Header,
@@ -16,8 +20,12 @@ export {
   QuickForm,
   SocialMedia,
   PopUpForm,
-  AdvantagesCard,
   FaqCards,
   Step,
-  SliderComponent,
+  AdvantageSection,
+  Slider,
+  ProcesSection,
+  AdvantagesCard,
+  AboutUs,
+  FaqSection,
 }
