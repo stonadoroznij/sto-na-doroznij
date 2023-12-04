@@ -1,9 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat, Exo_2 } from 'next/font/google'
 import './globals.css'
 import { Header, Footer, PopUpForm } from '../components'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
+
+const exo = Exo_2({
+  weight: ['700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-exo',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${montserrat.variable} ${exo.variable}`}>
+      <body>
         <div className="bg-coal-800 min-h-screen flex flex-col justify-between">
           <div>
             <Header />

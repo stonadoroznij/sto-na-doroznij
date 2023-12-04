@@ -33,8 +33,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["'Montserrat'", ...defaultTheme.fontFamily.sans],
-        title: ["'Russo One'"],
+        sans: ["var(--font-montserrat)"],
+        title: ["var(--font-exo)"],
       },
       fontSize: {
         "7xxl": "5rem",
