@@ -7,6 +7,7 @@ import PopUpForm from './forms/PopUpForm'
 import BigForm from './forms/BigForm'
 import MultiSelect from './multiselect/MultiSelect'
 import Select from './select/Select'
+import GoogleMap from './map/GoogleMap'
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   PopUpForm,
   BigForm,
   MultiSelect,
-  Select,
+  Select
+  GoogleMap
 }
