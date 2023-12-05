@@ -2,6 +2,7 @@ import { ButtonType } from '@/ui/buttons/Button'
 import { ServiceCard } from '../../components'
 import { Button } from '../../ui'
 import React from 'react'
+import Link from 'next/link'
 
 const OurServices = () => {
   return (
@@ -20,7 +21,9 @@ const OurServices = () => {
         </div>
         <div className="flex justify-center mt-12 flex-wrap gap-4">
           <Button>Зв&apos;язатись з нами</Button>
-          <Button type={ButtonType.outline}>Замовити послугу</Button>
+          <Link href={'/serviceform'}>
+            <Button type={ButtonType.outline}>Замовити послугу</Button>
+          </Link>
         </div>
       </section>
     </main>
