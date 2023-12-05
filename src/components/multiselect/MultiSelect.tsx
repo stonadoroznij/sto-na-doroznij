@@ -20,12 +20,12 @@ const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
   const values = field.value as string[]
   const changeHandler = field.onChange
 
-  const toggleService = (service: string) => {
-    const serviceIndex = values.findIndex((el) => el === service)
+  const toggleService = (newValue: string) => {
+    const serviceIndex = values.findIndex((el) => el === newValue)
     if (serviceIndex === -1) {
-      changeHandler([...values, service])
+      changeHandler([...values, newValue])
     } else {
-      const newvalues = values.filter((el) => el !== service)
+      const newvalues = values.filter((el) => el !== newValue)
       changeHandler(newvalues)
     }
   }
@@ -46,15 +46,15 @@ const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
         <div className="flex items-start">
           <div className="h-fit w-full flex items-center gap-x-2 flex-wrap">
             {values.length !== 0 ? (
-              values.map((service) => (
+              values.map((v) => (
                 <div
                   onClick={(e) => {
                     e.stopPropagation()
-                    toggleService(service)
+                    toggleService(v)
                   }}
-                  key={service}
+                  key={v}
                 >
-                  <Tab service={service} />
+                  <Tab service={v} />
                 </div>
               ))
             ) : (

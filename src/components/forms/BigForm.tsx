@@ -2,7 +2,7 @@
 import { FormValues, formSchema } from '../../schemas/zod-schemas'
 import { Button, TextArea, TextInput } from '../../ui'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { FormRequest } from '../../app/actions'
 import { MultiSelect, Select } from '..'
@@ -55,11 +55,16 @@ const BigForm = () => {
     reset()
   }
 
-  const years: string[] = []
+  const getYears = () => {
+    const years: string[] = []
 
-  for (let i = new Date().getFullYear(); i >= 1900; i--) {
-    years.push(String(i))
+    for (let i = new Date().getFullYear(); i >= 1900; i--) {
+      years.push(String(i))
+    }
+    return years
   }
+
+  const years = useMemo(() => getYears(), [])
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
