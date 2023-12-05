@@ -26,8 +26,8 @@ class Service {
     })
   }
 
-  public async getAll(data: any) {
-    const result = await prisma.service.findMany(data)
+  public async getAll() {
+    const result = await prisma.service.findMany()
 
     prisma.$disconnect()
     return result
