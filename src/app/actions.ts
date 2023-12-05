@@ -25,7 +25,7 @@ export async function FormRequest(formData: FormValues) {
     bot.sendMessage(message.markdown())
 
     mailer.sendMessageToAdmin({
-      subject: 'Нова заявка',
+      subject: 'Нова заявка на сайті!',
       text: message.text(),
       html: message.html(),
     })
