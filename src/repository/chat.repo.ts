@@ -2,33 +2,45 @@ import { prisma } from '@/services/db'
 
 class Chat {
   public async add(data: { chatId: string }) {
-    return await prisma.telegramChat.create({
+     const result = prisma.telegramChat.create({
       data,
     })
+
+    prisma.$disconnect()
+    return result
   }
 
   public async deleteById(chatId: string) {
-    return await prisma.telegramChat.delete({
+     const result = prisma.telegramChat.delete({
       where: {
         chatId,
       },
     })
+
+    prisma.$disconnect()
+    return result
   }
 
   public async getById(chatId: string) {
-    return await prisma.telegramChat.findUnique({
+     const result = prisma.telegramChat.findUnique({
       where: {
         chatId,
       },
     })
+        
+    prisma.$disconnect()
+    return result
   }
 
   public async getAll() {
-    return await prisma.telegramChat.findMany({
+     const result = prisma.telegramChat.findMany({
       select: {
         chatId: true,
       },
     })
+        
+    prisma.$disconnect()
+    return result
   }
 }
 
