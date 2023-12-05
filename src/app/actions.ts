@@ -11,7 +11,7 @@ export async function FormRequest(formData: FormValues) {
 
   const errorMessage = {
     sucsses: false,
-    message: Actions.from.errorMessages,
+    message: Actions.form.errorMessages,
   }
 
   if (!parse.success) {
@@ -32,7 +32,7 @@ export async function FormRequest(formData: FormValues) {
 
     return {
       sucsses: true,
-      message: Actions.from.sucssesMessages,
+      message: Actions.form.sucssesMessages,
     }
   } catch (e) {
     console.log(e)
