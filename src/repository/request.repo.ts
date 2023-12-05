@@ -1,23 +1,30 @@
 import { prisma } from '@/services/db'
 import { FormValues } from '@/schemas/zod-schemas'
-import { serviceRepo } from './'
+// import { serviceRepo } from './'
 
 class Request {
   public async add(formData: FormValues) {
     const { phone, services, carYear, ...rest } = formData
 
-    const connect = services ? await serviceRepo.getManyByNames(services) : []
+    const result = await prisma.$transaction(async (prisma) => {
+      const foundServices = await prisma.service.findMany({
+        where: {
+          name: {
+            in: services,
+          },
+        },
+      })
 
-    const data = {
-      ...rest,
-      phoneNumber: phone,
-      carYear: Number(carYear),
-      services: {
-        connect,
-      },
-    }
-    const result = await prisma.request.create({
-      data,
+      return prisma.request.create({
+        data: {
+          ...rest,
+          phoneNumber: phone,
+          carYear: Number(carYear),
+          services: {
+            connect: foundServices,
+          },
+        },
+      })
     })
 
     prisma.$disconnect()

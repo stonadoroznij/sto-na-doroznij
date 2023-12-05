@@ -16,16 +16,6 @@ class Service {
     return result
   }
 
-  public async getManyByNames(names: string[]) {
-    return await prisma.service.findMany({
-      where: {
-        name: {
-          in: names,
-        },
-      },
-    })
-  }
-
   public async getAll() {
     const result = await prisma.service.findMany()
 
