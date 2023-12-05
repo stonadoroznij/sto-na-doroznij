@@ -4,13 +4,14 @@ import { mailer } from '@/services/email'
 import { RequestMessage } from '@/services/utils'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { requestRepo } from '@/repository'
+import { Actions, Email } from '@/i18n/uk'
 
 export async function FormRequest(formData: FormValues) {
   const parse = formSchema.safeParse(formData)
 
   const errorMessage = {
     sucsses: false,
-    message: 'Помилка запису даних форми',
+    message: Actions.from.errorMessages,
   }
 
   if (!parse.success) {
@@ -23,16 +24,15 @@ export async function FormRequest(formData: FormValues) {
     const message = new RequestMessage(res)
 
     bot.sendMessage(message.markdown())
-
     mailer.sendMessageToAdmin({
-      subject: 'Нова заявка на сайті!',
+      subject: Email.newRequestSubject,
       text: message.text(),
       html: message.html(),
     })
 
     return {
       sucsses: true,
-      message: `Форма успішно надіслана`,
+      message: Actions.from.sucssesMessages,
     }
   } catch (e) {
     console.log(e)
