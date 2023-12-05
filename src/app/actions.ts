@@ -1,8 +1,9 @@
 'use server'
-import { QuickFormValues, quickFormSchema } from '@/schemas/zod-schemas'
+import { FormValues, formSchema } from '@/schemas/zod-schemas'
 
-export async function QuickFormRequest(formData: QuickFormValues) {
-  const parse = quickFormSchema.safeParse(formData)
+export async function FormRequest(formData: FormValues) {
+  console.log(formData)
+  const parse = formSchema.safeParse(formData)
 
   if (!parse.success) {
     return { message: 'Помилка запису даних форми' }
