@@ -1,7 +1,3 @@
-import React from 'react'
-import { FaqCards } from '..'
-//import  faqList  from '@/i18n/uk/Faq'
-
 const faqList = [
   {
     question: 'Навіщо потрібно проводити діагностику авто регулярно?',
@@ -49,23 +45,4 @@ const faqList = [
     При заміні ланцюга ГРМ також замінюйте напрямні та заспокоювальні планки, і натягувачі ланцюга. У деяких випадках заміни, вимагають зірки розподільних валів і колінчастого вала. Якщо цього не зробити, новий ланцюг швидко вийде з ладу.`,
   },
 ]
-
-
-const FaqSection = () => {
-  // if (!Array.isArray(faqList) || faqList.length === 0) {
-  //   console.error('faqList is not a valid array or is empty');
-    console.log(faqList)
-  return (
-    <div>
-    {
-    faqList.map((text, index)=>{
-      return(<FaqCards 
-        key={index}
-        question={text.question} 
-        answer={text.answer}/>)
-    })}
-    </div>
-  )
-}
-
-export default FaqSection
+export default faqList
