@@ -5,7 +5,7 @@ import { SocialMedia } from '..'
 import MenuItem from './MenuItem'
 import { Logo } from '../../ui'
 import { useState } from 'react'
-import { pre } from 'telegraf/format'
+import { Header as HeaderText } from '../../i18n/uk'
 
 const Header = () => {
   return (
@@ -15,22 +15,22 @@ const Header = () => {
           <Logo />
         </div>
         <div className="hidden lg:flex lg:gap-6">
-          <MenuItem href="/ourservices">Послуги</MenuItem>
-          <MenuItem href="/aboutus">Про нас</MenuItem>
-          <MenuItem href="/contacts">Контакти</MenuItem>
+          <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
+          <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
+          <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
           <SocialMedia />
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
+            <div className="min-w-[160px]">{HeaderText.phone}</div>
             <div className="flex flex-col justify-center items-center">
-              <div className="text-center">Пн-Пт 9:00-18:00</div>
-              <div className="text-center">Сб 9:00-14:00 </div>
+              <div className="text-center">{HeaderText.workingtime.first}</div>
+              <div className="text-center">{HeaderText.workingtime.second}</div>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2">
             <Image src={LocationIcon} alt="Location icon" />
-            <div className="w-[152px]">вул.Дорожня, 33 м. Макарів</div>
+            <div className="w-[152px]">{HeaderText.address}</div>
           </div>
         </div>
         <div className="lg:hidden">
@@ -65,30 +65,28 @@ const BurgerMenu = () => {
       >
         <div className="flex flex-col items-center gap-4">
           <div onClick={toggleOpen}>
-            <MenuItem href="/">Головна</MenuItem>
+            <MenuItem href="/">{HeaderText.main}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/ourservices">Послуги</MenuItem>
+            <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/aboutus">Про нас</MenuItem>
+            <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/contacts">Контакти</MenuItem>
+            <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
           </div>
         </div>
         <div className="flex flex-col items-center gap-4">
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
             <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
             <div className="flex flex-col justify-center items-center">
-              <div className="text-center">Пн-Пт 9:00-18:00</div>
-              <div className="text-center">Сб 9:00-14:00 </div>
+              <div className="text-center">{HeaderText.workingtime.first}</div>
+              <div className="text-center">{HeaderText.workingtime.second}</div>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2">
-            <div className="w-[152px] text-center">
-              вул.Дорожня, 33 м. Макарів
-            </div>
+            <div className="w-[152px] text-center">{HeaderText.address}</div>
           </div>
           <SocialMedia />
         </div>
