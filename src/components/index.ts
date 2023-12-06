@@ -19,5 +19,5 @@ export {
   BigForm,
   MultiSelect,
   Select,
-  GoogleMap
+  GoogleMap,
 }

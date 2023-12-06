@@ -21,7 +21,10 @@ const ServiceCard = () => {
           Est leo eget dolor natoque ultricies neque ultrices aliquam ac.
         </p>
       </div>
-      <Link href={'/price'} className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100">
+      <Link
+        href={'/price'}
+        className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100"
+      >
         Прайс
       </Link>
       <Button type={ButtonType.outline}>Замовити послугу</Button>
