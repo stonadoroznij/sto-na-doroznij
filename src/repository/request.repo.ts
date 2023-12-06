@@ -13,6 +13,9 @@ class Request {
             in: services,
           },
         },
+        select: {
+          id: true,
+        },
       })
 
       return prisma.request.create({
