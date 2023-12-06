@@ -32,7 +32,7 @@ const TelegramBot = {
       ${rBold}Модель авто:${lBold} ${carModel}${newLine}
       ${rBold}Рік авто:${lBold} ${carYear}${newLine}
       ${rBold}VIN код:${lBold} ${vinCode}${newLine}
-      ${rBold}Послуги${lBold} ${services}${newLine}
+      ${rBold}Послуги:${lBold} ${services}${newLine}
       ${rBold}Повідомлення:${lBold} ${message}`
   },
 }
