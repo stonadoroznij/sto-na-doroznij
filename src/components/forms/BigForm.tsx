@@ -141,7 +141,7 @@ const BigForm = () => {
       <div className="relative flex justify-center">
         <Button>Надіслати</Button>
         {message && (
-          <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-accent-yellow">
+          <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
             {message}
           </div>
         )}
