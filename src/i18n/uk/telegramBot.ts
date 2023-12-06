@@ -9,7 +9,7 @@ const TelegramBot = {
   unsubscribe: 'Ви відписались від розсилки!',
   startMessage:
     'Привіт! Я бот, який буде надсилати тобі повідомлення про заявки на послуги в "СТО на Дорожній". Для початку роботи підпишись на розсилку командою /join.',
-  requestTemplate: (messageData: MessageData, config: MessageConfig) => {
+  requestTemplate: (messageData: MessageData, services: string,  config: MessageConfig) => {
     const { rBold, lBold, newLine } = config
     const {
       name,
@@ -32,6 +32,7 @@ const TelegramBot = {
       ${rBold}Модель авто:${lBold} ${carModel}${newLine}
       ${rBold}Рік авто:${lBold} ${carYear}${newLine}
       ${rBold}VIN код:${lBold} ${vinCode}${newLine}
+      ${rBold}Послуги:${lBold} ${services}${newLine}
       ${rBold}Повідомлення:${lBold} ${message}`
   },
 }

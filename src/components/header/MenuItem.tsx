@@ -16,9 +16,9 @@ const MenuItem = ({ href, children }: PropsType) => {
       <div className="relative font-bold group">
         {children}
         {href === pathName ? (
-          <div className="absolute -bottom-1 left-0 h-[3px] w-full bg-accent-yellow" />
+          <div className="absolute -bottom-1 left-0 h-1 w-full bg-accent-yellow" />
         ) : (
-          <div className="absolute -bottom-1 left-[40%] w-0 h-[3px] bg-accent-yellow transition-transform duration-300 ease-in-out group-hover:w-1/5 group-hover:scale-x-[5]" />
+          <div className="absolute -bottom-1 left-[40%] w-0 h-1 bg-accent-yellow transition-transform duration-300 ease-in-out group-hover:w-1/5 group-hover:scale-x-[5]" />
         )}
       </div>
     </Link>

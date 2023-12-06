@@ -5,13 +5,17 @@ import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
 import PopUpForm from './forms/PopUpForm'
 import FaqCards from './FaqSection/faq/FaqCards'
-import Step from './Step/Step'
+import Step from './ProcesSection/Step/Step'
 import AdvantageSection from './Advantages/AdvantageSection'
 import Slider from './Slider/Slider'
 import ProcesSection from './ProcesSection/ProcesSection'
 import AdvantagesCard from './Advantages/advantagescard/AdvantagesCard'
 import AboutUs from './AboutUs/AboutUs'
 import FaqSection from './FaqSection/FaqSection'
+import BigForm from './forms/BigForm'
+import MultiSelect from './multiselect/MultiSelect'
+import Select from './select/Select'
+import GoogleMap from './map/GoogleMap'
 
 export {
   Header,
@@ -28,4 +32,8 @@ export {
   AdvantagesCard,
   AboutUs,
   FaqSection,
+  BigForm,
+  MultiSelect,
+  Select,
+  GoogleMap
 }

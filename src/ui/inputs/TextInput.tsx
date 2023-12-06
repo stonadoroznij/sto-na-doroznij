@@ -1,27 +1,27 @@
 import { FieldValues, Path, UseFormRegister } from 'react-hook-form'
 
-type InputProps<T extends FieldValues> = {
+type PropsType<T extends FieldValues> = {
   label: Path<T>
   register: UseFormRegister<T>
   error?: string
   placeholder: string
 }
 
-const TextInput = function <T extends FieldValues>({
+const TextInput = <T extends FieldValues>({
   label,
   register,
   error,
   placeholder,
-}: InputProps<T>) {
+}: PropsType<T>) => {
   return (
-    <div className="relative flex">
+    <div className="relative">
       <input
         placeholder={`${placeholder}`}
-        className="flex-1 bg-transparent pb-2 outline-none border-b border-white focus:border-accent-yellow"
+        className="w-full bg-transparent pb-2 outline-none border-b border-white focus:border-accent-yellow placeholder:text-coal-300"
         {...register(label)}
       />
       {error && (
-        <div className="flex-1 text-red-400 text-xs absolute -bottom-5 left-0">{`${error}`}</div>
+        <div className="w-full text-red-400 text-xs absolute top-9 left-0">{`${error}`}</div>
       )}
     </div>
   )

@@ -1,6 +1,6 @@
 'use client'
-import { QuickFormRequest } from '@/app/actions'
-import { QuickFormValues, quickFormSchema } from '@/schemas/zod-schemas'
+import { FormRequest } from '@/app/actions'
+import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
@@ -14,12 +14,12 @@ const QuickForm = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<QuickFormValues>({
-    resolver: zodResolver(quickFormSchema),
+  } = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
   })
 
-  const onSubmit: SubmitHandler<QuickFormValues> = async (data) => {
-    const response = await QuickFormRequest(data)
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    const response = await FormRequest(data)
     if (response.message) {
       setMessage(response.message)
     }
@@ -28,14 +28,14 @@ const QuickForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
-      <TextInput<QuickFormValues>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 text-white">
+      <TextInput<FormValues>
         placeholder="Iм'я"
         label="name"
         register={register}
         error={errors.name?.message}
       />
-      <TextInput<QuickFormValues>
+      <TextInput<FormValues>
         placeholder="Телефон"
         label="phone"
         register={register}
@@ -44,7 +44,7 @@ const QuickForm = () => {
       <div className="relative flex justify-center">
         <Button>Надіслати</Button>
         {message && (
-          <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-accent-yellow">
+          <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
             {message}
           </div>
         )}

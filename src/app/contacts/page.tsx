@@ -1,4 +1,4 @@
-import { SocialMedia } from '@/components'
+import { GoogleMap, SocialMedia } from '@/components'
 
 const Contacts = () => {
   return (
@@ -28,7 +28,7 @@ const Contacts = () => {
           </div>
         </div>
         <h2 className="mb-6 text-center">Побудувати маршрут в Google maps</h2>
-        <div className="w-64 h-64 bg-coal-600" />
+        <GoogleMap />
       </section>
     </main>
   )

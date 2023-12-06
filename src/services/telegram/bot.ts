@@ -32,10 +32,10 @@ class Bot {
   public async sendMessage(text: string) {
     try {
       const chatList = await chatRepo.getAll()
-      const chatIdList = chatList.map((item) => item.chatId)
+      const chatIdList = chatList.map((item: any) => item.chatId)
 
       return await Promise.allSettled(
-        chatIdList.map((chatId) => {
+        chatIdList.map((chatId: any) => {
           return this.bot.telegram.sendMessage(chatId, text, {
             parse_mode: 'Markdown',
           })

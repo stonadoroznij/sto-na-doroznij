@@ -4,6 +4,7 @@ import AboutUsImage1 from '../../../public/images/aboutus_1.png'
 import AboutUsImage2 from '../../../public/images/aboutus_2.png'
 import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
+import Link from 'next/link'
 
 const AboutUs = () => {
   return (
@@ -26,9 +27,13 @@ const AboutUs = () => {
               гарантуємо не тільки першокласне виконання робіт, а й привітне та
               тепле обслуговування.
             </p>
-            <div className="flex flex-col gap-4 self-stretch xs:flex-row xs:justify-stretch">
-              <Button>Зв’язатись з нами</Button>
-              <Button type={ButtonType.outline}>Замовити послугу</Button>
+            <div className="flex gap-4 flex-wrap">
+              <Link href={'/serviceform'}>
+                <Button>Зв’язатись з нами</Button>
+              </Link>
+              <Link href={'/serviceform'}>
+                <Button type={ButtonType.outline}>Замовити послугу</Button>
+              </Link>
             </div>
           </div>
         </section>

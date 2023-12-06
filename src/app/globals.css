@@ -28,15 +28,56 @@
   h5 {
     @apply font-sans;
   }
-  /* input:-webkit-autofill,
-    input:-webkit-autofill:focus {
-        transition: background-color 0s 600000s, color 0s 600000s;
-    } */
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-coal-600 rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-coal-300 rounded-md;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-coal-300;
+  }
 }
 
 @layer components {
   .btn {
-    @apply rounded-full p-3 pl-6 pr-6 font-semibold;
+    @apply rounded-full p-[10px] pl-6 pr-6 font-semibold whitespace-nowrap;
+  }
+
+  .mapouter {
+    position: relative;
+    height: 400px;
+    width: 590px;
+    background: #fff;
+  }
+
+  .maprouter a {
+    color: #fff !important;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 0 !important;
+  }
+
+  .gmap_canvas {
+    overflow: hidden;
+    height: 400px;
+    width: 590px;
+  }
+
+  .gmap_canvas iframe {
+    position: relative;
+    z-index: 2;
   }
   .moving-object {
     @apply animate-rider;
