@@ -20,8 +20,9 @@ export async function FormRequest(formData: FormValues) {
 
   try {
     const res = await requestRepo.add(formData)
+    const { services, ...rest } = res
 
-    const message = new RequestMessage(res)
+    const message = new RequestMessage(rest, services)
 
     bot.sendMessage(message.markdown())
     mailer.sendMessageToAdmin({
