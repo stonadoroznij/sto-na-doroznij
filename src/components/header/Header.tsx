@@ -24,8 +24,8 @@ const Header = () => {
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
             <div className="min-w-[160px]">{HeaderText.phone}</div>
             <div className="flex flex-col justify-center items-center">
-              <div className="text-center">{HeaderText.workingtime.first}</div>
-              <div className="text-center">{HeaderText.workingtime.second}</div>
+              <div className="text-center">{HeaderText.workingTime.first}</div>
+              <div className="text-center">{HeaderText.workingTime.second}</div>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2">
