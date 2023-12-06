@@ -4,5 +4,16 @@ import Header from './Header'
 import Footer from './Footer'
 import AboutUs from './AboutUs'
 import ButtonText from './ButtonText'
+import Contacts from './Contacts'
+import Services from './Services'
 
-export { TelegramBot, Email, Header, Footer, AboutUs, ButtonText }
+export {
+  TelegramBot,
+  Email,
+  Header,
+  Footer,
+  AboutUs,
+  ButtonText,
+  Contacts,
+  Services,
+}
