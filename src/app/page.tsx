@@ -5,6 +5,7 @@ import {
   ProcesSection,
   AboutUs,
   FaqSection,
+  GoogleMap
 } from '@/components'
 import { AdvantageSection } from '@/components'
 
@@ -59,10 +60,10 @@ export default function Home() {
         <AboutUs />
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2 className="flex justify-center">
+        <h2 className="flex justify-center mb-6">
           Побудувати маршрут в GOOGLE MAPS
         </h2>
-        MAP
+       <GoogleMap/>
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="flex justify-center">Питання / Відповіді</h2>
