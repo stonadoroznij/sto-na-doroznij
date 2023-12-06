@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import Link from 'next/link'
 import ServiceImage1 from '../../../public/images/service_1.png'
 import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
@@ -21,9 +21,9 @@ const ServiceCard = () => {
           Est leo eget dolor natoque ultricies neque ultrices aliquam ac.
         </p>
       </div>
-      <a className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100">
-        Read more
-      </a>
+      <Link href={'/price'} className="text-sm text-white opacity-50 underline font-bold group-hover:text-accent-yellow group-hover:opacity-100">
+        Прайс
+      </Link>
       <Button type={ButtonType.outline}>Замовити послугу</Button>
       <div className="absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl">
         від 300 грн
