@@ -1,6 +1,7 @@
 import React from 'react'
 import { QuickForm, SocialMedia } from '..'
 import { Logo } from '../../ui'
+import { Footer as FooterText } from '@/i18n/uk'
 
 const Footer = () => {
   return (
@@ -17,22 +18,29 @@ const Footer = () => {
             <div className="flex flex-col justify-start items-center gap-12 md:flex-row md:justify-between">
               <div className="flex-1 flex flex-col gap-8 max-w-xs">
                 <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">Контакти</div>
-                  <div className="">
-                    Макарів, вул. Дорожня, 33
-                    <br /> +38 (096) 973 37 54
+                  <div className="text-2xl font-semibold">
+                    {FooterText.contacts}
                   </div>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">Графік роботи</div>
                   <div className="">
-                    Пн-Пт 9.00-18.00
+                    {FooterText.address}
                     <br />
-                    Сб 9.00-14.00
+                    {FooterText.phone}
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">Соціальні мережі</div>
+                  <div className="text-2xl font-semibold">
+                    {FooterText.workingTime.title}
+                  </div>
+                  <div className="">
+                    {FooterText.workingTime.first}
+                    <br />
+                    {FooterText.workingTime.second}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="text-2xl font-semibold">
+                    {FooterText.socialMedia}
+                  </div>
                   <SocialMedia />
                 </div>
               </div>
