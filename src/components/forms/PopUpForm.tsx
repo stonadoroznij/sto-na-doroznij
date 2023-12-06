@@ -4,6 +4,7 @@ import Image from 'next/image'
 import PhoneIcon from '../../../public/phone_icon.svg'
 import CloseIcon from '../../../public/close_icon.svg'
 import { QuickForm } from '..'
+import { Forms } from '@/i18n/uk'
 
 const PopUpForm = () => {
   const [opened, setOpened] = useState(false)
@@ -25,7 +26,7 @@ const PopUpForm = () => {
           <div className="relative bg-coal-800 p-8 pr-12 pl-12 w-[calc(100vw-64px)] rounded-lg border border-coal-600 shadow-dark xs:mr-12 xs:w-fit">
             <div className="flex flex-col gap-8">
               <div className="text-2xl font-semibold text-white text-center">
-                Замовити зворотній зв’язок
+                {Forms.popUpForm.title}
               </div>
               <QuickForm />
             </div>

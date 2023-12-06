@@ -6,6 +6,7 @@ import AboutUs from './AboutUs'
 import ButtonText from './ButtonText'
 import Contacts from './Contacts'
 import Services from './Services'
+import Forms from './Forms'
 
 export {
   TelegramBot,
@@ -16,4 +17,5 @@ export {
   ButtonText,
   Contacts,
   Services,
+  Forms,
 }
