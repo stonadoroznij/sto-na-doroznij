@@ -61,7 +61,7 @@ const BurgerMenu = () => {
         <div className="w-8 h-1 bg-white" />
       </div>
       <div
-        className={`absolute top-0 left-0 h-screen w-screen bg-coal-800 z-30 flex flex-col justify-between p-16 transition-opacity duration-700 ease-in-out ${style}`}
+        className={`absolute top-0 left-0 h-screen w-screen bg-coal-800 z-30 flex flex-col justify-between p-16 transition-opacity duration-300 ease-in-out ${style}`}
       >
         <div className="flex flex-col items-center gap-4">
           <div onClick={toggleOpen}>
