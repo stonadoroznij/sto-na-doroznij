@@ -26,9 +26,6 @@ class Request {
             connect: foundServices,
           },
         },
-        include: {
-          services: true,
-        },
       })
     })
 

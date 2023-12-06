@@ -9,7 +9,7 @@ class RequestMessage {
 
   constructor(
     private readonly requestData: Request,
-    private readonly services: Service[]
+    private readonly services: string[]
   ) {}
 
   private dataToSrt(): MessageData {
@@ -27,8 +27,7 @@ class RequestMessage {
 
   private servicesToStr() {
     const { services } = this
-    const servicsNames = services.map(({ name }) => name)
-    return servicsNames.join(', ') || this.NA_STRING
+    return services.join(', ') || this.NA_STRING
   }
 
   markdown() {
