@@ -23,5 +23,5 @@ export {
   Services,
   Forms,
   FormError,
-  Price
+  Price,
 }
