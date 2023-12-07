@@ -13,11 +13,11 @@ const ProcesSection = () => {
       <div className="mt-12 mb-[6.875rem] flex justify-center">
         <hr className="w-[56.25rem]" />
         <span className="flex absolute justify-between w-[57rem] -mt-2">
-          <Image src={YellowDot} alt="yellowDot" />
-          <Image src={ClearDot} alt="ClearDot" />
-          <Image src={ClearDot} alt="ClearDot" />
-          <Image src={ClearDot} alt="ClearDot" />
-          <Image src={ClearDot} alt="ClearDot" />
+          <span className='text-7xl -mt-8'>•</span>
+          <span className='text-7xl -mt-8'>•</span>
+          <span className='text-7xl -mt-8'>•</span>
+          <span className='text-7xl -mt-8'>•</span>
+          <span className='text-7xl -mt-8'>•</span>
         </span>
         <span className="w-[57rem] absolute ">
           <Image
