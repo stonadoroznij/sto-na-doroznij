@@ -52,7 +52,7 @@
 
 @layer components {
   .btn {
-    @apply rounded-full p-3 pl-6 pr-6 font-semibold;
+    @apply rounded-full p-[10px] pl-6 pr-6 font-semibold whitespace-nowrap;
   }
 
   .mapouter {

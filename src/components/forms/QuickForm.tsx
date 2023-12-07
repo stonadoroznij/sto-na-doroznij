@@ -5,6 +5,7 @@ import { Button, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { Forms, ButtonText } from '@/i18n/uk'
 
 const QuickForm = () => {
   const [message, setMessage] = useState<string>('')
@@ -28,23 +29,26 @@ const QuickForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-8 text-white"
+    >
       <TextInput<FormValues>
-        placeholder="Iм'я"
+        placeholder={Forms.fields.name}
         label="name"
         register={register}
         error={errors.name?.message}
       />
       <TextInput<FormValues>
-        placeholder="Телефон"
+        placeholder={Forms.fields.phone}
         label="phone"
         register={register}
         error={errors.phone?.message}
       />
       <div className="relative flex justify-center">
-        <Button>Надіслати</Button>
+        <Button>{ButtonText.send}</Button>
         {message && (
-          <div className="absolute w-full text-center left-0 -bottom-5 text-xs text-accent-yellow">
+          <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
             {message}
           </div>
         )}
