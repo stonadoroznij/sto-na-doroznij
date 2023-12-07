@@ -15,7 +15,7 @@ const FaqCards = (props: faqProps) => {
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
-    setAnswerHeight(isOpen ? 0 : 200)
+    setAnswerHeight(isOpen ? 0 : 1500)
   }
   return (
     <div className="mt-2 w-100%">
@@ -34,7 +34,7 @@ const FaqCards = (props: faqProps) => {
         <h3
           style={{
             maxHeight: `${answerHeight}px`,
-            transition: 'max-height 0.6s ease-in-out',
+            transition: 'max-height 1s ease-in-out',
             overflow: 'hidden',
           }}
           className="mt-2 px-[1.875rem]"

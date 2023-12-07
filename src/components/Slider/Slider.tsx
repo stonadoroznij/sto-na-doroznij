@@ -9,19 +9,19 @@ import 'swiper/css/navigation'
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules'
 import { ServiceCard } from '..'
-import { useSwiper } from 'swiper/react'
 
 const Slider = () => {
-  const swiper = useSwiper()
   return (
     <div className="">
       <Swiper
         style={{
           '--swiper-navigation-color': '#fcea10',
           '--swiper-pagination-color': '#fcea10',
-          '--swiper-navigation-sides-offset': '0px',
-          padding: '0 1rem 3rem 1rem',
-        }}
+          '--swiper-navigation-sides-offset': 'calc(50% - 8rem)',
+          '--swiper-navigation-top-offset': '96%',
+          '--swiper-navigation-size': '1.5rem',
+          paddingBottom: '3rem',
+        } as React.CSSProperties}
         slidesPerView={1}
         spaceBetween={10}
         pagination={{

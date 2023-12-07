@@ -85,3 +85,7 @@
     animation-fill-mode: forwards; /* Только один раз */
   }
 }
+
+.swiper-pagination {
+  z-index: 9 !important;
+}
