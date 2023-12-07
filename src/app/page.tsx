@@ -23,10 +23,11 @@ export default function Home() {
         placeholder="blur"
         quality={100}
         fill
-        sizes="100vw"
+        // sizes="100dvw"
         style={{
           objectFit: 'cover',
           filter: 'blur(2px) grayscale(50%) brightness(50%)',
+          maxHeight: '53rem',
         }}
       />
       <section className="text-white z-40 flex relative mb-14">
