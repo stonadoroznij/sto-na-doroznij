@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Step = (props: string) => {
+interface StepProps {
+  name: string
+  about: string
+}
+
+const Step = (props: StepProps) => {
   return (
     <div>
       <h3>{props.name}</h3>
