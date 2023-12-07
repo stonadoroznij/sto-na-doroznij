@@ -26,12 +26,12 @@ const ProcesSection = () => {
             className="absolute -mt-3 moving-object"
           />
         </span>
-        <span className="flex mt-[2rem] absolute justify-between w-[59rem]">
-          <Step name="Етап 1" about="Опис" />
-          <Step name="Етап 2" about="Опис" />
-          <Step name="Етап 3" about="Опис" />
-          <Step name="Етап 4" about="Опис" />
-          <Step name="Етап 5" about="Опис" />
+        <span className="flex mt-[2rem] absolute justify-between w-[62rem]">
+          <Step name="Етап 1" about="Записатись на СТО" />
+          <Step name="Етап 2" about="Привезти авто на СТО" />
+          <Step name="Етап 3" about="Обговорення проблеми" />
+          <Step name="Етап 4" about="Очікування" />
+          <Step name="Етап 5" about="Забираєте авто" />
         </span>
       </div>
       <div className="flex justify-center">
