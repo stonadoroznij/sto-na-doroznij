@@ -79,13 +79,16 @@
     position: relative;
     z-index: 2;
   }
+
   .moving-object {
     @apply animate-rider;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards; /* Только один раз */
+    animation-fill-mode: forwards;
+    /* Только один раз */
   }
-}
 
-.swiper-pagination {
-  z-index: 9 !important;
+  .swiper-pagination {
+    z-index: 9 !important;
+  }
+
 }
