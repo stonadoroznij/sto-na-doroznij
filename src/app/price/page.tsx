@@ -1,16 +1,15 @@
-import Image from 'next/image'
+import {Price as Prices} from '../../i18n/uk'
 
-export default function Home() {
+const Price = () => {
   return (
     <main className="max-w-352 m-auto p-6">
       <section className="text-white">
-        <h1>
-          СТО на
-          <br />
-          Дорожній
-        </h1>
-        <h2 className="mb-6">Прайс</h2>
+        {/* {Object.keys(Prices).map(key => {
+          return (<h2 className="mb-6">{Prices[key].title}</h2>)
+        })} */}
       </section>
     </main>
   )
 }
+
+export default Price

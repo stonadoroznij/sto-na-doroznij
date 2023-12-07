@@ -1,5 +1,5 @@
-const Price = {
-  diagnosis: {
+const Price = [
+  {
     title: 'Діагностика',
     services: [
       {
@@ -24,7 +24,7 @@ const Price = {
       },
     ],
   },
-  oil: {
+  {
     title: 'Заміна технічних рідин та фільтрів',
     services: [
       {
@@ -99,7 +99,7 @@ const Price = {
       },
     ],
   },
-  chassis: {
+  {
     title: 'Ходова частина',
     services: [
       {
@@ -239,7 +239,7 @@ const Price = {
       },
     ],
   },
-  break: {
+  {
     title: 'Гальмівна система',
     services: [
       {
@@ -334,7 +334,7 @@ const Price = {
       },
     ],
   },
-  steering: {
+  {
     title: 'Рульове управління',
     services: [
       {
@@ -369,7 +369,7 @@ const Price = {
       },
     ],
   },
-  clutch: {
+  {
     title: 'Система зчеплення',
     services: [
       {
@@ -394,7 +394,7 @@ const Price = {
       },
     ],
   },
-  grm: {
+  {
     title: 'ГРМ',
     services: [
       {
@@ -419,7 +419,7 @@ const Price = {
       },
     ],
   },
-  battery: {
+  {
     title: 'Акумулятор',
     services: [
       {
@@ -444,7 +444,7 @@ const Price = {
       },
     ],
   },
-  engine: {
+  {
     title: 'Поточний ремонт та обслуговування двигуна (заміна)',
     services: [
       {
@@ -484,7 +484,7 @@ const Price = {
       },
     ],
   },
-  belts: {
+  {
     title: 'Заміна сервісних ременів',
     services: [
       {
@@ -504,7 +504,7 @@ const Price = {
       },
     ],
   },
-  burn: {
+  {
     title: 'Система запалювання',
     services: [
       {
@@ -519,7 +519,7 @@ const Price = {
       },
     ],
   },
-  other: {
+  {
     title: 'Інші роботи',
     services: [
       {
@@ -544,6 +544,6 @@ const Price = {
       },
     ],
   },
-}
+]
 
 export default Price
