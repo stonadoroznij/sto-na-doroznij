@@ -12,14 +12,12 @@ class Service {
       },
     })
 
-    prisma.$disconnect()
     return result
   }
 
   public async getAll() {
     const result = await prisma.service.findMany()
 
-    prisma.$disconnect()
     return result
   }
 }

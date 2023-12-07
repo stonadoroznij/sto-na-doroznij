@@ -29,7 +29,6 @@ class Request {
       })
     })
 
-    prisma.$disconnect()
     return result
   }
 
@@ -41,7 +40,6 @@ class Request {
       },
     })
 
-    prisma.$disconnect()
     return result
   }
 }
