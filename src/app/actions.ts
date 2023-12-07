@@ -1,25 +1,42 @@
 'use server'
+import { bot } from '@/services/telegram'
+import { mailer } from '@/services/email'
+import { RequestMessage } from '@/services/utils'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
+import { requestRepo } from '@/repository'
+import { Actions, Email } from '@/i18n/uk'
 
 export async function FormRequest(formData: FormValues) {
-  console.log(formData)
   const parse = formSchema.safeParse(formData)
 
-  if (!parse.success) {
-    return { message: 'Помилка запису даних форми' }
+  const errorMessage = {
+    sucsses: false,
+    message: Actions.form.errorMessages,
   }
 
-  const data = parse.data
+  if (!parse.success) {
+    return errorMessage
+  }
 
   try {
-    //fake request to db
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve('')
-      }, 1000)
+    const res = await requestRepo.add(formData)
+    const services = formData.services || []
+
+    const message = new RequestMessage(res, services)
+
+    bot.sendMessage(message.markdown())
+    mailer.sendMessageToAdmin({
+      subject: Email.newRequestSubject,
+      text: message.text(),
+      html: message.html(),
     })
-    return { message: `Форма успішно надіслана` }
+
+    return {
+      sucsses: true,
+      message: Actions.form.sucssesMessages,
+    }
   } catch (e) {
-    return { message: 'Помилка запису даних форми' }
+    console.log(e)
+    return errorMessage
   }
 }
