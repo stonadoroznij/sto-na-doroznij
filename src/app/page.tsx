@@ -57,7 +57,7 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[800px] ml-[650px] md:hidden lg:block"
+        className="absolute mt-[800px] ml-[650px] hidden lg:block"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
@@ -73,9 +73,8 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[1980px] ml-[150px] md:hidden lg:block sm:hidden"
+        className="absolute mt-[1980px] ml-[150px] hidden lg:block"
         style={{
-          objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(155deg)',
         }}
@@ -86,7 +85,7 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[2450px] ml-[150px] md:hidden lg:block"
+        className="absolute mt-[2450px] ml-[150px] hidden lg:block"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
