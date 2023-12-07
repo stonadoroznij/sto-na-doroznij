@@ -19,7 +19,7 @@ const FaqCards = (props:faqProps) => {
   };
   return (
     <div className="mt-2 w-100%">
-      <div onClick={toggleOpen} className="py-[1.125rem] px-[1.875rem] bg-coal-700 rounded-lg flex justify-between">
+      <div onClick={toggleOpen} className="py-[1.125rem] px-[1.875rem] bg-coal-700 rounded-lg flex justify-between items-center">
         <h3>{props.question}</h3>
         {isOpen ? 
         <Image 
