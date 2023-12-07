@@ -1,5 +1,5 @@
 import TelegramBot from './telegramBot'
 import Email from './Email'
-import faqList from './Faq'
+import faqText from './Faq'
 
-export { TelegramBot, Email, faqList, }
+export { TelegramBot, Email, faqText, }

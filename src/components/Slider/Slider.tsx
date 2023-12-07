@@ -1,61 +1,66 @@
 'use client'
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react'
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 // import required modules
-import { Pagination } from 'swiper/modules';
-import { ServiceCard } from '..';
-import { useSwiper } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules'
+import { ServiceCard } from '..'
+import { useSwiper } from 'swiper/react'
 
 const Slider = () => {
-  const swiper = useSwiper();
+  const swiper = useSwiper()
   return (
-    <div className=''>
+    <div className="">
       <Swiper
-        spaceBetween={30}
-        slidesPerView={4}
+        style={{
+          '--swiper-navigation-color': '#fcea10',
+          '--swiper-pagination-color': '#fcea10',
+          "--swiper-navigation-sides-offset": "0px",
+          'padding': '0 1rem 3rem 1rem' ,
+        }}
+        slidesPerView={1}
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
+        navigation={true}
         breakpoints={{
-          '@0.00': {
+          0: {
             slidesPerView: 1,
             spaceBetween: 10,
           },
-          '@0.75': {
+          620: {
             slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          980: {
+            slidesPerView: 3,
             spaceBetween: 20,
           },
-          '@1.00': {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          '@1.50': {
+          1280: {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 20,
           },
         }}
-        modules={[Pagination]}
-        className="flex flex-wrap w-100% mt-6 pt-12"
+        modules={[Pagination, Navigation]}
+        className="mySwiper mt-6"
       >
-        <SwiperSlide className=''><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide><ServiceCard/></SwiperSlide>
-        <SwiperSlide className='mb-10'><ServiceCard/></SwiperSlide>
+        {Array.from({ length: 12 }, (_, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <div className="w-full flex justify-center">
+                <ServiceCard />
+              </div>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </div>
-  );
+  )
 }
 
-export default Slider;
+export default Slider
