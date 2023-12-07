@@ -13,11 +13,11 @@ const ProcesSection = () => {
       <div className="mt-12 mb-[6.875rem] flex justify-center">
         <hr className="w-[56.25rem]" />
         <span className="flex absolute justify-between w-[57rem] -mt-2">
-          <span className='text-7xl -mt-8'>•</span>
-          <span className='text-7xl -mt-8'>•</span>
-          <span className='text-7xl -mt-8'>•</span>
-          <span className='text-7xl -mt-8'>•</span>
-          <span className='text-7xl -mt-8'>•</span>
+          <span className="text-7xl -mt-8">•</span>
+          <span className="text-7xl -mt-8">•</span>
+          <span className="text-7xl -mt-8">•</span>
+          <span className="text-7xl -mt-8">•</span>
+          <span className="text-7xl -mt-8">•</span>
         </span>
         <span className="w-[57rem] absolute ">
           <Image
@@ -26,7 +26,7 @@ const ProcesSection = () => {
             className="absolute -mt-3 moving-object"
           />
         </span>
-        <span className="flex mt-[2rem] absolute justify-between w-[62rem]">
+        <span className="flex mt-[2rem] absolute justify-between w-[61rem]">
           <Step name="Етап 1" about="Записатись на СТО" />
           <Step name="Етап 2" about="Привезти авто на СТО" />
           <Step name="Етап 3" about="Обговорення проблеми" />

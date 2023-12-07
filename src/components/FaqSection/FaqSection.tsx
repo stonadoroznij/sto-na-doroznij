@@ -5,7 +5,6 @@ import faqText from '@/i18n/uk/Faq'
 const { faqList } = faqText
 
 const FaqSection = () => {
-
   return (
     <div>
       {faqList.map((text, index) => {

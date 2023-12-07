@@ -8,11 +8,10 @@ import {
   GoogleMap,
   Slider,
   ServiceCard,
-  AdvantagesCard
+  AdvantagesCard,
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
-
 
 export default function Home() {
   return (
@@ -50,19 +49,19 @@ export default function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
-        <Slider/>
+        <Slider />
         <div className="pt-6 flex justify-center">
           <Button type="outline">Усі послуги</Button>
         </div>
       </section>
       <Image
-      src={BusImg}
-      alt='bus image on bg'
-      className='absolute mt-[800px] ml-[650px] md:hidden lg:block'
-      style={{
-        objectFit: 'cover',
-        filter: "grayscale(100%) brightness(17%)",
-      }}
+        src={BusImg}
+        alt="bus image on bg"
+        className="absolute mt-[800px] ml-[650px] md:hidden lg:block"
+        style={{
+          objectFit: 'cover',
+          filter: 'grayscale(100%) brightness(17%)',
+        }}
       />
       <section className="font-bold font-serif flex flex-col z-20 mt-[3.5rem] pt-14 text-white ">
         <h2 className="flex justify-center">Переваги</h2>
@@ -72,33 +71,33 @@ export default function Home() {
         <ProcesSection />
       </section>
       <Image
-      src={BusImg}
-      alt='bus image on bg'
-      className='absolute mt-[1980px] ml-[150px] md:hidden lg:block'
-      style={{
-        objectFit: 'cover',
-        filter: "grayscale(100%) brightness(17%)",
-        transform: "rotate(155deg)",
-      }}
+        src={BusImg}
+        alt="bus image on bg"
+        className="absolute mt-[1980px] ml-[150px] md:hidden lg:block sm:hidden"
+        style={{
+          objectFit: 'cover',
+          filter: 'grayscale(100%) brightness(17%)',
+          transform: 'rotate(155deg)',
+        }}
       />
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
         <AboutUs />
       </section>
       <Image
-      src={BusImg}
-      alt='bus image on bg'
-      className='absolute mt-[2450px] ml-[150px] md:hidden lg:block'
-      style={{
-        objectFit: 'cover',
-        filter: "grayscale(100%) brightness(17%)",
-        transform: "rotate(125deg)",
-      }}
+        src={BusImg}
+        alt="bus image on bg"
+        className="absolute mt-[2450px] ml-[150px] md:hidden lg:block"
+        style={{
+          objectFit: 'cover',
+          filter: 'grayscale(100%) brightness(17%)',
+          transform: 'rotate(125deg)',
+        }}
       />
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="flex justify-center mb-6">
           Побудувати маршрут в GOOGLE MAPS
         </h2>
-       <GoogleMap/>
+        <GoogleMap />
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="flex justify-center">Питання / Відповіді</h2>

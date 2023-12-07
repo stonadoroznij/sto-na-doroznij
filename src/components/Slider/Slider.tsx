@@ -19,8 +19,8 @@ const Slider = () => {
         style={{
           '--swiper-navigation-color': '#fcea10',
           '--swiper-pagination-color': '#fcea10',
-          "--swiper-navigation-sides-offset": "0px",
-          'padding': '0 1rem 3rem 1rem' ,
+          '--swiper-navigation-sides-offset': '0px',
+          padding: '0 1rem 3rem 1rem',
         }}
         slidesPerView={1}
         spaceBetween={10}

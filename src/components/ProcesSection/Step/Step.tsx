@@ -7,9 +7,9 @@ interface StepProps {
 
 const Step = (props: StepProps) => {
   return (
-    <div className='text-center'>
+    <div className="text-center">
       <h3>{props.name}</h3>
-      <p className='text-xs text font-normal max-w-[100px]'>{props.about}</p>
+      <p className="text-xs text font-normal max-w-[80px]">{props.about}</p>
     </div>
   )
 }
