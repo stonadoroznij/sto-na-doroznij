@@ -13,7 +13,7 @@ import FormError from './FormError'
 export {
   TelegramBot,
   Email,
-  Actions
+  Actions,
   Header,
   Footer,
   AboutUs,
