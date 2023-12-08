@@ -1,22 +1,50 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Plus from '../../../../public/plus.svg'
 import Minus from '../../../../public/minus.svg'
 import Image from 'next/image'
 
 interface faqProps {
   question: string
-  answer: string
+  answer?: string
+  list?: string[]
 }
 
 const FaqCards = (props: faqProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [answerHeight, setAnswerHeight] = useState(0)
+  const [contentHeight, setContentHeight] = useState<number | string>('0')
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
-    setAnswerHeight(isOpen ? 0 : 1500)
   }
+
+  const updateContentHeight = () => {
+    if (contentRef.current) {
+      setContentHeight(
+        isOpen ? `${contentRef.current.clientHeight + 10}px` : '0'
+      )
+    }
+  }
+
+  useEffect(() => {
+    updateContentHeight()
+  }, [isOpen])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (isOpen && contentRef.current) {
+        setContentHeight(`${contentRef.current.clientHeight + 10}px`)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [isOpen])
+
   return (
     <div className="mt-2 w-100%">
       <div
@@ -31,16 +59,25 @@ const FaqCards = (props: faqProps) => {
         )}
       </div>
       {
-        <h3
+        <div
           style={{
-            maxHeight: `${answerHeight}px`,
-            transition: 'max-height 1s ease-in-out',
+            maxHeight: contentHeight,
+            transition: 'max-height 0.5s ease-in-out',
             overflow: 'hidden',
           }}
-          className="mt-2 px-[1.875rem]"
         >
-          {props.answer}
-        </h3>
+          <div ref={contentRef} className="mt-2 px-[1.875rem]">
+            {props.list  ? (
+              <ul className="list-disc list-inside">
+                {props.list.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <span>{props.answer}</span>
+            )}
+          </div>
+        </div>
       }
     </div>
   )
