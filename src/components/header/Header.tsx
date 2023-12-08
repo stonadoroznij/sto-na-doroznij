@@ -17,6 +17,7 @@ const Header = () => {
         <div className="hidden lg:flex lg:gap-6">
           <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
           <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
+          <MenuItem href="/price">{HeaderText.price}</MenuItem>
           <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
@@ -72,6 +73,9 @@ const BurgerMenu = () => {
           </div>
           <div onClick={toggleOpen}>
             <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
+          </div>
+          <div onClick={toggleOpen}>
+            <MenuItem href="/price">{HeaderText.price}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
             <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>

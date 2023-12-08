@@ -9,6 +9,7 @@ import Contacts from './Contacts'
 import Services from './Services'
 import Forms from './Forms'
 import FormError from './FormError'
+import Price from './Price'
 
 export {
   TelegramBot,
@@ -22,4 +23,5 @@ export {
   Services,
   Forms,
   FormError,
+  Price,
 }
