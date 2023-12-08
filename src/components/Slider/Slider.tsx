@@ -14,14 +14,16 @@ const Slider = () => {
   return (
     <div className="">
       <Swiper
-        style={{
-          '--swiper-navigation-color': '#fcea10',
-          '--swiper-pagination-color': '#fcea10',
-          '--swiper-navigation-sides-offset': 'calc(50% - 8rem)',
-          '--swiper-navigation-top-offset': '96%',
-          '--swiper-navigation-size': '1.5rem',
-          paddingBottom: '3rem',
-        } as React.CSSProperties}
+        style={
+          {
+            '--swiper-navigation-color': '#fcea10',
+            '--swiper-pagination-color': '#fcea10',
+            '--swiper-navigation-sides-offset': 'calc(50% - 8rem)',
+            '--swiper-navigation-top-offset': '96%',
+            '--swiper-navigation-size': '1.5rem',
+            paddingBottom: '3rem',
+          } as React.CSSProperties
+        }
         slidesPerView={1}
         spaceBetween={10}
         pagination={{

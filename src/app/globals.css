@@ -91,4 +91,41 @@
     z-index: 9 !important;
   }
 
+  .animate-car {
+    animation: ride 3s ease-in-out 0s normal forwards;
+  }
+
+  @keyframes ride {
+    from {
+      left: calc(10% - 57px);
+    }
+    to {
+      left: calc(90% - 57px);
+    }
+  }
+
+  .animate-point-1 {
+    animation: appear 0.5s ease-out 0s normal forwards;
+  }
+  .animate-point-2 {
+    animation: appear 0.5s ease-out 1s normal forwards;
+  }
+  .animate-point-3 {
+    animation: appear 0.5s ease-out 1.5s normal forwards;
+  }
+  .animate-point-4 {
+    animation: appear 0.5s ease-out 2s normal forwards;
+  }
+  .animate-point-5 {
+    animation: appear 0.5s ease-out 3s normal forwards;
+  }
+
+  @keyframes appear {
+    from {
+      @apply bg-coal-600;
+    }
+    to {
+      @apply bg-accent-yellow;
+    }
+  }
 }

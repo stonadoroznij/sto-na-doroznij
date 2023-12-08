@@ -69,7 +69,7 @@ export default function Home() {
         <AdvantageSection />
       </section>
       <section>
-        <ProcesSection/>
+        <ProcesSection />
       </section>
       {/* <Image
         src={BusImg}
@@ -94,9 +94,7 @@ export default function Home() {
         }}
       /> */}
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2 className="text-center mb-6">
-          Побудувати маршрут в GOOGLE MAPS
-        </h2>
+        <h2 className="text-center mb-6">Побудувати маршрут в GOOGLE MAPS</h2>
         <GoogleMap />
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">

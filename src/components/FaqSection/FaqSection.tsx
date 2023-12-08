@@ -9,7 +9,12 @@ const FaqSection = () => {
     <div>
       {faqList.map((text, index) => {
         return (
-          <FaqCards key={index} question={text.question} answer={text.answer} list={text.list} />
+          <FaqCards
+            key={index}
+            question={text.question}
+            answer={text.answer}
+            list={text.list}
+          />
         )
       })}
     </div>

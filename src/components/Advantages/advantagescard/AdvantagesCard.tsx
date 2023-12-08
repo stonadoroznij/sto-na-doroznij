@@ -7,7 +7,7 @@ interface PropsType {
   text: string
 }
 
-const AdvantagesCard = ({imgSrc, imgAlt, text}: PropsType) => {
+const AdvantagesCard = ({ imgSrc, imgAlt, text }: PropsType) => {
   return (
     <div className=" rounded-lg border-solid border-black border w-full flex items-center p-6 shadow-dark bg-coal-800">
       <Image src={imgSrc} alt={imgAlt} className="pr-3" />

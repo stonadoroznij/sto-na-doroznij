@@ -67,7 +67,7 @@ const FaqCards = (props: faqProps) => {
           }}
         >
           <div ref={contentRef} className="mt-2 px-[1.875rem]">
-            {props.list  ? (
+            {props.list ? (
               <ul className="list-disc list-inside">
                 {props.list.map((item, index) => (
                   <li key={index}>{item}</li>

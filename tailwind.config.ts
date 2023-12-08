@@ -12,14 +12,12 @@ const config: Config = {
     extend: {
       keyframes: {
         rider: {
-          '1%': { transform: 'translateX(0)', opacity: '1' },
-          '50%': { transform: 'translateX(435px)', opacity: '1' },
-          '99%': { transform: 'translateX(870px)', opacity: '1' },
-          '100%': { opacity: '0' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(50vw)' },
         },
       },
       animation: {
-        rider: 'rider 10s linear ',
+        rider: 'rider 10s linear normal forwards',
       },
       screens: {
         xs: '540px',
