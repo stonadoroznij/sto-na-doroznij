@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FormValues } from '../../schemas/zod-schemas'
 import { Control, useController } from 'react-hook-form'
 import Image from 'next/image'
@@ -11,10 +11,17 @@ interface PropsType {
   name: keyof FormValues
   placeholder: string
   options: string[]
+  defaultOption: string | null
   control: Control<FormValues>
 }
 
-const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
+const MultiSelect = ({
+  name,
+  placeholder,
+  options,
+  defaultOption,
+  control,
+}: PropsType) => {
   const { field } = useController({ name, control })
 
   const values = field.value as string[]
@@ -35,6 +42,12 @@ const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
   const toggleOpened = () => {
     setOpened((prev) => !prev)
   }
+
+  useEffect(() => {
+    if (defaultOption) {
+      toggleService(defaultOption)
+    }
+  }, [])
 
   return (
     <div

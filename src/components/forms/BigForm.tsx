@@ -7,9 +7,13 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { FormRequest } from '../../app/actions'
 import { MultiSelect, Select } from '..'
 import { Forms, ButtonText } from '@/i18n/uk'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 const BigForm = ({ options }: { options: string[] }) => {
   const [message, setMessage] = useState<string>('')
+
+  const searchParams = useSearchParams()
+  const defaultService = searchParams.get('service')
 
   const {
     register,
@@ -60,6 +64,7 @@ const BigForm = ({ options }: { options: string[] }) => {
           name="services"
           placeholder={Forms.fields.services}
           options={options}
+          defaultOption={defaultService}
           control={control}
         />
       </div>
