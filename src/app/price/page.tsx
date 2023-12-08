@@ -12,10 +12,10 @@ const Price = () => {
                 <h2 className="text-2xl md:text-3xl">{v.title}</h2>
                 <div className="flex gap-4 p-4 pb-0 pt-2 text-coal-300 font-semibold lg:pl-8 lg:pr-8">
                   <div className="flex-1">{Prices.columnNames[0]}</div>
-                  <div className="w-16 text-center md:w-20">
+                  <div className="w-16 text-center md:w-28">
                     {Prices.columnNames[1]}
                   </div>
-                  <div className="w-16 text-center md:w-20">
+                  <div className="w-16 text-center md:w-28">
                     {Prices.columnNames[2]}
                   </div>
                 </div>
@@ -27,13 +27,15 @@ const Price = () => {
                         className="flex items-center gap-2 p-4 bg-coal-700 rounded-lg md:gap-4 lg:pl-8 lg:pr-8"
                       >
                         <div className="flex-1">{s.name}</div>
-                        <div className="w-16 text-center md:w-20">
+                        <div className="w-16 text-center md:w-28">
                           {Prices.from}
                           <br className="md:hidden" /> {s.priceCar}
+                          <br className="md:hidden" /> {Prices.currency}
                         </div>
-                        <div className="w-16 text-center md:w-20">
+                        <div className="w-16 text-center md:w-28">
                           {Prices.from}
                           <br className="md:hidden" /> {s.priceBus}
+                          <br className="md:hidden" /> {Prices.currency}
                         </div>
                       </div>
                     )

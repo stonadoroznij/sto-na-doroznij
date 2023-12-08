@@ -1,5 +1,6 @@
 const Price = {
   title: 'Прайс',
+  currency: 'грн',
   columnNames: {
     0: 'Послуга',
     1: 'Легкові',
