@@ -9,29 +9,35 @@ import { AdvantagesCard } from '..'
 
 const AdvantageSection = () => {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
       <AdvantagesCard
-        imageSrc={Advantages1}
+        imgSrc={Advantages1}
+        imgAlt="Нове сучасне обладнання та інструмент."
         text="Нове сучасне обладнання та інструмент."
       />
       <AdvantagesCard
-        imageSrc={Advantages2}
+        imgSrc={Advantages2}
+        imgAlt="Досвідчені та кваліфіковані працівники."
         text="Досвідчені та кваліфіковані працівники."
       />
       <AdvantagesCard
-        imageSrc={Advantages3}
+        imgSrc={Advantages3}
+        imgAlt="Широкий спектр послуг з ремонту та обслуговування авто."
         text="Широкий спектр послуг з ремонту та обслуговування авто."
       />
       <AdvantagesCard
-        imageSrc={Advantages4}
+        imgSrc={Advantages4}
+        imgAlt="Гарантія на роботу та запчастини."
         text="Гарантія на роботу та запчастини."
       />
       <AdvantagesCard
-        imageSrc={Advantages5}
+        imgSrc={Advantages5}
+        imgAlt="Сучасний 3D стенд розвал-сходження."
         text="Сучасний 3D стенд розвал-сходження."
       />
       <AdvantagesCard
-        imageSrc={Advantages6}
+        imgSrc={Advantages6}
+        imgAlt="Комфортна зона очікування для клієнтів."
         text="Комфортна зона очікування для клієнтів."
       />
     </div>

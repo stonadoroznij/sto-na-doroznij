@@ -20,6 +20,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
+    "react-in-viewport": "^1.0.0-alpha.30",
     "swiper": "^11.0.5",
     "swiper-react": "^1.0.0",
     "telegraf": "^4.15.0",

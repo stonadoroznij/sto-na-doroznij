@@ -12,6 +12,7 @@ import {
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
+import { ButtonType } from '@/ui/buttons/Button'
 
 export default function Home() {
   return (
@@ -30,20 +31,20 @@ export default function Home() {
           maxHeight: '53rem',
         }}
       />
-      <section className="text-white z-40 flex relative mb-14">
-        <div className="w-1/2">
+      <section className="text-white z-10 flex relative mb-14">
+        <div className="flex flex-col gap-6">
           <h1>
             СТО на
             <br />
             Дорожній
           </h1>
-          <p className="font-normal text-sm pt-6">
+          <p className="font-normal text-sm w-full md:w-1/2">
             Наша мета - забезпечити нашим клієнтам якісний, безпечний ремонт і
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
-          <div className="w-[28.5rem] flex justify-between pt-6">
+          <div className="flex gap-4 flex-wrap">
             <Button>Зв’язатись з нами</Button>
-            <Button type="outline">Замовити послугу</Button>
+            <Button type={ButtonType.outline}>Замовити послугу</Button>
           </div>
         </div>
       </section>
@@ -51,10 +52,10 @@ export default function Home() {
         <h2 className="flex justify-center">Послуги</h2>
         <Slider />
         <div className="pt-6 flex justify-center">
-          <Button type="outline">Усі послуги</Button>
+          <Button type={ButtonType.outline}>Усі послуги</Button>
         </div>
       </section>
-      <Image
+      {/* <Image
         src={BusImg}
         alt="bus image on bg"
         className="absolute mt-[800px] ml-[650px] hidden lg:block"
@@ -62,15 +63,15 @@ export default function Home() {
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
         }}
-      />
-      <section className="font-bold font-serif flex flex-col z-20 mt-[3.5rem] pt-14 text-white ">
+      /> */}
+      <section className="font-bold font-serif flex flex-col gap-8 z-20 mt-[3.5rem] pt-14 text-white ">
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
       </section>
       <section>
-        <ProcesSection />
+        <ProcesSection/>
       </section>
-      <Image
+      {/* <Image
         src={BusImg}
         alt="bus image on bg"
         className="absolute mt-[1980px] ml-[150px] hidden lg:block"
@@ -78,11 +79,11 @@ export default function Home() {
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(155deg)',
         }}
-      />
+      /> */}
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
         <AboutUs />
       </section>
-      <Image
+      {/* <Image
         src={BusImg}
         alt="bus image on bg"
         className="absolute mt-[2450px] ml-[150px] hidden lg:block"
@@ -91,15 +92,15 @@ export default function Home() {
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(125deg)',
         }}
-      />
+      /> */}
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2 className="flex justify-center mb-6">
+        <h2 className="text-center mb-6">
           Побудувати маршрут в GOOGLE MAPS
         </h2>
         <GoogleMap />
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-        <h2 className="flex justify-center">Питання / Відповіді</h2>
+        <h2 className="text-center mb-6">Питання / Відповіді</h2>
         <FaqSection />
       </section>
     </main>

@@ -1,41 +1,42 @@
-import React from 'react'
-import YellowDot from '../../../public/yellowDot.svg'
-import ClearDot from '../../../public/clearDot.svg'
+'use client'
+import React, { useEffect, useRef } from 'react'
 import YellowCar from '../../../public/YellowCar.svg'
 import Image from 'next/image'
 import { Step } from '..'
 import { Button } from '@/ui'
+import { ButtonType } from '@/ui/buttons/Button'
 
 const ProcesSection = () => {
+
+  
+  const target = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (target.current) {
+      const obseerver = new IntersectionObserver(() => console.log('Hello world!'))
+      obseerver.observe(target.current)
+    }
+  }, [])
+
   return (
-    <div className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-      <h2 className="flex justify-center">Як відбувається процес</h2>
-      <div className="mt-12 mb-[6.875rem] flex justify-center">
-        <hr className="w-[56.25rem]" />
-        <span className="flex absolute justify-between w-[57rem] -mt-2">
-          <span className="text-7xl -mt-8">•</span>
-          <span className="text-7xl -mt-8">•</span>
-          <span className="text-7xl -mt-8">•</span>
-          <span className="text-7xl -mt-8">•</span>
-          <span className="text-7xl -mt-8">•</span>
-        </span>
-        <span className="w-[57rem] absolute ">
-          <Image
-            src={YellowCar}
-            alt="YellowCar"
-            className="absolute -mt-3 moving-object"
-          />
-        </span>
-        <span className="flex mt-[2rem] absolute justify-between w-[61rem]">
-          <Step name="Етап 1" about="Записатись на СТО" />
-          <Step name="Етап 2" about="Привезти авто на СТО" />
-          <Step name="Етап 3" about="Обговорення проблеми" />
-          <Step name="Етап 4" about="Очікування" />
-          <Step name="Етап 5" about="Забираєте авто" />
-        </span>
+    <div ref={target} className="flex flex-col gap-16 z-20 mt-14 pt-14 text-white">
+      <h2 className="text-center">Як відбувається процес</h2>
+      <div className="hidden w-full h-40 relative md:block">
+        <div className="w-full h-40 flex justify-between gap-4 absolute z-10">
+          <Step number="1" about="Записатись на СТО" active={true} />
+          <Step number="2" about="Привезти авто на СТО" />
+          <Step number="3" about="Обговорення проблеми " />
+          <Step number="4" about="Очікування" />
+          <Step number="5" about="Забираєте авто" />
+        </div>
+        <div className="absolute top-2 left-[10%] w-4/5 h-[2px] bg-white z-0" />
+        <div className='absolute -top-2 left-[calc(10%-57px)] z-20'>
+          <Image src={YellowCar} alt="yellow car" />
+        </div>
       </div>
+
       <div className="flex justify-center">
-        <Button type="outline">Зв'язатися з нами</Button>
+        <Button type={ButtonType.outline}>Зв&apos;язатися з нами</Button>
       </div>
     </div>
   )
