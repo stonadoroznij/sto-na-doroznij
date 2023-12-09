@@ -25,9 +25,11 @@ model Request {
 }
 
 model Service {
-  id       Int       @id @default(autoincrement())
-  name     String
-  requests Request[]
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  price       Int?
+  requests    Request[]
 }
 
 model TelegramChat {
