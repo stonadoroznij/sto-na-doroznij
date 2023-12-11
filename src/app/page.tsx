@@ -55,15 +55,18 @@ export default function Home() {
           <Button type={ButtonType.outline}>Усі послуги</Button>
         </div>
       </section>
-      {/* <Image
+      
+       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[800px] ml-[650px] hidden lg:block"
+        className="absolute h-full z-0 top-[1200px] right-[80px] hidden md:block"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
+          transform: 'rotate(5deg)'
         }}
-      /> */}
+      /> 
+      
       <section className="font-bold font-serif flex flex-col gap-8 z-20 mt-[3.5rem] pt-14 text-white ">
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
@@ -71,28 +74,28 @@ export default function Home() {
       <section>
         <ProcesSection />
       </section>
-      {/* <Image
+     <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[1980px] ml-[150px] hidden lg:block"
+        className="absolute top-[2400px] lg:right-[600px] md:right-[300px] hidden md:block"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(155deg)',
         }}
-      /> */}
+      /> 
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
         <AboutUs />
       </section>
-      {/* <Image
+       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute mt-[2450px] ml-[150px] hidden lg:block"
+        className="absolute lg:top-[2950px] md:top-[3300px] right-[450px] hidden md:block"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(125deg)',
         }}
-      /> */}
+      /> 
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="text-center mb-6">Побудувати маршрут в GOOGLE MAPS</h2>
         <GoogleMap />
