@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import BgImage from '../../public/images/MainBg.jpg'
 import { Button } from '@/ui'
@@ -13,8 +14,15 @@ import {
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
 import { ButtonType } from '@/ui/buttons/Button'
+import Link from 'next/link'
 
 export default function Home() {
+  const handleButtonClick = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
   return (
     <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between">
       <Image
@@ -43,8 +51,12 @@ export default function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <Button>Зв’язатись з нами</Button>
-            <Button type={ButtonType.outline}>Замовити послугу</Button>
+            <button onClick={handleButtonClick}>
+              <Button>Зв’язатись з нами</Button>
+            </button>
+            <Link href={'/serviceform'}>
+              <Button type={ButtonType.outline}>Замовити послугу</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -52,21 +64,23 @@ export default function Home() {
         <h2 className="flex justify-center">Послуги</h2>
         <Slider />
         <div className="pt-6 flex justify-center">
-          <Button type={ButtonType.outline}>Усі послуги</Button>
+          <Link href="/ourservices">
+            <Button type={ButtonType.outline}>Усі послуги</Button>
+          </Link>
         </div>
       </section>
-      
-       <Image
+
+      <Image
         src={BusImg}
         alt="bus image on bg"
         className="absolute h-full z-0 top-[1200px] right-[80px] hidden md:block"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
-          transform: 'rotate(5deg)'
+          transform: 'rotate(5deg)',
         }}
-      /> 
-      
+      />
+
       <section className="font-bold font-serif flex flex-col gap-8 z-20 mt-[3.5rem] pt-14 text-white ">
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
@@ -74,19 +88,19 @@ export default function Home() {
       <section>
         <ProcesSection />
       </section>
-     <Image
+      <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute top-[2400px] lg:right-[600px] md:right-[300px] hidden md:block"
+        className="absolute top-[2600px] lg:right-[600px] md:right-[300px] hidden md:block"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
-          transform: 'rotate(155deg)',
+          transform: 'rotate(137deg)',
         }}
-      /> 
+      />
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
         <AboutUs />
       </section>
-       <Image
+      <Image
         src={BusImg}
         alt="bus image on bg"
         className="absolute lg:top-[2950px] md:top-[3300px] right-[450px] hidden md:block"
@@ -95,7 +109,7 @@ export default function Home() {
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(125deg)',
         }}
-      /> 
+      />
       <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
         <h2 className="text-center mb-6">Побудувати маршрут в GOOGLE MAPS</h2>
         <GoogleMap />

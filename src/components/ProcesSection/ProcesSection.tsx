@@ -8,6 +8,13 @@ import { useInView } from 'react-intersection-observer'
 import { useEffect, useRef, useState } from 'react'
 
 const ProcesSection = () => {
+  const handleButtonClick = () => {
+    // Додайте код для анімації прокрутки вниз
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    })
+  }
   const { ref, inView, entry } = useInView({
     threshold: 0.75,
   })
@@ -85,7 +92,9 @@ const ProcesSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <Button type={ButtonType.outline}>Зв&apos;язатися з нами</Button>
+        <button onClick={handleButtonClick}>
+          <Button type={ButtonType.outline}>Зв’язатись з нами</Button>
+        </button>
       </div>
     </div>
   )

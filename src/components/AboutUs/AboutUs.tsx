@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/ui'
 import AboutUsImage2 from '../../../public/images/aboutus_2.png'
 import { ButtonType } from '@/ui/buttons/Button'
+import Link from 'next/link'
 
 const AboutUs = () => {
   return (
@@ -17,7 +18,9 @@ const AboutUs = () => {
           виконання робіт.
         </p>
         <div className="flex justify-end">
-          <Button type={ButtonType.outline}>Read more</Button>
+          <Link href="/aboutus">
+            <Button type={ButtonType.outline}>Read more</Button>
+          </Link>
         </div>
       </div>
       <div className="max-w-[746px]">
