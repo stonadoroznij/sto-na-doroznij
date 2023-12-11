@@ -49,7 +49,7 @@ const MultiSelect = ({
   }
 
   useEffect(() => {
-    if (defaultOption) {
+    if (defaultOption && Number.parseInt(defaultOption)) {
       toggleService(Number.parseInt(defaultOption))
     }
   }, [])

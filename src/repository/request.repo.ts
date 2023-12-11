@@ -8,7 +8,7 @@ class Request {
     const result = await prisma.$transaction(async (prisma) => {
       const foundServices = await prisma.service.findMany({
         where: {
-          name: {
+          id: {
             in: services,
           },
         },
