@@ -9,7 +9,16 @@ import { MultiSelect, Select } from '..'
 import { Forms, ButtonText } from '@/i18n/uk'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-const BigForm = ({ options }: { options: string[] }) => {
+interface Service {
+  id: number
+  name: string
+}
+
+interface PropsType {
+  services: Service[]
+}
+
+const BigForm = ({ services }: PropsType) => {
   const [message, setMessage] = useState<string>('')
 
   const searchParams = useSearchParams()
@@ -63,7 +72,7 @@ const BigForm = ({ options }: { options: string[] }) => {
         <MultiSelect
           name="services"
           placeholder={Forms.fields.services}
-          options={options}
+          options={services}
           defaultOption={defaultService}
           control={control}
         />

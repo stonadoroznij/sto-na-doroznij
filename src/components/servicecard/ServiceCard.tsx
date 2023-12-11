@@ -48,7 +48,7 @@ const ServiceCard = ({ service }: PropsType) => {
         >
           {ButtonText.price}
         </Link>
-        <Link href={`/serviceform?service=${service.name}`}>
+        <Link href={`/serviceform?service=${service.id}`}>
           <Button type={ButtonType.outline}>{ButtonText.orderService}</Button>
         </Link>
       </div>

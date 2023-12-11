@@ -38,7 +38,7 @@ export const formSchema = z.object({
   message: z.optional(
     z.string().max(2000, { message: FormError.message.tooLong })
   ),
-  services: z.optional(z.array(z.string().trim())),
+  services: z.optional(z.array(z.number())),
 })
 
 export type FormValues = z.infer<typeof formSchema>

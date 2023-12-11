@@ -7,10 +7,15 @@ import ArrowIcon from '../../../public/arrow_icon.svg'
 import Tab from './Tab'
 import MultiSelectOptions from './MultiSelectOptions'
 
+export interface Option {
+  id: number
+  name: string
+}
+
 interface PropsType {
   name: keyof FormValues
   placeholder: string
-  options: string[]
+  options: Option[]
   defaultOption: string | null
   control: Control<FormValues>
 }
@@ -24,15 +29,15 @@ const MultiSelect = ({
 }: PropsType) => {
   const { field } = useController({ name, control })
 
-  const values = field.value as string[]
+  const values = field.value as number[]
   const changeHandler = field.onChange
 
-  const toggleService = (newValue: string) => {
-    const serviceIndex = values.findIndex((el) => el === newValue)
+  const toggleService = (newId: number) => {
+    const serviceIndex = values.findIndex((id) => id === newId)
     if (serviceIndex === -1) {
-      changeHandler([...values, newValue])
+      changeHandler([...values, newId])
     } else {
-      const newvalues = values.filter((el) => el !== newValue)
+      const newvalues = values.filter((id) => id !== newId)
       changeHandler(newvalues)
     }
   }
@@ -45,7 +50,7 @@ const MultiSelect = ({
 
   useEffect(() => {
     if (defaultOption) {
-      toggleService(defaultOption)
+      toggleService(Number.parseInt(defaultOption))
     }
   }, [])
 
@@ -67,7 +72,7 @@ const MultiSelect = ({
                   }}
                   key={v}
                 >
-                  <Tab service={v} />
+                  <Tab service={options.find(o => o.id === v)?.name} />
                 </div>
               ))
             ) : (
