@@ -5,30 +5,16 @@ class Request {
   public async add(formData: FormValues) {
     const { phone, services, carYear, ...rest } = formData
 
-    const result = await prisma.$transaction(async (prisma) => {
-      const foundServices = await prisma.service.findMany({
-        where: {
-          name: {
-            in: services,
-          },
+    const result = await prisma.request.create({
+      data: {
+        phoneNumber: phone,
+        carYear: carYear ? Number.parseInt(carYear) : null,
+        ...rest,
+        services: {
+          connect: services?.map((service) => ({ id: service })),
         },
-        select: {
-          id: true,
-        },
-      })
-
-      return prisma.request.create({
-        data: {
-          ...rest,
-          phoneNumber: phone,
-          carYear: Number(carYear),
-          services: {
-            connect: foundServices,
-          },
-        },
-      })
+      },
     })
-
     return result
   }
 
