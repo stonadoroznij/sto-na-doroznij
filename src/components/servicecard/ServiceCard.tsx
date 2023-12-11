@@ -8,6 +8,8 @@ import { ButtonText, Services as ServicesText } from '@/i18n/uk'
 type Service = {
   id: number
   name: string
+  description: string | null
+  price: number | null
 }
 
 interface PropsType {
@@ -19,26 +21,22 @@ const ServiceCard = ({ service }: PropsType) => {
     <div className="relative w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:cursor-pointer hover:-translate-y-1 p-6 flex flex-col gap-3 justify-between items-center transition-all duration-200 ease-in group">
       <div className="w-full flex flex-col gap-3">
         <Image
-          src={ServiceImage1}
+          src={`/images/services/service-${service.id}.jpg`}
+          width={600}
+          height={465}
           alt={service.name}
           className="w-full rounded-lg"
         />
         <div className="flex flex-col w-full gap-2">
           <div className="text-lg font-semibold">{service.name}</div>
-          {ServicesText.items.map((s) => {
-            if (s.name === service.name) {
-              return (
-                <div key={service.id}>
-                  <p className="line-clamp-4 text-coal-300 group-hover:text-white">
-                    {s.description}
-                  </p>
-                  <div className="absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl">
-                    {`${ServicesText.from} ${s.price} ${ServicesText.currency}`}
-                  </div>
-                </div>
-              )
-            }
-          })}
+          <div key={service.id}>
+            <p className="line-clamp-4 text-coal-300 group-hover:text-white">
+              {service.description}
+            </p>
+            <div className="absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl">
+              {`${ServicesText.from} ${service.price} ${ServicesText.currency}`}
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-4 items-center">

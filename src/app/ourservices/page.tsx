@@ -8,8 +8,6 @@ import { serviceRepo } from '../../repository'
 
 const OurServices = async () => {
   const services = await serviceRepo.getAll()
-  console.log(services);
-  
 
   return (
     <main className="max-w-352 m-auto p-6">
