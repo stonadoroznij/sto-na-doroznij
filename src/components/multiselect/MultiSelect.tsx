@@ -72,7 +72,7 @@ const MultiSelect = ({
                   }}
                   key={v}
                 >
-                  <Tab service={options.find(o => o.id === v)?.name} />
+                  <Tab service={options.find((o) => o.id === v)?.name} />
                 </div>
               ))
             ) : (

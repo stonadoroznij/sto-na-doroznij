@@ -9,7 +9,7 @@ class RequestMessage {
 
   constructor(
     private readonly requestData: Request,
-    private readonly services: string[]
+    private readonly services: number[]
   ) {}
 
   private dataToSrt(): MessageData {
