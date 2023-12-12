@@ -7,6 +7,7 @@ import {
   FaqSection,
   GoogleMap,
   Slider,
+  PopUpFormButton,
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
@@ -44,8 +45,7 @@ export default async function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <Button>Зв’язатись з нами</Button>
-
+            <PopUpFormButton />
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -65,7 +65,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="z-0 top-[1200px] right-[80px] hidden md:block icon-1"
+        className="z-0 top-[1200px] right-[80px] hidden lg:block icon-1"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
@@ -83,7 +83,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="top-[2400px] md:top-[2300px] hidden md:block icon-2 z-0"
+        className="top-[2400px] md:top-[2300px] hidden lg:block icon-2 z-0"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(154deg)',
@@ -95,7 +95,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="md:top-[3200px] lg:top-[2950px] hidden md:block icon-3"
+        className="md:top-[3200px] lg:top-[2950px] hidden lg:block icon-3"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',

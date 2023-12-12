@@ -6,6 +6,7 @@ import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
 import Link from 'next/link'
 import { AboutUs as AboutUsText, ButtonText } from '@/i18n/uk'
+import { PopUpFormButton } from '@/components'
 
 const AboutUs = () => {
   return (
@@ -22,9 +23,7 @@ const AboutUs = () => {
             <p>{AboutUsText.paragraphs.first}</p>
             <p>{AboutUsText.paragraphs.second}</p>
             <div className="flex gap-4 flex-wrap">
-              <Link href={'/serviceform'}>
-                <Button>{ButtonText.contactWithUs}</Button>
-              </Link>
+              <PopUpFormButton />
               <Link href={'/serviceform'}>
                 <Button type={ButtonType.outline}>
                   {ButtonText.orderService}

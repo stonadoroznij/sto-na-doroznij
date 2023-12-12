@@ -1,13 +1,14 @@
 'use client'
-import React, { useState } from 'react'
 import Image from 'next/image'
-import PhoneIcon from '../../../public/phone_icon.svg'
 import CloseIcon from '../../../public/close_icon.svg'
 import { QuickForm } from '..'
-import { Forms } from '@/i18n/uk'
+import { ButtonText, Forms } from '@/i18n/uk'
+import { useState } from 'react'
+import { Button } from '@/ui'
+import { ButtonType } from '@/ui/buttons/Button'
 
-const PopUpFormButton = () => {
-  const [opened, setOpened] = useState(false)
+const PopUpFormButton = ({ type = ButtonType.fill }: { type?: ButtonType }) => {
+  const [opened, setOpened] = useState<boolean>(false)
 
   const toggleOpened = () => {
     setOpened((prev) => !prev)
@@ -15,15 +16,12 @@ const PopUpFormButton = () => {
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 flex flex-col-reverse items-end gap-4 z-20">
-        <button
-          onClick={toggleOpened}
-          className="w-fit p-5 bg-accent-yellow border border-coal-800 rounded-full transition-transform duration-300 hover:shadow-accent-30 hover:scale-110 md:bottom-8 md:right-8"
-        >
-          <Image src={PhoneIcon} alt="phone icon" />
-        </button>
-        {opened && (
-          <div className="relative bg-coal-800 p-8 pr-12 pl-12 w-[calc(100vw-64px)] rounded-lg border border-coal-600 shadow-dark xs:mr-12 xs:w-fit">
+      <div onClick={toggleOpened}>
+        <Button type={type}>{ButtonText.contactWithUs}</Button>
+      </div>
+      {opened && (
+        <div className="fixed top-0 left-0 h-screen w-screen p-4 flex justify-center items-center z-50">
+          <div className="relative bg-coal-800 p-8 pr-12 pl-12 rounded-lg border border-coal-600 shadow-dark z-50">
             <div className="flex flex-col gap-8">
               <div className="text-2xl font-semibold text-white text-center">
                 {Forms.popUpForm.title}
@@ -37,8 +35,12 @@ const PopUpFormButton = () => {
               <Image src={CloseIcon} alt="close pop-up button" />
             </div>
           </div>
-        )}
-      </div>
+          <div
+            onClick={toggleOpened}
+            className="absolute top-0 left-0 h-screen w-screen bg-black opacity-50 z-40"
+          />
+        </div>
+      )}
     </>
   )
 }
