@@ -87,10 +87,6 @@
     /* Только один раз */
   }
 
-  .swiper-pagination {
-    z-index: 9 !important;
-  }
-
   .animate-car {
     animation: ride 3s ease-in-out 0s normal forwards;
   }

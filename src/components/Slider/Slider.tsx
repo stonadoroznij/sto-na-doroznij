@@ -10,6 +10,7 @@ import 'swiper/css/navigation'
 import { Pagination, Navigation } from 'swiper/modules'
 import { ServiceCard } from '..'
 import { Service } from '@/types'
+import { z } from 'zod'
 interface PropsType {
   services: Service[]
 }
@@ -23,9 +24,9 @@ const Slider = ({services}:PropsType) => {
             '--swiper-navigation-color': '#fcea10',
             '--swiper-pagination-color': '#fcea10',
             '--swiper-navigation-sides-offset': 'calc(50% - 8rem)',
-            '--swiper-navigation-top-offset': '96%',
+            '--swiper-navigation-top-offset': '96.5%',
             '--swiper-navigation-size': '1.5rem',
-            paddingBottom: '3rem',
+            padding: '1rem 1rem 3rem 1rem',
           } as React.CSSProperties
         }
         slidesPerView={1}
@@ -33,7 +34,10 @@ const Slider = ({services}:PropsType) => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -41,15 +45,15 @@ const Slider = ({services}:PropsType) => {
           },
           620: {
             slidesPerView: 2,
-            spaceBetween: 15,
+            spaceBetween: 20,
           },
           980: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 30,
           },
           1280: {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 40,
           },
         }}
         modules={[Pagination, Navigation]}
@@ -57,13 +61,19 @@ const Slider = ({services}:PropsType) => {
       >
         {services.map((service) => {
           return (
-            <SwiperSlide key={service.id}>
-              <div className="w-full flex justify-center">
+            <SwiperSlide key={service.id} style={
+              {
+                height: 'auto'
+              }
+            }>
+              <div className="h-full flex justify-center">
                  <ServiceCard service={service}/> 
               </div>
             </SwiperSlide>
           )
         })}
+        <div className='swiper-button-next'></div>
+        <div className='swiper-button-prev'></div>
       </Swiper>
     </div>
   )
