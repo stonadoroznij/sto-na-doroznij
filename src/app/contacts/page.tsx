@@ -1,4 +1,4 @@
-import { GoogleMap, SocialMedia } from '@/components'
+import { GoogleMap, SocialMediaBig } from '@/components'
 import { Contacts as ContactsText } from '@/i18n/uk'
 
 const Contacts = () => {
@@ -27,7 +27,7 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">{ContactsText.followUs}</h3>
-            <SocialMedia />
+            <SocialMediaBig />
           </div>
         </div>
         <h2 className="mb-6 text-center">{ContactsText.buildRoute}</h2>

@@ -4,33 +4,34 @@ import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
 import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
 import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
 import Image from 'next/image'
+import { SocialMediaLinks } from '../../i18n/uk'
 
 const SocialMedia = () => {
   return (
-    <div className="flex gap-6 justify-start items-center flex-wrap lg:gap-2">
+    <div className="flex gap-2 justify-start items-center flex-wrap">
       <a
-        href="https://www.tiktok.com/"
+        href={SocialMediaLinks.tiktok}
         target="_blank"
         className="hover:opacity-80"
       >
         <Image src={TikTokIcon} alt="icon tiktok" />
       </a>
       <a
-        href="https://www.instagram.com/"
+        href={SocialMediaLinks.instagram}
         target="_blank"
         className="hover:opacity-80"
       >
         <Image src={InstagramIcon} alt="icon instagram" />
       </a>
       <a
-        href="https://www.facebook.com/"
+        href={SocialMediaLinks.facebook}
         target="_blank"
         className="hover:opacity-80"
       >
         <Image src={FacebookIcon} alt="icon facebook" />
       </a>
       <a
-        href="https://web.telegram.org/"
+        href={SocialMediaLinks.telegram}
         target="_blank"
         className="hover:opacity-80"
       >

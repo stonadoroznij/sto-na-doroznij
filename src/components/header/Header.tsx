@@ -1,7 +1,7 @@
 'use client'
 import LocationIcon from '../../../public/LocationIcon.svg'
 import Image from 'next/image'
-import { SocialMedia } from '..'
+import { SocialMedia, SocialMediaBig } from '..'
 import MenuItem from './MenuItem'
 import { Logo } from '../../ui'
 import { useState } from 'react'
@@ -92,7 +92,7 @@ const BurgerMenu = () => {
           <div className="flex justify-start items-center gap-2">
             <div className="w-[152px] text-center">{HeaderText.address}</div>
           </div>
-          <SocialMedia />
+          <SocialMediaBig />
         </div>
         <div onClick={toggleOpen} className="absolute top-8 right-8 w-8 h-6">
           <div className="absolute top-1/2 w-6 h-1 bg-coal-300 rotate-45" />

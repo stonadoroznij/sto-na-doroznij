@@ -3,6 +3,7 @@ import Footer from './footer/Footer'
 import ServiceCard from './servicecard/ServiceCard'
 import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
+import SocialMediaBig from './socialmedia/SocialMediaBig'
 import PopUpForm from './forms/PopUpForm'
 import FaqCards from './FaqSection/faq/FaqCards'
 import Step from './ProcesSection/Step/Step'
@@ -23,6 +24,7 @@ export {
   ServiceCard,
   QuickForm,
   SocialMedia,
+  SocialMediaBig,
   PopUpForm,
   FaqCards,
   Step,
