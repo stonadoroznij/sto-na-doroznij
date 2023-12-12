@@ -14,9 +14,8 @@ import { ButtonType } from '@/ui/buttons/Button'
 import Link from 'next/link'
 import { serviceRepo } from '@/repository'
 
-
 export default async function Home() {
-  const services = await serviceRepo.getAll();
+  const services = await serviceRepo.getAll()
   return (
     <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between overflow-hidden">
       <Image
@@ -45,9 +44,8 @@ export default async function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-           
-              <Button>Зв’язатись з нами</Button>
-            
+            <Button>Зв’язатись з нами</Button>
+
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -56,7 +54,7 @@ export default async function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
-        <Slider services={services}/>
+        <Slider services={services} />
         <div className="pt-6 flex justify-center">
           <Link href="/ourservices">
             <Button type={ButtonType.outline}>Усі послуги</Button>

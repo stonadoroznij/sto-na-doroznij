@@ -14,7 +14,7 @@ interface PropsType {
   services: Service[]
 }
 
-const Slider = ({services}:PropsType) => {
+const Slider = ({ services }: PropsType) => {
   return (
     <div className="">
       <Swiper
@@ -59,7 +59,7 @@ const Slider = ({services}:PropsType) => {
           return (
             <SwiperSlide key={service.id}>
               <div className="w-full flex justify-center">
-                 <ServiceCard service={service}/> 
+                <ServiceCard service={service} />
               </div>
             </SwiperSlide>
           )
