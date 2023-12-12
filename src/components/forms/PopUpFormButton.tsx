@@ -6,7 +6,7 @@ import CloseIcon from '../../../public/close_icon.svg'
 import { QuickForm } from '..'
 import { Forms } from '@/i18n/uk'
 
-const PopUpForm = () => {
+const PopUpFormButton = () => {
   const [opened, setOpened] = useState(false)
 
   const toggleOpened = () => {
@@ -43,4 +43,4 @@ const PopUpForm = () => {
   )
 }
 
-export default PopUpForm
+export default PopUpFormButton

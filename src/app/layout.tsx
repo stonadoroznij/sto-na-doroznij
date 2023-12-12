@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, Exo_2 } from 'next/font/google'
 import './globals.css'
-import { Header, Footer, PopUpForm } from '../components'
+import { Header, Footer, PopUpFormButton } from '../components'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -36,7 +36,7 @@ export default function RootLayout({
             <div>{children}</div>
           </div>
           <Footer />
-          <PopUpForm />
+          <PopUpFormButton />
         </div>
       </body>
     </html>

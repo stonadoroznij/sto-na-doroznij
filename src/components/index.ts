@@ -4,7 +4,7 @@ import ServiceCard from './servicecard/ServiceCard'
 import QuickForm from './forms/QuickForm'
 import SocialMedia from './socialmedia/SocialMedia'
 import SocialMediaBig from './socialmedia/SocialMediaBig'
-import PopUpForm from './forms/PopUpForm'
+import PopUpFormButton from './forms/PopUpFormButton'
 import FaqCards from './FaqSection/faq/FaqCards'
 import Step from './ProcesSection/Step/Step'
 import AdvantageSection from './Advantages/AdvantageSection'
@@ -25,7 +25,7 @@ export {
   QuickForm,
   SocialMedia,
   SocialMediaBig,
-  PopUpForm,
+  PopUpFormButton,
   FaqCards,
   Step,
   AdvantageSection,
