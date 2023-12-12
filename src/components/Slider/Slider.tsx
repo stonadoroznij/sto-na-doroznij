@@ -9,8 +9,12 @@ import 'swiper/css/navigation'
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules'
 import { ServiceCard } from '..'
+import { Service } from '@/types'
+interface PropsType {
+  services: Service[]
+}
 
-const Slider = () => {
+const Slider = ({services}:PropsType) => {
   return (
     <div className="">
       <Swiper
@@ -51,11 +55,11 @@ const Slider = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper mt-6"
       >
-        {Array.from({ length: 12 }, (_, i) => {
+        {services.map((service) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={service.id}>
               <div className="w-full flex justify-center">
-                {/* <ServiceCard /> */}
+                 <ServiceCard service={service}/> 
               </div>
             </SwiperSlide>
           )
