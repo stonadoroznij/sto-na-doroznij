@@ -8,9 +8,15 @@ interface StepProps {
 
 const Step = ({ number, about }: StepProps) => {
   return (
-    <div className="w-full flex flex-col items-center gap-4">
-      <h3 className="text-2xl text-center font-bold">Етап {number}</h3>
-      <p className="text-lg text-center">{about}</p>
+    <div className="md:w-full w-[240px] flex flex-col md:items-center gap-4">
+      <div className='hidden md:block'>
+        <h3 className="text-2xl text-center font-bold">Етап {number}</h3>
+        <p className="text-lg text-center">{about}</p>
+      </div>
+      <div className='block md:hidden'>
+        <h3 className="text-2xl font-bold">Етап {number}</h3>
+        <p className="text-lg">{about}</p>
+      </div>
     </div>
   )
 }

@@ -90,7 +90,38 @@ const ProcesSection = () => {
           <Image src={YellowCar} alt="yellow car" />
         </div>
       </div>
-
+      <div className='block md:hidden w-[100vw]'>
+      <div className="flex flex-row items-center content-center justify-center mb-5">
+            <div
+              className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point1} mr-3`}
+            />
+            <Step number="1" about="Записатись на СТО" />
+          </div>
+          <div className="flex flex-row items-center content-center justify-center mb-5">
+            <div
+              className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point2} mr-3`}
+            />
+            <Step number="2" about="Привезти авто на СТО" />
+          </div>
+          <div className="flex flex-row items-center content-center justify-center mb-5">
+            <div
+              className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point3} mr-3 `}
+            />
+            <Step number="3" about="Обговорення проблеми " />
+          </div>
+          <div className="flex flex-row items-center content-center justify-center mb-5">
+            <div
+              className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point4} mr-3`}
+            />
+            <Step number="4" about="Очікування" />
+          </div>
+        <div className="flex flex-row items-center content-center justify-center">
+            <div
+              className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point5} mr-3`}
+            />
+            <Step number="5" about="Забираєте авто" />
+          </div>
+      </div>
       <div className="flex justify-center">
         <div onClick={handleButtonClick} className='z-20'>
           <Button type={ButtonType.outline}>Зв’язатись з нами</Button>

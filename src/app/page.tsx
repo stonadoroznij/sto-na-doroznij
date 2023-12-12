@@ -85,7 +85,7 @@ export default function Home() {
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
       </section>
-      <section>
+      <section className='none md:block'>
         <ProcesSection />
       </section>
       <Image
