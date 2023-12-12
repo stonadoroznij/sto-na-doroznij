@@ -85,7 +85,9 @@ const BurgerMenu = () => {
         </div>
         <div className="flex flex-col items-center gap-6 text-xl">
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
+            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
+              <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
+            </a>
             <div className="flex flex-col justify-center items-center">
               <div className="text-center">{HeaderText.workingTime.first}</div>
               <div className="text-center">{HeaderText.workingTime.second}</div>

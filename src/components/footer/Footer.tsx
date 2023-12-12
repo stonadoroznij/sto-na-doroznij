@@ -24,7 +24,9 @@ const Footer = () => {
                   <div className="">
                     {FooterText.address}
                     <br />
-                    {FooterText.phone}
+                    <a href={`tel:${FooterText.phone.replaceAll(' ', '-')}`}>
+                      {FooterText.phone}
+                    </a>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
