@@ -13,7 +13,7 @@ const MenuItem = ({ href, children }: PropsType) => {
 
   return (
     <Link href={href}>
-      <div className="relative font-bold group">
+      <div className="relative text-xl font-bold group lg:text-base">
         {children}
         {href === pathName ? (
           <div className="absolute -bottom-1 left-0 h-1 w-full bg-accent-yellow" />

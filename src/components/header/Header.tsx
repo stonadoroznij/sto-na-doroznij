@@ -62,9 +62,9 @@ const BurgerMenu = () => {
         <div className="w-8 h-1 bg-white" />
       </div>
       <div
-        className={`absolute top-0 left-0 h-screen w-screen bg-coal-800 z-30 flex flex-col justify-between p-16 transition-opacity duration-300 ease-in-out ${style}`}
+        className={`fixed top-0 left-0 h-screen w-screen bg-coal-800 z-30 flex flex-col justify-between p-16 transition-opacity duration-300 ease-in-out ${style}`}
       >
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-8">
           <div onClick={toggleOpen}>
             <MenuItem href="/">{HeaderText.main}</MenuItem>
           </div>
@@ -81,7 +81,7 @@ const BurgerMenu = () => {
             <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-6 text-xl">
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
             <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
             <div className="flex flex-col justify-center items-center">

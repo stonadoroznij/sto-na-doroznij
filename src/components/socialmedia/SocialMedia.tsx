@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const SocialMedia = () => {
   return (
-    <div className="flex gap-2 justify-start items-center flex-wrap">
+    <div className="flex gap-6 justify-start items-center flex-wrap lg:gap-2">
       <a
         href="https://www.tiktok.com/"
         target="_blank"
