@@ -31,7 +31,9 @@ const Contacts = () => {
           </div>
         </div>
         <h2 className="mb-6 text-center">{ContactsText.buildRoute}</h2>
-        <GoogleMap />
+        <div className="w-full" id="map">
+          <GoogleMap />
+        </div>
       </section>
     </main>
   )

@@ -6,6 +6,7 @@ import MenuItem from './MenuItem'
 import { Logo } from '../../ui'
 import { useState } from 'react'
 import { Header as HeaderText } from '../../i18n/uk'
+import Link from 'next/link'
 
 const Header = () => {
   return (
@@ -33,7 +34,9 @@ const Header = () => {
           </div>
           <div className="flex justify-start items-center gap-2">
             <Image src={LocationIcon} alt="Location icon" />
-            <div className="w-[152px]">{HeaderText.address}</div>
+            <Link href="/contacts#map">
+              <div className="w-[152px]">{HeaderText.address}</div>
+            </Link>
           </div>
         </div>
         <div className="lg:hidden">
@@ -93,8 +96,13 @@ const BurgerMenu = () => {
               <div className="text-center">{HeaderText.workingTime.second}</div>
             </div>
           </div>
-          <div className="flex justify-start items-center gap-2">
-            <div className="w-[152px] text-center">{HeaderText.address}</div>
+          <div
+            onClick={toggleOpen}
+            className="flex justify-start items-center gap-2"
+          >
+            <Link href="/contacts#map">
+              <div className="w-[152px] text-center">{HeaderText.address}</div>
+            </Link>
           </div>
           <SocialMediaBig />
         </div>
