@@ -8,8 +8,6 @@ import {
   FaqSection,
   GoogleMap,
   Slider,
-  ServiceCard,
-  AdvantagesCard,
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
@@ -51,9 +49,9 @@ export default function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-              <div onClick={handleButtonClick}>
-              <Button >Зв’язатись з нами</Button>
-              </div>
+            <div onClick={handleButtonClick}>
+              <Button>Зв’язатись з нами</Button>
+            </div>
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -85,7 +83,7 @@ export default function Home() {
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
       </section>
-      <section className='none md:block'>
+      <section className="none md:block">
         <ProcesSection />
       </section>
       <Image
