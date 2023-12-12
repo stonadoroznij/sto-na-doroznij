@@ -9,7 +9,7 @@ import { Header as HeaderText } from '../../i18n/uk'
 
 const Header = () => {
   return (
-    <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12">
+    <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12 relative z-40">
       <div className="flex justify-between items-center gap-6 text-white font-bold">
         <div className="w-28 h-28">
           <Logo />

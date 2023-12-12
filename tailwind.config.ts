@@ -10,6 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        rider: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(50vw)' },
+        },
+      },
+      animation: {
+        rider: 'rider 10s linear normal forwards',
+      },
       screens: {
         xs: '540px',
       },
