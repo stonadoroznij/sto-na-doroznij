@@ -1,3 +1,5 @@
 import chatRepo from './chat.repo'
+import requestRepo from './request.repo'
+import serviceRepo from './service.repo'
 
-export { chatRepo }
+export { chatRepo, requestRepo, serviceRepo }

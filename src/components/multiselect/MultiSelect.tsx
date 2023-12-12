@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FormValues } from '../../schemas/zod-schemas'
 import { Control, useController } from 'react-hook-form'
 import Image from 'next/image'
@@ -7,25 +7,37 @@ import ArrowIcon from '../../../public/arrow_icon.svg'
 import Tab from './Tab'
 import MultiSelectOptions from './MultiSelectOptions'
 
+export interface Option {
+  id: number
+  name: string
+}
+
 interface PropsType {
   name: keyof FormValues
   placeholder: string
-  options: string[]
+  options: Option[]
+  defaultOption: string | null
   control: Control<FormValues>
 }
 
-const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
+const MultiSelect = ({
+  name,
+  placeholder,
+  options,
+  defaultOption,
+  control,
+}: PropsType) => {
   const { field } = useController({ name, control })
 
-  const values = field.value as string[]
+  const values = field.value as number[]
   const changeHandler = field.onChange
 
-  const toggleService = (service: string) => {
-    const serviceIndex = values.findIndex((el) => el === service)
+  const toggleService = (newId: number) => {
+    const serviceIndex = values.findIndex((id) => id === newId)
     if (serviceIndex === -1) {
-      changeHandler([...values, service])
+      changeHandler([...values, newId])
     } else {
-      const newvalues = values.filter((el) => el !== service)
+      const newvalues = values.filter((id) => id !== newId)
       changeHandler(newvalues)
     }
   }
@@ -35,6 +47,12 @@ const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
   const toggleOpened = () => {
     setOpened((prev) => !prev)
   }
+
+  useEffect(() => {
+    if (defaultOption && Number.parseInt(defaultOption)) {
+      toggleService(Number.parseInt(defaultOption))
+    }
+  }, [])
 
   return (
     <div
@@ -46,15 +64,15 @@ const MultiSelect = ({ name, placeholder, options, control }: PropsType) => {
         <div className="flex items-start">
           <div className="h-fit w-full flex items-center gap-x-2 flex-wrap">
             {values.length !== 0 ? (
-              values.map((service) => (
+              values.map((v) => (
                 <div
                   onClick={(e) => {
                     e.stopPropagation()
-                    toggleService(service)
+                    toggleService(v)
                   }}
-                  key={service}
+                  key={v}
                 >
-                  <Tab service={service} />
+                  <Tab service={options.find((o) => o.id === v)?.name} />
                 </div>
               ))
             ) : (

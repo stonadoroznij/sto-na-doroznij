@@ -55,7 +55,7 @@ const Slider = () => {
           return (
             <SwiperSlide key={i}>
               <div className="w-full flex justify-center">
-                <ServiceCard />
+                {/* <ServiceCard /> */}
               </div>
             </SwiperSlide>
           )

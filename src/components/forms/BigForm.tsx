@@ -2,28 +2,27 @@
 import { FormValues, formSchema } from '../../schemas/zod-schemas'
 import { Button, TextArea, TextInput } from '../../ui'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { FormRequest } from '../../app/actions'
 import { MultiSelect, Select } from '..'
+import { Forms, ButtonText } from '@/i18n/uk'
+import { usePathname, useSearchParams } from 'next/navigation'
 
-const options = [
-  'Діагностика',
-  'ГРМ',
-  'Шиномонтаж та балансування',
-  'Ходова, рульова та гальмівна частини',
-  'Заміна масла',
-  'Розвал-сходження',
-  'Діагностика2',
-  'ГРМ2',
-  'Шиномонтаж та балансування2',
-  'Ходова, рульова та гальмівна частини2',
-  'Заміна масла2',
-  'Розвал-сходження2',
-]
+interface Service {
+  id: number
+  name: string
+}
 
-const BigForm = () => {
+interface PropsType {
+  services: Service[]
+}
+
+const BigForm = ({ services }: PropsType) => {
   const [message, setMessage] = useState<string>('')
+
+  const searchParams = useSearchParams()
+  const defaultService = searchParams.get('service')
 
   const {
     register,
@@ -55,29 +54,35 @@ const BigForm = () => {
     reset()
   }
 
-  const years: string[] = []
+  const getYears = () => {
+    const years: string[] = []
 
-  for (let i = new Date().getFullYear(); i >= 1900; i--) {
-    years.push(String(i))
+    for (let i = new Date().getFullYear(); i >= 1900; i--) {
+      years.push(String(i))
+    }
+    return years
   }
+
+  const years = useMemo(() => getYears(), [])
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
-        <div className="font-bold">Що вас цікавить?</div>
+        <div className="font-bold">{Forms.bigForm.sectionFirst}</div>
         <MultiSelect
           name="services"
-          placeholder="Оберіть послугу"
-          options={options}
+          placeholder={Forms.fields.services}
+          options={services}
+          defaultOption={defaultService}
           control={control}
         />
       </div>
       <div className="flex flex-col gap-4">
-        <div className="font-bold">Контактні дані</div>
+        <div className="font-bold">{Forms.bigForm.sectionSecond}</div>
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder="Iм'я"
+              placeholder={Forms.fields.name}
               label="name"
               register={register}
               error={errors.name?.message}
@@ -85,7 +90,7 @@ const BigForm = () => {
           </div>
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder="Телефон"
+              placeholder={Forms.fields.phone}
               label="phone"
               register={register}
               error={errors.phone?.message}
@@ -94,11 +99,11 @@ const BigForm = () => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="font-bold">Автомобіль</div>
+        <div className="font-bold">{Forms.bigForm.sectionThird}</div>
         <div className="flex flex-col gap-6 md:flex-row md:justify-between">
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder="Марка"
+              placeholder={Forms.fields.carBrand}
               label="carBrand"
               register={register}
               error={errors.carBrand?.message}
@@ -106,7 +111,7 @@ const BigForm = () => {
           </div>
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder="Модель"
+              placeholder={Forms.fields.carModel}
               label="carModel"
               register={register}
               error={errors.carModel?.message}
@@ -115,7 +120,7 @@ const BigForm = () => {
           <div className="flex-1">
             <Select
               name="carYear"
-              placeholder="Рік"
+              placeholder={Forms.fields.carYear}
               options={years}
               control={control}
             />
@@ -123,7 +128,7 @@ const BigForm = () => {
         </div>
         <div className="mt-2">
           <TextInput<FormValues>
-            placeholder="VIN-Code"
+            placeholder={Forms.fields.vinCode}
             label="vinCode"
             register={register}
             error={errors.vinCode?.message}
@@ -133,13 +138,13 @@ const BigForm = () => {
           <TextArea<FormValues>
             name="message"
             control={control}
-            placeholder="Напишіть повідомення"
+            placeholder={Forms.fields.message}
             error={errors.message?.message}
           />
         </div>
       </div>
       <div className="relative flex justify-center">
-        <Button>Надіслати</Button>
+        <Button>{ButtonText.send}</Button>
         {message && (
           <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
             {message}
