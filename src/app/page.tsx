@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import BgImage from '../../public/images/MainBg.jpg'
+import BgImage from '../../public/images/main-banner.jpg'
 import { Button } from '@/ui'
 import {
   ProcesSection,
@@ -29,7 +29,7 @@ export default async function Home() {
         // sizes="100dvw"
         style={{
           objectFit: 'cover',
-          filter: 'blur(2px) grayscale(50%) brightness(50%)',
+          filter: 'grayscale(50%) brightness(30%)',
           maxHeight: '53rem',
         }}
       />

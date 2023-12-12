@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/ui'
-import AboutUsImage2 from '../../../public/images/aboutus_2.png'
+import AboutUsImage1 from '../../../public/images/aboutus/about-us-1.jpg'
 import { ButtonType } from '@/ui/buttons/Button'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="max-w-[746px]">
-        <Image src={AboutUsImage2} alt="Фото нашого СТО всередині" />
+        <Image src={AboutUsImage1} alt="Фото нашого СТО всередині" />
       </div>
     </section>
   )
