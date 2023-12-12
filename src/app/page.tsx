@@ -24,7 +24,7 @@ export default function Home() {
     })
   }
   return (
-    <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between">
+    <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between overflow-hidden">
       <Image
         src={BgImage}
         alt="фон"
@@ -51,9 +51,9 @@ export default function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-              <div onClick={handleButtonClick}>
-              <Button >Зв’язатись з нами</Button>
-              </div>
+            <div onClick={handleButtonClick}>
+              <Button>Зв’язатись з нами</Button>
+            </div>
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -73,7 +73,7 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className=" z-0 top-[1200px] right-[80px] hidden md:block icon-1"
+        className="z-0 top-[1200px] right-[80px] hidden md:block icon-1"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
@@ -85,16 +85,16 @@ export default function Home() {
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
       </section>
-      <section className='none md:block'>
+      <section className="none md:block">
         <ProcesSection />
       </section>
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="top-[2400px] md:top-[2490px] hidden md:block icon-2 z-0"
+        className="top-[2400px] md:top-[2300px] hidden md:block icon-2 z-0"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
-          transform: 'rotate(131deg)',
+          transform: 'rotate(154deg)',
         }}
       />
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
