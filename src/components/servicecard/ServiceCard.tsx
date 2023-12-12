@@ -1,16 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import ServiceImage1 from '../../../public/images/service_1.png'
 import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
 import { ButtonText, Services as ServicesText } from '@/i18n/uk'
-
-type Service = {
-  id: number
-  name: string
-  description: string | null
-  price: number | null
-}
+import { Service } from '../../types'
 
 interface PropsType {
   service: Service
