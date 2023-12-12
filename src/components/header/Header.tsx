@@ -23,7 +23,9 @@ const Header = () => {
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
           <SocialMedia />
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <div className="min-w-[160px]">{HeaderText.phone}</div>
+            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
+              <div className="min-w-[160px]">{HeaderText.phone}</div>
+            </a>
             <div className="flex flex-col justify-center items-center">
               <div className="text-center">{HeaderText.workingTime.first}</div>
               <div className="text-center">{HeaderText.workingTime.second}</div>
