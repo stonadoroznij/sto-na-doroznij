@@ -19,7 +19,7 @@ const AboutUs = () => {
         </p>
         <div className="flex justify-end">
           <Link href="/aboutus">
-            <Button type={ButtonType.outline}>Read more</Button>
+            <Button type={ButtonType.outline}>Читати повністю</Button>
           </Link>
         </div>
       </div>

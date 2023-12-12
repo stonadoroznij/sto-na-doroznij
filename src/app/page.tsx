@@ -51,9 +51,9 @@ export default function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <button onClick={handleButtonClick}>
-              <Button>Зв’язатись з нами</Button>
-            </button>
+              <div onClick={handleButtonClick}>
+              <Button >Зв’язатись з нами</Button>
+              </div>
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -73,7 +73,7 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute h-full z-0 top-[1200px] right-[80px] hidden md:block"
+        className=" z-0 top-[1200px] right-[80px] hidden md:block icon-1"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
@@ -91,10 +91,10 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute top-[2600px] lg:right-[600px] md:right-[300px] hidden md:block"
+        className="top-[2400px] md:top-[2490px] hidden md:block icon-2 z-0"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
-          transform: 'rotate(137deg)',
+          transform: 'rotate(131deg)',
         }}
       />
       <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
@@ -103,7 +103,7 @@ export default function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute lg:top-[2950px] md:top-[3300px] right-[450px] hidden md:block"
+        className="md:top-[3200px] lg:top-[2950px] hidden md:block icon-3"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',

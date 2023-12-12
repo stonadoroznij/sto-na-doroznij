@@ -128,4 +128,20 @@
       @apply bg-accent-yellow;
     }
   }
+  .icon-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .icon-2 {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+   
+  }
+  .icon-3 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+  }
 }

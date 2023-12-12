@@ -92,9 +92,9 @@ const ProcesSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <button onClick={handleButtonClick}>
+        <div onClick={handleButtonClick} className='z-20'>
           <Button type={ButtonType.outline}>Зв’язатись з нами</Button>
-        </button>
+        </div>
       </div>
     </div>
   )
