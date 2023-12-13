@@ -1,5 +1,5 @@
 import { ButtonType } from '@/ui/buttons/Button'
-import { ServiceCard } from '../../components'
+import { PopUpFormButton, ServiceCard } from '../../components'
 import { Button } from '../../ui'
 import React from 'react'
 import Link from 'next/link'
@@ -19,7 +19,7 @@ const OurServices = async () => {
           ))}
         </div>
         <div className="flex justify-center mt-12 flex-wrap gap-4">
-          <Button>{ButtonText.contactWithUs}</Button>
+          <PopUpFormButton />
           <Link href={'/serviceform'}>
             <Button type={ButtonType.outline}>{ButtonText.orderService}</Button>
           </Link>

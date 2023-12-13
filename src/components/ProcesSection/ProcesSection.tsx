@@ -1,21 +1,14 @@
 'use client'
 import YellowCar from '../../../public/YellowCar.svg'
 import Image from 'next/image'
-import { Step } from '..'
+import { PopUpFormButton, Step } from '..'
 import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
 import { useInView } from 'react-intersection-observer'
 import { useEffect, useRef, useState } from 'react'
 
 const ProcesSection = () => {
-  const handleButtonClick = () => {
-    // Додайте код для анімації прокрутки вниз
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth',
-    })
-  }
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.75,
   })
 
@@ -123,9 +116,7 @@ const ProcesSection = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <div onClick={handleButtonClick} className="z-20">
-          <Button type={ButtonType.outline}>Зв’язатись з нами</Button>
-        </div>
+        <PopUpFormButton type={ButtonType.outline} />
       </div>
     </div>
   )

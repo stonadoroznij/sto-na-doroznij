@@ -10,6 +10,7 @@ import Services from './Services'
 import Forms from './Forms'
 import FormError from './FormError'
 import Price from './Price'
+import SocialMediaLinks from './SocialMediaLinks'
 
 export {
   TelegramBot,
@@ -24,4 +25,5 @@ export {
   Forms,
   FormError,
   Price,
+  SocialMediaLinks,
 }
