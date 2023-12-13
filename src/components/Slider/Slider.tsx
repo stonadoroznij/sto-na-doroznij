@@ -41,11 +41,11 @@ const Slider = ({services}:PropsType) => {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 30,
           },
           620: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 30,
           },
           980: {
             slidesPerView: 3,
