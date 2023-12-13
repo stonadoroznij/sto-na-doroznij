@@ -15,7 +15,7 @@ interface PropsType {
   services: Service[]
 }
 
-const Slider = ({services}:PropsType) => {
+const Slider = ({ services }: PropsType) => {
   return (
     <div className="">
       <Swiper

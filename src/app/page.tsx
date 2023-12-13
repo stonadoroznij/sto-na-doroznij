@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import BgImage from '../../public/images/MainBg.jpg'
+import BgImage from '../../public/images/main-banner.jpg'
 import { Button } from '@/ui'
 import {
   ProcesSection,
@@ -7,6 +7,7 @@ import {
   FaqSection,
   GoogleMap,
   Slider,
+  PopUpFormButton,
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import BusImg from '../../public/bus.svg'
@@ -15,7 +16,7 @@ import Link from 'next/link'
 import { serviceRepo } from '@/repository'
 
 export default async function Home() {
-  const services = await serviceRepo.getAll();
+  const services = await serviceRepo.getAll()
   return (
     <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between overflow-hidden">
       <Image
@@ -28,7 +29,7 @@ export default async function Home() {
         // sizes="100dvw"
         style={{
           objectFit: 'cover',
-          filter: 'blur(2px) grayscale(50%) brightness(50%)',
+          filter: 'grayscale(50%) brightness(30%)',
           maxHeight: '53rem',
         }}
       />
@@ -44,9 +45,7 @@ export default async function Home() {
             незабутній клієнтський досвід, заснований на сімейних цінностях.
           </p>
           <div className="flex gap-4 flex-wrap">
-           
-              <Button>Зв’язатись з нами</Button>
-            
+            <PopUpFormButton />
             <Link href={'/serviceform'}>
               <Button type={ButtonType.outline}>Замовити послугу</Button>
             </Link>
@@ -67,7 +66,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="z-0 top-[1200px] right-[80px] hidden md:block icon-1"
+        className="z-0 top-[1200px] right-[80px] hidden lg:block icon-1"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
@@ -85,7 +84,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="top-[2400px] md:top-[2300px] hidden md:block icon-2 z-0"
+        className="top-[2400px] md:top-[2300px] hidden lg:block icon-2 z-0"
         style={{
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(154deg)',
@@ -97,7 +96,7 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="md:top-[3200px] lg:top-[2950px] hidden md:block icon-3"
+        className="md:top-[3200px] lg:top-[2950px] hidden lg:block icon-3"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',

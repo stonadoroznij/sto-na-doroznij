@@ -1,5 +1,6 @@
 'use client'
 import { FormValues } from '@/schemas/zod-schemas'
+import { useState } from 'react'
 import {
   Control,
   FieldValues,
@@ -23,8 +24,7 @@ const TextArea = <T extends FieldValues>({
 }: PropsType<T>) => {
   const { field } = useController({ name, control })
 
-  const value = field.value as string
-  const changeHandler = field.onChange
+  const [value, setValue] = useState(field.value as string)
 
   return (
     <div className="flex gap-2 p-4 border rounded-lg border-white focus-within:border-accent-yellow">
@@ -32,7 +32,11 @@ const TextArea = <T extends FieldValues>({
         <textarea
           placeholder={`${placeholder}`}
           className="w-full h-32 bg-transparent outline-none placeholder:text-coal-300"
-          {...field}
+          onChange={(e) => {
+            setValue(e.target.value)
+            field.onChange(e.target.value)
+          }}
+          value={value}
         />
         <div className="flex justify-end items-center gap-4">
           {error && <div className="text-red-400 text-xs">{`${error}`}</div>}
@@ -42,7 +46,8 @@ const TextArea = <T extends FieldValues>({
       <div
         onClick={(e) => {
           e.stopPropagation()
-          changeHandler('')
+          setValue('')
+          field.onChange('')
         }}
         className="w-6 h-6 text-coal-300 text-3xl flex justify-center items-center cursor-pointer hover:text-white"
       >

@@ -1,11 +1,12 @@
 'use client'
 import LocationIcon from '../../../public/LocationIcon.svg'
 import Image from 'next/image'
-import { SocialMedia } from '..'
+import { SocialMedia, SocialMediaBig } from '..'
 import MenuItem from './MenuItem'
 import { Logo } from '../../ui'
 import { useState } from 'react'
 import { Header as HeaderText } from '../../i18n/uk'
+import Link from 'next/link'
 
 const Header = () => {
   return (
@@ -23,7 +24,9 @@ const Header = () => {
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
           <SocialMedia />
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <div className="min-w-[160px]">{HeaderText.phone}</div>
+            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
+              <div className="min-w-[160px]">{HeaderText.phone}</div>
+            </a>
             <div className="flex flex-col justify-center items-center">
               <div className="text-center">{HeaderText.workingTime.first}</div>
               <div className="text-center">{HeaderText.workingTime.second}</div>
@@ -31,7 +34,9 @@ const Header = () => {
           </div>
           <div className="flex justify-start items-center gap-2">
             <Image src={LocationIcon} alt="Location icon" />
-            <div className="w-[152px]">{HeaderText.address}</div>
+            <Link href="/contacts#map">
+              <div className="w-[152px]">{HeaderText.address}</div>
+            </Link>
           </div>
         </div>
         <div className="lg:hidden">
@@ -83,16 +88,23 @@ const BurgerMenu = () => {
         </div>
         <div className="flex flex-col items-center gap-6 text-xl">
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
+            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
+              <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
+            </a>
             <div className="flex flex-col justify-center items-center">
               <div className="text-center">{HeaderText.workingTime.first}</div>
               <div className="text-center">{HeaderText.workingTime.second}</div>
             </div>
           </div>
-          <div className="flex justify-start items-center gap-2">
-            <div className="w-[152px] text-center">{HeaderText.address}</div>
+          <div
+            onClick={toggleOpen}
+            className="flex justify-start items-center gap-2"
+          >
+            <Link href="/contacts#map">
+              <div className="w-[152px] text-center">{HeaderText.address}</div>
+            </Link>
           </div>
-          <SocialMedia />
+          <SocialMediaBig />
         </div>
         <div onClick={toggleOpen} className="absolute top-8 right-8 w-8 h-6">
           <div className="absolute top-1/2 w-6 h-1 bg-coal-300 rotate-45" />

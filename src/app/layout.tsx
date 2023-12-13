@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, Exo_2 } from 'next/font/google'
 import './globals.css'
-import { Header, Footer, PopUpForm } from '../components'
+import { Header, Footer, PopUpFormButtonFixed } from '../components'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${exo.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${exo.variable} bg-coal-800`}>
       <body>
         <div className="bg-coal-800 min-h-screen flex flex-col justify-between">
           <div>
@@ -36,7 +36,7 @@ export default function RootLayout({
             <div>{children}</div>
           </div>
           <Footer />
-          <PopUpForm />
+          <PopUpFormButtonFixed />
         </div>
       </body>
     </html>

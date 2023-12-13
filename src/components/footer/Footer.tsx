@@ -1,5 +1,5 @@
 import React from 'react'
-import { QuickForm, SocialMedia } from '..'
+import { QuickForm, SocialMediaBig } from '..'
 import { Logo } from '../../ui'
 import { Footer as FooterText } from '@/i18n/uk'
 
@@ -24,7 +24,9 @@ const Footer = () => {
                   <div className="">
                     {FooterText.address}
                     <br />
-                    {FooterText.phone}
+                    <a href={`tel:${FooterText.phone.replaceAll(' ', '-')}`}>
+                      {FooterText.phone}
+                    </a>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
@@ -41,7 +43,7 @@ const Footer = () => {
                   <div className="text-2xl font-semibold">
                     {FooterText.socialMedia}
                   </div>
-                  <SocialMedia />
+                  <SocialMediaBig />
                 </div>
               </div>
               <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-64 lg:h-64">
