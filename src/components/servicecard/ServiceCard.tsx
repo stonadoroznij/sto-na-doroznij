@@ -19,6 +19,8 @@ const ServiceCard = ({ service }: PropsType) => {
           height={465}
           alt={service.name}
           className="w-full rounded-lg"
+          placeholder='blur'
+          blurDataURL={`/images/services-blur/service-${service.id}.jpg`}
         />
         <div className="flex flex-col w-full gap-2">
           <div className="text-lg font-semibold">{service.name}</div>
