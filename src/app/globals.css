@@ -2,26 +2,141 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    overflow-x: hidden;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  h1,
+  h2 {
+    @apply font-title font-bold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xxl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  div,
+  p,
+  span,
+  h3,
+  h4,
+  h5 {
+    @apply font-sans;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-coal-600 rounded-md;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-coal-300 rounded-md;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-coal-300;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .btn {
+    @apply rounded-full p-[10px] pl-6 pr-6 font-semibold whitespace-nowrap;
+  }
+
+  .mapouter {
+    position: relative;
+    height: 400px;
+    width: 590px;
+    background: #fff;
+  }
+
+  .maprouter a {
+    color: #fff !important;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 0 !important;
+  }
+
+  .gmap_canvas {
+    overflow: hidden;
+    height: 400px;
+    width: 590px;
+  }
+
+  .gmap_canvas iframe {
+    position: relative;
+    z-index: 2;
+  }
+
+  .moving-object {
+    @apply animate-rider;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    /* Только один раз */
+  }
+
+  .animate-car {
+    animation: ride 3s ease-in-out 0s normal forwards;
+  }
+
+  @keyframes ride {
+    from {
+      left: calc(10% - 57px);
+    }
+    to {
+      left: calc(90% - 57px);
+    }
+  }
+
+  .animate-point-1 {
+    animation: appear 0.5s ease-out 0s normal forwards;
+  }
+  .animate-point-2 {
+    animation: appear 0.5s ease-out 1s normal forwards;
+  }
+  .animate-point-3 {
+    animation: appear 0.5s ease-out 1.5s normal forwards;
+  }
+  .animate-point-4 {
+    animation: appear 0.5s ease-out 2s normal forwards;
+  }
+  .animate-point-5 {
+    animation: appear 0.5s ease-out 3s normal forwards;
+  }
+
+  @keyframes appear {
+    from {
+      @apply bg-coal-600;
+    }
+    to {
+      @apply bg-accent-yellow;
+    }
+  }
+  .icon-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .icon-2 {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+  }
+  .icon-3 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+  }
 }
