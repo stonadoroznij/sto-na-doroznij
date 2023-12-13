@@ -61,19 +61,20 @@ const Slider = ({ services }: PropsType) => {
       >
         {services.map((service) => {
           return (
-            <SwiperSlide key={service.id} style={
-              {
-                height: 'auto'
-              }
-            }>
+            <SwiperSlide
+              key={service.id}
+              style={{
+                height: 'auto',
+              }}
+            >
               <div className="h-full flex justify-center">
-                 <ServiceCard service={service}/> 
+                <ServiceCard service={service} />
               </div>
             </SwiperSlide>
           )
         })}
-        <div className='swiper-button-next'></div>
-        <div className='swiper-button-prev'></div>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
       </Swiper>
     </div>
   )

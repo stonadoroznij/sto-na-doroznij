@@ -11,7 +11,7 @@ interface PropsType {
 
 const ServiceCard = ({ service }: PropsType) => {
   return (
-    <div className="relative w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 hover:shadow-accent-20 hover:border-accent-yellow hover:-translate-y-1 p-6 flex flex-col gap-3 justify-between items-center transition-all duration-200 ease-in group">
+    <div className="relative w-full bg-coal-800 rounded-xl shadow-dark border border-coal-600 lg:hover:shadow-accent-20 lg:hover:border-accent-yellow hover:-translate-y-1 p-6 flex flex-col gap-3 justify-between items-center transition-all duration-200 ease-in group">
       <div className="w-full flex flex-col gap-3">
         <Image
           src={`/images/services/service-${service.id}.jpg`}
@@ -19,6 +19,8 @@ const ServiceCard = ({ service }: PropsType) => {
           height={465}
           alt={service.name}
           className="w-full rounded-lg"
+          placeholder='blur'
+          blurDataURL={`/images/services-blur/service-${service.id}.jpg`}
         />
         <div className="flex flex-col w-full gap-2">
           <div className="text-lg font-semibold">{service.name}</div>
