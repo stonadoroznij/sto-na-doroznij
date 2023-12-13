@@ -28,7 +28,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${exo.variable} bg-coal-800`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${exo.variable} bg-coal-800`}
+    >
       <body>
         <div className="bg-coal-800 min-h-screen flex flex-col justify-between">
           <div>

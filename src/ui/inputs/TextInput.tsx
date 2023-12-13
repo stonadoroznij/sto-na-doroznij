@@ -17,7 +17,7 @@ const TextInput = <T extends FieldValues>({
     <div className="relative">
       <input
         placeholder={`${placeholder}`}
-        className="w-full bg-transparent pb-2 outline-none border-b border-white focus:border-accent-yellow placeholder:text-coal-300"
+        className="w-full bg-transparent pb-2 outline-none border-b border-white rounded-none focus:border-accent-yellow placeholder:text-coal-300"
         {...register(label)}
       />
       {error && (

@@ -54,7 +54,7 @@ export default async function Home() {
       </section>
       <section className="font-bold font-serif flex flex-col z-20 mt-[10rem] pt-14 text-white">
         <h2 className="flex justify-center">Послуги</h2>
-        <Slider services={services}/>
+        <Slider services={services} />
         {/* <Carousel slides={services} cardsToDisplay={4}/> */}
         <div className="pt-6 flex justify-center">
           <Link href="/ourservices">
