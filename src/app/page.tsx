@@ -78,7 +78,7 @@ export default async function Home() {
         <h2 className="flex justify-center">Переваги</h2>
         <AdvantageSection />
       </section>
-      <section className="none md:block">
+      <section className="none z-20 md:block">
         <ProcesSection />
       </section>
       <Image
