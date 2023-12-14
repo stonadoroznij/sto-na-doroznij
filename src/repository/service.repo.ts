@@ -15,6 +15,18 @@ class Service {
     return result
   }
 
+  public async getByIdList(idList: number[]) {
+    const result = await prisma.service.findMany({
+      where: {
+        id: {
+          in: idList,
+        },
+      },
+    })
+
+    return result
+  }
+
   public async getAll() {
     const result = await prisma.service.findMany()
 

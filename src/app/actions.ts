@@ -3,7 +3,7 @@ import { bot } from '@/services/telegram'
 import { mailer } from '@/services/email'
 import { RequestMessage } from '@/services/utils'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
-import { requestRepo } from '@/repository'
+import { requestRepo, serviceRepo } from '@/repository'
 import { Actions, Email } from '@/i18n/uk'
 
 export async function FormRequest(formData: FormValues) {
@@ -20,7 +20,8 @@ export async function FormRequest(formData: FormValues) {
 
   try {
     const res = await requestRepo.add(formData)
-    const services = formData.services || []
+    const servicesList = await serviceRepo.getByIdList(formData.services || [])
+    const services = servicesList.map((s) => s.name)
 
     const message = new RequestMessage(res, services)
 
