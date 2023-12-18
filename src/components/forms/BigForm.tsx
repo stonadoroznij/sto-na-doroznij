@@ -1,6 +1,6 @@
 'use client'
 import { FormValues, formSchema } from '../../schemas/zod-schemas'
-import { Button, TextArea, TextInput } from '../../ui'
+import { Button, PhoneInput, TextArea, TextInput } from '../../ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMemo, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -89,7 +89,7 @@ const BigForm = ({ services }: PropsType) => {
             />
           </div>
           <div className="flex-1">
-            <TextInput<FormValues>
+            <PhoneInput<FormValues>
               placeholder={Forms.fields.phone}
               label="phone"
               register={register}
