@@ -1,5 +1,6 @@
 import { GoogleMap, SocialMediaBig } from '@/components'
 import { Contacts as ContactsText } from '@/i18n/uk'
+import Link from 'next/link'
 
 const Contacts = () => {
   return (
@@ -9,7 +10,9 @@ const Contacts = () => {
         <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">{ContactsText.callUs}</h3>
-            <div className="text-lg">{ContactsText.phone}</div>
+            <a href={`tel:${ContactsText.phone.replaceAll(' ', '-')}`}>
+              <div className="text-lg">{ContactsText.phone}</div>
+            </a>
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">
@@ -23,7 +26,9 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">{ContactsText.driveToUs}</h3>
-            <div className="text-lg">{ContactsText.address}</div>
+            <Link href="/contacts#map">
+              <div className="text-lg">{ContactsText.address}</div>
+            </Link>
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">{ContactsText.followUs}</h3>

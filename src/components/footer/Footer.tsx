@@ -2,6 +2,7 @@ import React from 'react'
 import { QuickForm, SocialMediaBig } from '..'
 import { Logo } from '../../ui'
 import { Footer as FooterText } from '@/i18n/uk'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
                     {FooterText.contacts}
                   </div>
                   <div className="">
-                    {FooterText.address}
+                    <Link href="/contacts#map">{FooterText.address}</Link>
                     <br />
                     <a href={`tel:${FooterText.phone.replaceAll(' ', '-')}`}>
                       {FooterText.phone}
