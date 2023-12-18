@@ -1,7 +1,7 @@
 'use client'
 import { FormRequest } from '@/app/actions'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
-import { Button, TextInput } from '@/ui'
+import { Button, PhoneInput, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -39,7 +39,7 @@ const QuickForm = () => {
         register={register}
         error={errors.name?.message}
       />
-      <TextInput<FormValues>
+      <PhoneInput<FormValues>
         placeholder={Forms.fields.phone}
         label="phone"
         register={register}
