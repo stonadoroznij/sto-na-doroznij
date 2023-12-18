@@ -20,13 +20,13 @@ const PopUpFormButton = ({ type = ButtonType.fill }: { type?: ButtonType }) => {
         <Button type={type}>{ButtonText.contactWithUs}</Button>
       </div>
       {opened && (
-        <div className="fixed top-0 left-0 h-screen w-screen p-4 flex justify-center items-center z-50">
+        <div className="fixed top-0 left-0 h-screen w-screen p-4 flex justify-center items-center z-40">
           <div className="relative bg-coal-800 p-8 pr-12 pl-12 rounded-lg border border-coal-600 shadow-dark z-50">
             <div className="flex flex-col gap-8">
               <div className="text-2xl font-semibold text-white text-center">
                 {Forms.popUpForm.title}
               </div>
-              <QuickForm />
+              <QuickForm close={toggleOpened} />
             </div>
             <div
               onClick={toggleOpened}

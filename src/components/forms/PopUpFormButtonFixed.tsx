@@ -34,7 +34,7 @@ const PopUpFormButtonFixed = () => {
               <div className="text-2xl font-semibold text-white text-center">
                 {Forms.popUpForm.title}
               </div>
-              <QuickForm />
+              <QuickForm close={toggleOpened} />
             </div>
             <div
               onClick={toggleOpened}
