@@ -40,11 +40,11 @@ const ProcesSection = () => {
   return (
     <div
       ref={ref}
-      className={`flex flex-col gap-16 z-20 mt-14 pt-14 text-white`}
+      className={`flex flex-col gap-16 z-10 mt-14 pt-14 text-white`}
     >
       <h2 className="text-center">Як відбувається процес</h2>
       <div className="hidden w-full h-40 relative md:block">
-        <div className="w-full h-40 flex justify-between gap-4 absolute z-10">
+        <div className="w-full h-40 flex justify-between gap-4 absolute -z-10">
           <div className="w-full flex flex-col items-center gap-4">
             <div
               className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point1}`}
@@ -76,9 +76,9 @@ const ProcesSection = () => {
             <Step number="5" about="Забираєте авто" />
           </div>
         </div>
-        <div className="absolute top-2 left-[10%] w-4/5 h-[2px] bg-white z-0" />
+        <div className="absolute top-2 left-[10%] w-4/5 h-[2px] bg-white -z-20" />
         <div
-          className={`absolute -top-2 left-[calc(10%-57px)] z-20 ${style.car}`}
+          className={`absolute -top-2 left-[calc(10%-57px)] z-10 ${style.car}`}
         >
           <Image src={YellowCar} alt="yellow car" />
         </div>
@@ -115,7 +115,7 @@ const ProcesSection = () => {
           <Step number="5" about="Забираєте авто" />
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center -mt-16">
         <PopUpFormButton type={ButtonType.outline} />
       </div>
     </div>
