@@ -63,7 +63,7 @@ export default async function Home() {
           transform: 'rotate(125deg)',
         }}
       />
-      <div className="relative z-10">
+      <div className="z-10 relative">
         <section className="text-white z-10 flex relative mb-12">
           <div className="flex flex-col gap-6">
             <h1>
@@ -71,9 +71,8 @@ export default async function Home() {
               <br />
               Дорожній
             </h1>
-            <p className="font-normal text-sm w-full md:w-1/2">
-              Наша мета - забезпечити нашим клієнтам якісний, безпечний ремонт і
-              незабутній клієнтський досвід, заснований на сімейних цінностях.
+            <p className="font-normal text-sm w-full md:w-2/3">
+              СТО на Дорожній- знаходимо рішення для кожного авто!
             </p>
             <div className="flex gap-4 flex-wrap">
               <PopUpFormButton />
