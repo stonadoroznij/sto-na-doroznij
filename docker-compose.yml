@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # next-app:
+  #   container_name: next-app
+  #   env_file:
+  #     - .env
+  #   build:
+  #     context: .
+  #     dockerfile: prod.Dockerfile
+  #     args:
+  #       ENV_VARIABLE: ${ENV_VARIABLE}
+  #       POSTGRES_PRISMA_URL: ${POSTGRES_PRISMA_URL}
+  #       NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
+  #   networks:
+  #     - api
+  # depends_on:
+  #   postgres:
+  #     condition: service_healthy
+
+  # Add more containers below (nginx, postgres, etc.)
+
+  postgres:
+    container_name: postgres
+    # image: postgres:15.5
+    image: postgres
+    # restart: unless-stopped
+    command: ['postgres', '-c', 'log_statement=all']
+    environment:
+      # PGUSER: postgres
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: sto-na-doroznij
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    # network_mode: 'host'
+    # networks:
+    #   - api
+    # healthcheck:
+    #   # test: ['CMD', 'pg_isready']
+    #   test: ['CMD', 'pg_isready', '-U', 'postgres', '-d', 'sto-na-doroznij']
+    #   # test: ['CMD-SHELL', 'pg_isready -U postgres']
+    #   interval: 5s
+    #   timeout: 5s
+    #   retries: 5
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+# networks:
+#   api:
+#     external: true
+
+volumes:
+  postgres-data:
