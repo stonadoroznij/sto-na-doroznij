@@ -149,4 +149,8 @@
     top: 80%;
     left: 45%;
   }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
 }

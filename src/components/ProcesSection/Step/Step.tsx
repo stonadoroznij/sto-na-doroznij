@@ -14,7 +14,7 @@ const Step = ({ number, about }: StepProps) => {
         <p className="text-lg text-center">{about}</p>
       </div>
       <div className="block md:hidden">
-        <h3 className="text-2xl font-bold">Етап {number}</h3>
+        <h3 className="text-2xl font-bold">Крок {number}</h3>
         <p className="text-lg">{about}</p>
       </div>
     </div>

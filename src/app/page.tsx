@@ -1,6 +1,7 @@
 'use server'
 import Image from 'next/image'
-import BgImage from '../../public/images/main-banner.jpg'
+import BgImage from '../../public/images/main-banner_desktop.jpg'
+import BgImageMobile from '../../public/images/main-banner_mobile.jpg'
 import { Button } from '@/ui'
 import {
   ProcesSection,
@@ -19,22 +20,37 @@ import { serviceRepo } from '@/repository'
 export default async function Home() {
   const services = await serviceRepo.getAll()
   return (
-    <main className="max-w-352 m-auto p-6 mt-60 flex-col flex content-between overflow-hidden">
-      <Image
-        src={BgImage}
-        alt="фон"
-        className="shadow-2xl"
-        placeholder="blur"
-        quality={100}
-        fill
-        // sizes="100dvw"
-        style={{
-          objectFit: 'cover',
-          filter: 'grayscale(50%) brightness(30%)',
-          maxHeight: '53rem',
-        }}
-      />
-      <Image
+    <main className="max-w-352 m-auto p-6 flex-col flex gap-16 lg:gap-24">
+      <div className="absolute top-0 left-0 w-full hidden sm:block sm:h-[80vh] max-h-[900px] -z-10">
+        <Image
+          src={BgImage}
+          alt="фон"
+          placeholder="blur"
+          quality={100}
+          fill
+          style={{
+            objectFit: 'cover',
+            filter: 'brightness(40%)',
+            maxHeight: '53rem',
+          }}
+        />
+      </div>
+      <div className="absolute top-0 left-0 w-full h-screen sm:hidden max-h-[900px] -z-10">
+        <Image
+          src={BgImageMobile}
+          alt="фон"
+          placeholder="blur"
+          quality={100}
+          fill
+          style={{
+            objectFit: 'cover',
+            filter: 'brightness(40%)',
+            maxHeight: '53rem',
+          }}
+        />
+      </div>
+
+      {/* <Image
         src={BusImg}
         alt="bus image on bg"
         className="z-0 top-[1200px] right-[80px] hidden lg:block icon-1"
@@ -62,52 +78,49 @@ export default async function Home() {
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(125deg)',
         }}
-      />
-      <div className="z-10 relative">
-        <section className="text-white z-10 flex relative mb-12">
-          <div className="flex flex-col gap-6">
-            <h1>
-              СТО на
-              <br />
-              Дорожній
-            </h1>
-            <p className="font-normal text-sm w-full md:w-2/3">
-              СТО на Дорожній- знаходимо рішення для кожного авто!
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <PopUpFormButton />
-              <Link href={'/serviceform'}>
-                <Button type={ButtonType.outline}>Замовити послугу</Button>
-              </Link>
-            </div>
+      /> */}
+      <div className="w-full flex flex-col gap-24">
+        <section className="text-white h-[calc(100vh-184px)] sm:h-[calc(80vh-184px)] lg:sm:h-[calc(80vh-208px)] max-h-[640px] flex flex-col justify-center gap-6">
+          <h1>
+            СТО на
+            <br />
+            Дорожній
+          </h1>
+          <p className="font-normal text-lg w-full md:w-2/3">
+            СТО на Дорожній- знаходимо рішення для кожного авто!
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <PopUpFormButton />
+            <Link href={'/serviceform'}>
+              <Button type={ButtonType.outline}>Замовити послугу</Button>
+            </Link>
           </div>
         </section>
-        <section className="font-bold font-serif flex flex-col z-20 mt-[6rem] pt-14 text-white">
-          <h2 className="flex justify-center">Послуги</h2>
+        <section className="flex flex-col text-white">
+          <h2 className="text-center">Послуги</h2>
           <Slider services={services} />
-          {/* <Carousel slides={services} cardsToDisplay={4}/> */}
-          <div className="pt-6 flex justify-center">
+          <div className="flex justify-center mt-6">
             <Link href="/ourservices">
               <Button type={ButtonType.outline}>Усі послуги</Button>
             </Link>
           </div>
         </section>
-        <section className="font-bold font-serif flex flex-col gap-8 z-20 mt-[3.5rem] pt-14 text-white ">
+        <section className="flex flex-col gap-6 text-white ">
           <h2 className="flex justify-center">Переваги</h2>
           <AdvantageSection />
         </section>
-        <section className="none -z-10 md:block">
+        <section>
           <ProcesSection />
         </section>
-        <section className="font-bold font-serif flex z-20 mt-14 pt-14 text-white">
+        <section className="text-white">
           <AboutUs />
         </section>
-        <section className="font-bold font-serif flex flex-col z-20 mt-[8rem] pt-14 text-white">
+        <section className="flex flex-col gap-6 text-white">
           <h2 className="text-center mb-6">Побудувати маршрут в GOOGLE MAPS</h2>
           <GoogleMap />
         </section>
-        <section className="font-bold font-serif flex flex-col z-20 mt-14 pt-14 text-white">
-          <h2 className="text-center mb-6">Питання / Відповіді</h2>
+        <section className="flex flex-col gap-6 text-white">
+          <h2 className="text-center">Питання / Відповіді</h2>
           <FaqSection />
         </section>
       </div>

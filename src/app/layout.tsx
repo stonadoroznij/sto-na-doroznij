@@ -33,7 +33,7 @@ export default function RootLayout({
       className={`${montserrat.variable} ${exo.variable} bg-coal-800`}
     >
       <body>
-        <div className="bg-coal-800 min-h-screen flex flex-col justify-between">
+        <div className="min-h-screen flex flex-col justify-between">
           <div>
             <Header />
             <div>{children}</div>

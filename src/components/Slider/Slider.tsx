@@ -17,7 +17,7 @@ interface PropsType {
 
 const Slider = ({ services }: PropsType) => {
   return (
-    <div className="">
+    <div>
       <Swiper
         style={
           {
