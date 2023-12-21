@@ -4,7 +4,7 @@ const Contacts = {
   driveToUs: 'Приїжайте',
   followUs: 'Слідкуйте',
   buildRoute: 'Побудувати маршрут в Google maps',
-  address: 'Макарів, вул. Дорожня, 33',
+  address: 'вул.Дорожня, 33 м. Макарів',
   phone: '+38 (096) 973 37 54',
   workingTime: {
     title: 'Графік роботи',

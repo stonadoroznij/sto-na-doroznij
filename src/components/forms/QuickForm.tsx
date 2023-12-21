@@ -1,14 +1,20 @@
 'use client'
 import { FormRequest } from '@/app/actions'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
-import { Button, TextInput } from '@/ui'
+import { Button, PhoneInput, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Forms, ButtonText } from '@/i18n/uk'
+import GoodResponseIcon from '../../../public/good_response.svg'
+import BadResponseIcon from '../../../public/bad_response.svg'
+import Image from 'next/image'
 
-const QuickForm = () => {
-  const [message, setMessage] = useState<string>('')
+const QuickForm = ({ close }: { close?: () => void }) => {
+  const [responseData, setResponseData] = useState<{
+    message: string
+    sucsses: boolean
+  }>({ message: '', sucsses: true })
 
   const {
     register,
@@ -21,39 +27,59 @@ const QuickForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const response = await FormRequest(data)
-    if (response.message) {
-      setMessage(response.message)
+    if (response.message && response.sucsses) {
+      setResponseData(response)
     }
-    setTimeout(() => setMessage(''), 3000)
+    setTimeout(() => {
+      setResponseData({ message: '', sucsses: true })
+      if (close) {
+        close()
+      }
+    }, 3000)
     reset()
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-8 text-white"
-    >
-      <TextInput<FormValues>
-        placeholder={Forms.fields.name}
-        label="name"
-        register={register}
-        error={errors.name?.message}
-      />
-      <TextInput<FormValues>
-        placeholder={Forms.fields.phone}
-        label="phone"
-        register={register}
-        error={errors.phone?.message}
-      />
-      <div className="relative flex justify-center">
-        <Button>{ButtonText.send}</Button>
-        {message && (
-          <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
-            {message}
+    <>
+      {responseData.message ? (
+        responseData.sucsses ? (
+          <div className="flex flex-col gap-4 items-center">
+            <Image src={GoodResponseIcon} alt="good response" />
+            <div className="w-full text-center text-lg text-green-400">
+              {responseData.message}
+            </div>
           </div>
-        )}
-      </div>
-    </form>
+        ) : (
+          <div className="flex flex-col gap-4 items-center">
+            <Image src={BadResponseIcon} alt="bad response" />
+            <div className="w-full text-center text-lg text-red-400">
+              {responseData.message}
+            </div>
+          </div>
+        )
+      ) : (
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-8 text-white"
+        >
+          <TextInput<FormValues>
+            placeholder={Forms.fields.name}
+            label="name"
+            register={register}
+            error={errors.name?.message}
+          />
+          <PhoneInput<FormValues>
+            placeholder={Forms.fields.phone}
+            label="phone"
+            register={register}
+            error={errors.phone?.message}
+          />
+          <div className="flex justify-center">
+            <Button>{ButtonText.send}</Button>
+          </div>
+        </form>
+      )}
+    </>
   )
 }
 

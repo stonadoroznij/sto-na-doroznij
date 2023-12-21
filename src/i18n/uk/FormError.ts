@@ -6,7 +6,7 @@ const FormError = {
   phone: {
     required: "Телефон обов'язкове поле!",
     badPhone: 'Невірний телефон!',
-    badFormat: 'Формат: +380999999999, 0999999999.',
+    badFormat: 'Формат: +38 (099) 999-99-99.',
   },
   email: {
     badEmail: 'Невірний email!',

@@ -1,13 +1,13 @@
 'use client'
 import { FormValues, formSchema } from '../../schemas/zod-schemas'
-import { Button, TextArea, TextInput } from '../../ui'
+import { Button, PhoneInput, TextArea, TextInput } from '../../ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMemo, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { FormRequest } from '../../app/actions'
 import { MultiSelect, Select } from '..'
 import { Forms, ButtonText } from '@/i18n/uk'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 interface Service {
   id: number
@@ -19,8 +19,10 @@ interface PropsType {
 }
 
 const BigForm = ({ services }: PropsType) => {
-  const [message, setMessage] = useState<string>('')
-
+  const [responseData, setResponseData] = useState<{
+    message: string
+    sucsses: boolean
+  }>({ message: '', sucsses: true })
   const searchParams = useSearchParams()
   const defaultService = searchParams.get('service')
 
@@ -47,10 +49,10 @@ const BigForm = ({ services }: PropsType) => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const response = await FormRequest(data)
-    if (response.message) {
-      setMessage(response.message)
+    if (response.message && response.sucsses) {
+      setResponseData(response)
     }
-    setTimeout(() => setMessage(''), 3000)
+    setTimeout(() => setResponseData({ message: '', sucsses: true }), 4000)
     reset()
   }
 
@@ -89,7 +91,7 @@ const BigForm = ({ services }: PropsType) => {
             />
           </div>
           <div className="flex-1">
-            <TextInput<FormValues>
+            <PhoneInput<FormValues>
               placeholder={Forms.fields.phone}
               label="phone"
               register={register}
@@ -143,11 +145,19 @@ const BigForm = ({ services }: PropsType) => {
           />
         </div>
       </div>
-      <div className="relative flex justify-center">
-        <Button>{ButtonText.send}</Button>
-        {message && (
-          <div className="absolute w-full text-center left-0 -bottom-5 text-sm text-accent-yellow">
-            {message}
+      <div className="flex flex-col items-center gap-2">
+        <div className="flex justify-center">
+          <Button>{ButtonText.send}</Button>
+        </div>
+        {!responseData.message && <div className="w-full h-6" />}
+        {responseData.message && responseData.sucsses && (
+          <div className="w-full h-6 text-center text-base text-green-400">
+            {responseData.message}
+          </div>
+        )}
+        {responseData.message && !responseData.sucsses && (
+          <div className="w-full h-6 text-center text-base text-red-400">
+            {responseData.message}
           </div>
         )}
       </div>
