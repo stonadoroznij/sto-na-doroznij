@@ -9,6 +9,7 @@ APP_PATH="/srv/next-app"
 echo "Deploying to production server..."
 
 echo "${SERVER_HOSTNAME} is the hostname of the production server"
+
 # Decode SSH key
 echo "${SSH_KEY}" | base64 -d > ssh_key
 # private keys need to have strict permission to be accepted by SSH agent
