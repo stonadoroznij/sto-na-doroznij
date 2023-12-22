@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOSTNAME }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
             cd /srv/next-app
