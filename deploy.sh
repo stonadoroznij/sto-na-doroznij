@@ -10,7 +10,7 @@ echo "Deploying to production server..."
 # Decode SSH key
 echo "${SSH_KEY}" > ssh_key
 # private keys need to have strict permission to be accepted by SSH agent
-chmod 600 ssh_key 
+# chmod 600 ssh_key 
 
 # Add production server to known hosts
 mkdir -p ~/.ssh
@@ -28,3 +28,6 @@ git pull origin feature/docker-compose \
 && docker system prune -af"
 
 echo "Successfully deployed!"
+
+# Clean up
+rm ssh_key
