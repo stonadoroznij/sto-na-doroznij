@@ -4,6 +4,7 @@
 set -e
 
 IMAGE_NAME="next-app"
+APP_PATH="/srv/next-app"
 
 # Decode SSH key
 echo "${SSH_KEY}" | base64 -d > ssh_key
@@ -15,7 +16,8 @@ echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
 
 # Deploy to production server
 ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
-"git pull origin main \
+"cd ${APP_PATH} \
+git pull origin main \
 && git checkout main \
 && docker compose build --no-cache ${IMAGE_NAME} \
 && docker compose down ${IMAGE_NAME} \
