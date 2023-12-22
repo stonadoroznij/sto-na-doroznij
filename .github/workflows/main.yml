@@ -15,5 +15,5 @@ jobs:
           SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
         run: |
           echo "Deploying to ${SERVER_HOSTNAME}"
-      - run: bush deploy.sh
+      - run: bash deploy.sh
     
