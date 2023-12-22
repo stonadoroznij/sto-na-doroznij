@@ -4,11 +4,6 @@ on:
     branches:
       - feature/docker-compose
 
-env:
-  SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
-  SERVER_PUBLIC_KEY: ${{ secrets.SERVER_PUBLIC_KEY }}
-  SSH_KEY: ${{ secrets.SSH_KEY }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest

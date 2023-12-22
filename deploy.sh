@@ -5,23 +5,24 @@ set -e
 
 IMAGE_NAME="next-app"
 APP_PATH="/srv/next-app"
+SERVER_HOSTNAME=$(echo ${GITHUB_ENV[$SERVER_HOSTNAME]})
 
 echo "Deploying to production server..."
 
 echo "${SERVER_HOSTNAME} is the hostname of the production server"
 
 # Decode SSH key
-echo "${env.SSH_KEY}" | base64 -d > ssh_key
+echo "${SSH_KEY}" | base64 -d > ssh_key
 # private keys need to have strict permission to be accepted by SSH agent
 chmod 600 ssh_key 
 
 # Add production server to known hosts
 mkdir -p ~/.ssh
 touch ~/.ssh/known_hosts
-echo "${env.SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
+echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
 
 # Deploy to production server
-ssh -i ssh_key "root@${env.SERVER_HOSTNAME}" \
+ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
 "cd ${APP_PATH} \
 git pull origin feature/docker-compose \
 && git checkout feature/docker-compose \
