@@ -25,3 +25,4 @@ jobs:
             docker compose down next-app
             docker compose up -d next-app
             docker system prune -af
+     
