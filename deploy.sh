@@ -5,11 +5,10 @@ set -e
 
 IMAGE_NAME="next-app"
 APP_PATH="/srv/next-app"
-SERVER_HOSTNAME=$(echo ${GITHUB_ENV[$SERVER_HOSTNAME]})
 
 echo "Deploying to production server..."
 
-echo "${SERVER_HOSTNAME} is the hostname of the production server"
+echo "$SERVER_HOSTNAME is the hostname of the production server"
 
 # Decode SSH key
 echo "${SSH_KEY}" | base64 -d > ssh_key
