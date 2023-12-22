@@ -8,14 +8,14 @@ APP_PATH="/srv/next-app"
 echo "Deploying to production server..."
 
 # Decode SSH key
-echo "${SSH_KEY}" | base64 -d > ssh_key
+echo "${SSH_KEY}" > ssh_key
 # private keys need to have strict permission to be accepted by SSH agent
 chmod 600 ssh_key 
 
 # Add production server to known hosts
 mkdir -p ~/.ssh
 touch ~/.ssh/known_hosts
-echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
+echo "${SERVER_PUBLIC_KEY}" >> ~/.ssh/known_hosts
 
 # Deploy to production server
 ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
