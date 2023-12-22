@@ -7,8 +7,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
+
     steps:
       - uses: actions/checkout@v3
-      - run: bash deploy.sh
+      - shell: bash
+        env: 
+          SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
+        run: bash deploy.sh
