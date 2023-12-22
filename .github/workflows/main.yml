@@ -3,12 +3,15 @@ on:
   push:
     branches:
       - feature/docker-compose
-env:
-  SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - run: bash deploy.sh
+      - shell: bash
+        env: 
+          SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
+        run: bash deploy.sh
+    
