@@ -13,5 +13,6 @@ jobs:
       - shell: bash
         env: 
           SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
-        run: bash deploy.sh
+        run: |
+          bash deploy.sh
     
