@@ -19,10 +19,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /srv/next-app
-            git pull origin feature/docker-compose
             git checkout feature/docker-compose
-            docker compose build --no-cache next-app
-            docker compose down next-app
-            docker compose up -d next-app
+            git pull origin feature/docker-compose
+            docker compose up --build -d next-app
             docker system prune -af
      
