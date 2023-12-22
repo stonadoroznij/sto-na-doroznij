@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - feature/docker-compose
 jobs:
   deploy:
     runs-on: ubuntu-latest
