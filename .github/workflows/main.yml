@@ -11,5 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - shell: bash
+        env: 
+            SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
         run: bash deploy.sh
     
