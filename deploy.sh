@@ -6,7 +6,7 @@ set -e
 IMAGE_NAME="next-app"
 APP_PATH="/srv/next-app"
 
-SERVER_HOSTNAME=${secret.SERVER_HOSTNAME}
+SERVER_HOSTNAME=${SERVER_HOSTNAME}
 
 echo "Deploying to production server..."
 
