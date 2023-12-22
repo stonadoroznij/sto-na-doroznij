@@ -9,17 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+      - uses: actions/checkout@v3
+      - shell: bash
+        env: 
+          SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
         run: |
-          echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.SERVER_HOSTNAME }}
-          echo "Trick to echo GitHub Actions Secret:  "
           echo ${{secrets.SERVER_HOSTNAME}} | sed 's/./& /g' 
-      # - uses: actions/checkout@v3
-      # - shell: bash
-      #   env: 
-      #     SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
-      #   run: |
-      #     echo ${{secrets.SERVER_HOSTNAME}} | sed 's/./& /g' 
-      # - run: bash deploy.sh
+      - run: bash deploy.sh
     
