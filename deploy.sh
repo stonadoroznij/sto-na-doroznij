@@ -8,7 +8,6 @@ APP_PATH="/srv/next-app"
 
 echo "Deploying to production server..."
 
-echo "${env.SERVER_HOSTNAME} is the hostname of the production server"
 echo "${SERVER_HOSTNAME} is the hostname of the production server"
 
 # Decode SSH key
