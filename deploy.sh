@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Stop script on first error
 set -e
 
