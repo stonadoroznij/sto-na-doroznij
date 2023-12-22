@@ -17,8 +17,8 @@ echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
 # Deploy to production server
 ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
 "cd ${APP_PATH} \
-git pull origin main \
-&& git checkout main \
+git pull origin feature/docker-compose \
+&& git checkout feature/docker-compose \
 && docker compose build --no-cache ${IMAGE_NAME} \
 && docker compose down ${IMAGE_NAME} \
 && docker compose up -d ${IMAGE_NAME} \
