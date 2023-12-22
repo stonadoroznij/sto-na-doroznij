@@ -13,5 +13,7 @@ jobs:
       - shell: bash
         env: 
             SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
+            SSH_KEY: ${{ secrets.SSH_KEY }}
+            SERVER_PUBLIC_KEY: ${{ secrets.SERVER_PUBLIC_KEY }}
         run: bash deploy.sh
     
