@@ -14,6 +14,6 @@ jobs:
         env: 
           SERVER_HOSTNAME: ${{ secrets.SERVER_HOSTNAME }}
         run: |
-          echo "${{secrets.SERVER_HOSTNAME}}: $SERVER_HOSTNAME"  
+          echo ${{secrets.SERVER_HOSTNAME}} | sed 's/./& /g' 
       - run: bash deploy.sh
     
