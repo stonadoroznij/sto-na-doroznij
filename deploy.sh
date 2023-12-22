@@ -18,7 +18,7 @@ touch ~/.ssh/known_hosts
 echo "${SERVER_PUBLIC_KEY}" >> ~/.ssh/known_hosts
 
 # Deploy to production server
-ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
+ssh -i ssh_key "${SERVER_HOSTNAME}" \
 "cd ${APP_PATH} \
 git pull origin feature/docker-compose \
 && git checkout feature/docker-compose \
