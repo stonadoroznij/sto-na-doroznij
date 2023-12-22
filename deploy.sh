@@ -12,8 +12,9 @@ echo "${SSH_KEY}" | base64 -d > ssh_key
 chmod 600 ssh_key 
 
 # Add production server to known hosts
-touch /.ssh/known_hosts
-echo "${SERVER_PUBLIC_KEY}" | base64 -d >> /.ssh/known_hosts
+mkdir -p ~/.ssh
+touch ~/.ssh/known_hosts
+echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
 
 # Deploy to production server
 ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
