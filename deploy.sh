@@ -7,6 +7,7 @@ IMAGE_NAME="next-app"
 APP_PATH="/srv/next-app"
 
 echo "Deploying to production server..."
+echo "${SERVER_HOSTNAME}"
 # Decode SSH key
 echo "${SSH_KEY}" | base64 -d > ssh_key
 # private keys need to have strict permission to be accepted by SSH agent
@@ -18,7 +19,6 @@ touch ~/.ssh/known_hosts
 echo "${SERVER_PUBLIC_KEY}" | base64 -d >> ~/.ssh/known_hosts
 
 # Deploy to production server
-echo "${SERVER_HOSTNAME}"
 ssh -i ssh_key "root@${SERVER_HOSTNAME}" \
 "cd ${APP_PATH} \
 git pull origin feature/docker-compose \
