@@ -3,7 +3,7 @@ import Image from 'next/image'
 import CloseIcon from '../../../public/close_icon.svg'
 import { QuickForm } from '..'
 import { ButtonText, Forms } from '@/i18n/uk'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/ui'
 import { ButtonType } from '@/ui/buttons/Button'
 
@@ -13,6 +13,15 @@ const PopUpFormButton = ({ type = ButtonType.fill }: { type?: ButtonType }) => {
   const toggleOpened = () => {
     setOpened((prev) => !prev)
   }
+
+  useEffect(() => {
+    const body = document.getElementsByTagName('body')[0]
+    if (opened) {
+      body.classList.add('overflow-hidden')
+    } else {
+      body.classList.remove('overflow-hidden')
+    }
+  }, [opened])
 
   return (
     <>

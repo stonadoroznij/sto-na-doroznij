@@ -38,13 +38,10 @@ const ProcesSection = () => {
   }, [inView])
 
   return (
-    <div
-      ref={ref}
-      className={`flex flex-col gap-16 z-20 mt-14 pt-14 text-white`}
-    >
-      <h2 className="text-center">Як відбувається процес</h2>
-      <div className="hidden w-full h-40 relative md:block">
-        <div className="w-full h-40 flex justify-between gap-4 absolute z-10">
+    <div ref={ref} className={`flex flex-col gap-4 text-white`}>
+      <h2 className="text-center mb-4">Як відбувається процес</h2>
+      <div className="hidden w-full h-32 mt-8 relative md:block">
+        <div className="w-full h-32 flex justify-between gap-4 absolute top-0 left-0 z-10">
           <div className="w-full flex flex-col items-center gap-4">
             <div
               className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point1}`}
@@ -83,34 +80,34 @@ const ProcesSection = () => {
           <Image src={YellowCar} alt="yellow car" />
         </div>
       </div>
-      <div className="block md:hidden w-[100vw]">
-        <div className="flex flex-row items-center content-center justify-center mb-5">
+      <div className="flex flex-col gap-6 p-4 md:hidden w-full">
+        <div className="flex gap-3 items-center justify-center">
           <div
-            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point1} mr-3`}
+            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point1}`}
           />
           <Step number="1" about="Записатись на СТО" />
         </div>
-        <div className="flex flex-row items-center content-center justify-center mb-5">
+        <div className="flex gap-3 items-center justify-center">
           <div
-            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point2} mr-3`}
+            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point2}`}
           />
           <Step number="2" about="Привезти авто на СТО" />
         </div>
-        <div className="flex flex-row items-center content-center justify-center mb-5">
+        <div className="flex gap-3 items-center justify-center">
           <div
-            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point3} mr-3 `}
+            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point3}`}
           />
           <Step number="3" about="Обговорення проблеми " />
         </div>
-        <div className="flex flex-row items-center content-center justify-center mb-5">
+        <div className="flex gap-3 items-center justify-center">
           <div
-            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point4} mr-3`}
+            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point4}`}
           />
           <Step number="4" about="Очікування" />
         </div>
-        <div className="flex flex-row items-center content-center justify-center">
+        <div className="flex gap-3 items-center justify-center">
           <div
-            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point5} mr-3`}
+            className={`w-5 h-5 rounded-full bg-coal-600 border border-accent-yellow ${style.point5}`}
           />
           <Step number="5" about="Забираєте авто" />
         </div>

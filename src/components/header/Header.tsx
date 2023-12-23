@@ -4,13 +4,13 @@ import Image from 'next/image'
 import { SocialMedia, SocialMediaBig } from '..'
 import MenuItem from './MenuItem'
 import { Logo } from '../../ui'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header as HeaderText } from '../../i18n/uk'
 import Link from 'next/link'
 
 const Header = () => {
   return (
-    <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12 relative z-40">
+    <header className="max-w-352 m-auto p-6 pt-6 lg:pt-12">
       <div className="flex justify-between items-center gap-6 text-white font-bold">
         <div className="w-28 h-28">
           <Logo />
@@ -53,6 +53,15 @@ const BurgerMenu = () => {
   const toggleOpen = () => {
     setIsOpen((prev) => !prev)
   }
+
+  useEffect(() => {
+    const body = document.getElementsByTagName('body')[0]
+    if (isOpen) {
+      body.classList.add('overflow-hidden')
+    } else {
+      body.classList.remove('overflow-hidden')
+    }
+  }, [isOpen])
 
   const style = isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
 

@@ -49,7 +49,7 @@ const FaqCards = (props: faqProps) => {
     <div className="mt-2 w-100%">
       <div
         onClick={toggleOpen}
-        className="py-[1.125rem] px-[1.875rem] bg-coal-700 rounded-lg flex justify-between items-center"
+        className="py-[1.125rem] px-[1.875rem] bg-coal-700 rounded-lg flex justify-between items-center cursor-pointer"
       >
         <h3>{props.question}</h3>
         {isOpen ? (

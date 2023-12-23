@@ -53,23 +53,32 @@ export default async function Home() {
       <Image
         src={BusImg}
         alt="bus image on bg"
-        className="absolute top-[1200px] right-[80px] -z-10 hidden lg:block"
+        className="absolute top-[1200px] right-[80px] -z-10 hidden lg:block icon-1"
         style={{
           objectFit: 'cover',
           filter: 'grayscale(100%) brightness(17%)',
           transform: 'rotate(5deg)',
         }}
       />
-      <Image
-        src={BusImg}
-        alt="bus image on bg"
-        className="absolute top-[2000px] -z-10 hidden lg:block"
-        style={{
-          objectFit: 'cover',
-          filter: 'grayscale(100%) brightness(17%)',
-          transform: 'rotate(154deg)',
-        }}
-      />
+      {/* <Image
+              src={BusImg}
+              alt="bus image on bg"
+              className="top-[2400px] md:top-[2300px] hidden lg:block icon-2 z-0"
+              style={{
+                filter: 'grayscale(100%) brightness(17%)',
+                transform: 'rotate(154deg)',
+              }}
+            />
+            <Image
+              src={BusImg}
+              alt="bus image on bg"
+              className="md:top-[3200px] lg:top-[2950px] hidden lg:block icon-3"
+              style={{
+                objectFit: 'cover',
+                filter: 'grayscale(100%) brightness(17%)',
+                transform: 'rotate(125deg)',
+              }}
+            /> */}
       <div className="w-full flex flex-col gap-24">
         <section className="text-white h-[calc(100vh-184px)] sm:h-[calc(80vh-184px)] lg:sm:h-[calc(80vh-208px)] max-h-[640px] flex flex-col justify-center gap-6">
           <h1>
