@@ -1,7 +1,8 @@
 'use client'
 
+import cn from 'classnames'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import Minus from '../../../../public/icons/minus.svg'
 import Plus from '../../../../public/icons/plus.svg'
@@ -14,41 +15,14 @@ interface faqProps {
 
 const FaqCards = (props: faqProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [contentHeight, setContentHeight] = useState<number | string>('0')
   const contentRef = useRef<HTMLDivElement>(null)
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
-  const updateContentHeight = () => {
-    if (contentRef.current) {
-      setContentHeight(
-        isOpen ? `${contentRef.current.clientHeight + 10}px` : '0'
-      )
-    }
-  }
-
-  useEffect(() => {
-    updateContentHeight()
-  }, [isOpen])
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (isOpen && contentRef.current) {
-        setContentHeight(`${contentRef.current.clientHeight + 10}px`)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [isOpen])
-
   return (
-    <div className="mt-2 w-100%">
+    <div className="space-y-2">
       <div
         onClick={toggleOpen}
         className="py-[1.125rem] px-[1.875rem] bg-coal-700 rounded-lg flex justify-between items-center cursor-pointer"
@@ -62,13 +36,15 @@ const FaqCards = (props: faqProps) => {
       </div>
       {
         <div
-          style={{
-            maxHeight: contentHeight,
-            transition: 'max-height 0.5s ease-in-out',
-            overflow: 'hidden',
-          }}
+          className={cn(
+            'grid duration-500 ease-out transition-[grid-template-rows]',
+            {
+              'grid-rows-[1fr]': isOpen,
+              'grid-rows-[0fr]': !isOpen,
+            }
+          )}
         >
-          <div ref={contentRef} className="mt-2 px-[1.875rem]">
+          <div ref={contentRef} className="px-[1.875rem] overflow-hidden">
             {props.list ? (
               <ul className="list-disc list-inside">
                 {props.list.map((item, index) => (

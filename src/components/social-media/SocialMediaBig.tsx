@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import { SocialMediaLinks } from '@/i18n/uk'
+import { SocialMediaLinks } from '@/consts'
 
 import FacebookIcon from '../../../public/social-media-icons/facebook-32.svg'
 import InstagramIcon from '../../../public/social-media-icons/instagram-32.svg'
@@ -12,14 +12,14 @@ const SocialMediaBig = () => {
   return (
     <div className="flex gap-4 justify-start items-center flex-wrap">
       <a
-        href={SocialMediaLinks.tiktok}
+        href={SocialMediaLinks.TikTok}
         target="_blank"
         className="hover:opacity-80"
       >
         <Image src={TikTokIcon} alt="icon tiktok" height={28} width={28} />
       </a>
       <a
-        href={SocialMediaLinks.instagram}
+        href={SocialMediaLinks.Instagram}
         target="_blank"
         className="hover:opacity-80"
       >
@@ -31,14 +31,14 @@ const SocialMediaBig = () => {
         />
       </a>
       <a
-        href={SocialMediaLinks.facebook}
+        href={SocialMediaLinks.Facebook}
         target="_blank"
         className="hover:opacity-80"
       >
         <Image src={FacebookIcon} alt="icon facebook" height={28} width={28} />
       </a>
       <a
-        href={SocialMediaLinks.telegram}
+        href={SocialMediaLinks.Telegram}
         target="_blank"
         className="hover:opacity-80"
       >

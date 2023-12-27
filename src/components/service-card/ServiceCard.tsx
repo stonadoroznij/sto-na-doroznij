@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Urls } from '@/consts'
-import { ButtonText, Services as ServicesText } from '@/i18n/uk'
 import { Service } from '@/types'
 import { Button } from '@/ui'
 
@@ -30,7 +29,7 @@ const ServiceCard = ({ service }: PropsType) => {
               {service.description}
             </p>
             <div className="absolute top-10 left-3 pr-4 pl-4 pb-2 pt-2 text-sm bg-accent-yellow text-coal-800 rounded-tl-2xl rounded-br-2xl">
-              {`${ServicesText.from} ${service.price} ${ServicesText.currency}`}
+              {`від ${service.price} грн`}
             </div>
           </div>
         </div>
@@ -40,10 +39,10 @@ const ServiceCard = ({ service }: PropsType) => {
           href={Urls.Price}
           className="text-sm text-coal-300 underline font-bold hover:text-accent-yellow"
         >
-          {ButtonText.price}
+          Прайс
         </Link>
         <Link href={`${Urls.ServiceForm}?service=${service.id}`}>
-          <Button type="outline">{ButtonText.orderService}</Button>
+          <Button type="outline">Замовити послугу</Button>
         </Link>
       </div>
     </div>

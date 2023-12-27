@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 import { PopUpFormButton } from '@/components'
 import { Urls } from '@/consts'
-import { AboutUs as AboutUsText, ButtonText } from '@/i18n/uk'
 import { Button } from '@/ui'
 
 import AboutUsImage1 from '../../../public/images/about-us/about-us-1.jpg'
@@ -15,18 +14,25 @@ const AboutUs = () => {
       <div className="flex flex-col gap-8">
         <section className="text-white flex flex-col justify-between items-center gap-8 lg:flex-row">
           <div className="max-w-[746px]">
-            <Image src={AboutUsImage1} alt={AboutUsText.fistImageAlt} />
+            <Image src={AboutUsImage1} alt="Фото нашого СТО зовні" />
           </div>
           <div className="flex flex-col gap-6 lg:w-[460px] lg:min-w-[460px]">
-            <h1 className="mb-2 mt-2 text-4xl md:text-5xl">
-              {AboutUsText.title}
-            </h1>
-            <p>{AboutUsText.paragraphs.first}</p>
-            <p>{AboutUsText.paragraphs.second}</p>
+            <h1 className="mb-2 mt-2 text-4xl md:text-5xl">Про нас</h1>
+            <p>
+              &quot;СТО на Дорожній&quot; — це новий автосервіс, який заснований
+              на засадах сімейного бізнесу. Молода команда професіоналів, які
+              постійно розвиваються і впроваджують нові технології для
+              досягнення найкращих результатів на всіх етапах виконання робіт.
+            </p>
+            <p>
+              Ми вибираємо тільки якісний підхід до справи, саме тому ми
+              гарантуємо не тільки першокласне виконання робіт, а й привітне та
+              тепле обслуговування.
+            </p>
             <div className="flex gap-4 flex-wrap">
               <PopUpFormButton />
               <Link href={Urls.ServiceForm}>
-                <Button type="outline">{ButtonText.orderService}</Button>
+                <Button type="outline">Замовити послугу</Button>
               </Link>
             </div>
           </div>
@@ -34,19 +40,22 @@ const AboutUs = () => {
         <section className="text-white flex flex-col-reverse justify-between items-center  gap-8 lg:flex-row">
           <div className="flex flex-col gap-6 lg:w-[460px] lg:min-w-[460px]">
             <p>
-              {AboutUsText.paragraphs.third[0]}
-              <span className="font-bold">
-                {AboutUsText.paragraphs.third[1]}
-              </span>
-              {AboutUsText.paragraphs.third[2]}
+              Автосервіс{' '}
+              <span className="font-bold">&quot;СТО на Дорожній&quot;</span> —
+              це професійна турбота про Ваш автомобіль!
             </p>
             <p>
-              <span className="font-bold">
-                {AboutUsText.paragraphs.fourth[0]}
-              </span>
-              {AboutUsText.paragraphs.fourth[1]}
+              <span className="font-bold">&quot;СТО на Дорожній&quot;</span> —
+              це новий автосервіс, який заснований на засадах сімейного бізнесу.
+              Молода команда професіоналів, які постійно розвиваються і
+              впроваджують нові технології для досягнення найкращих результатів
+              на всіх етапах виконання робіт.
             </p>
-            <p>{AboutUsText.paragraphs.fifth}</p>
+            <p>
+              Ми вибираємо тільки якісний підхід до справи, саме тому ми
+              гарантуємо не тільки першокласне виконання робіт, а й привітне та
+              тепле обслуговування.
+            </p>
           </div>
           <div className="max-w-[746px]">
             <Image src={AboutUsImage2} alt="Фото нашого СТО всередині" />

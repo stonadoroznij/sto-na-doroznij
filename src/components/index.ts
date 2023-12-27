@@ -11,6 +11,7 @@ import QuickForm from './forms/QuickForm'
 import Header from './header/Header'
 import GoogleMap from './map/GoogleMap'
 import MultiSelect from './multiselect/MultiSelect'
+import PricesList from './price/PricesList'
 import ProcessSection from './process-section/ProcessSection'
 import Step from './process-section/Step/Step'
 import Select from './select/Select'
@@ -40,4 +41,5 @@ export {
   MultiSelect,
   Select,
   GoogleMap,
+  PricesList,
 }

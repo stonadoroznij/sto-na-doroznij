@@ -1,14 +1,13 @@
 import React from 'react'
 
 import { FaqCards } from '@/components'
-import faqText from '@/i18n/uk/Faq'
 
-const { faqList } = faqText
+import { FaqData } from './FaqSection.data'
 
 const FaqSection = () => {
   return (
-    <div>
-      {faqList.map((text, index) => {
+    <div className="space-y-2">
+      {FaqData.map((text, index) => {
         return (
           <FaqCards
             key={index}

@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { FormRequest } from '@/app/actions'
-import { ButtonText, Forms } from '@/i18n/uk'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { Button, PhoneInput, TextInput } from '@/ui'
 
@@ -66,19 +65,19 @@ const QuickForm = ({ close }: { close?: () => void }) => {
           className="flex flex-col gap-8 text-white"
         >
           <TextInput<FormValues>
-            placeholder={Forms.fields.name}
+            placeholder="Iм'я"
             label="name"
             register={register}
             error={errors.name?.message}
           />
           <PhoneInput<FormValues>
-            placeholder={Forms.fields.phone}
+            placeholder="Телефон"
             label="phone"
             register={register}
             error={errors.phone?.message}
           />
           <div className="flex justify-center">
-            <Button>{ButtonText.send}</Button>
+            <Button>Надіслати</Button>
           </div>
         </form>
       )}
