@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, Exo_2 } from 'next/font/google'
 import './globals.css'
-import { Header, Footer, PopUpFormButtonFixed } from '../components'
+import { Header, Footer, PopUpFormButtonFixed } from '@/components'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
