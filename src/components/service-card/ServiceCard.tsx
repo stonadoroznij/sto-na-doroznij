@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '@/ui'
+
+import { Urls } from '@/consts'
 import { ButtonText, Services as ServicesText } from '@/i18n/uk'
 import { Service } from '@/types'
-import { Urls } from '@/consts'
+import { Button } from '@/ui'
 
 interface PropsType {
   service: Service

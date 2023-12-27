@@ -1,14 +1,17 @@
 'use client'
+
+import { zodResolver } from '@hookform/resolvers/zod'
+import Image from 'next/image'
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+
 import { FormRequest } from '@/app/actions'
+import { ButtonText, Forms } from '@/i18n/uk'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { Button, PhoneInput, TextInput } from '@/ui'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import { Forms, ButtonText } from '@/i18n/uk'
-import SuccessResponseIcon from '../../../public/icons/success-response.svg'
+
 import FailedResponseIcon from '../../../public/icons/failed-response.svg'
-import Image from 'next/image'
+import SuccessResponseIcon from '../../../public/icons/success-response.svg'
 
 const QuickForm = ({ close }: { close?: () => void }) => {
   const [responseData, setResponseData] = useState<{

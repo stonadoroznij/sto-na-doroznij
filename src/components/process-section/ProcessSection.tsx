@@ -1,9 +1,12 @@
 'use client'
-import YellowCar from '../../../public/yellow-car.svg'
+
 import Image from 'next/image'
-import { PopUpFormButton, Step } from '@/components'
-import { useInView } from 'react-intersection-observer'
 import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+
+import { PopUpFormButton, Step } from '@/components'
+
+import YellowCar from '../../../public/yellow-car.svg'
 
 const ProcessSection = () => {
   const { ref, inView } = useInView({

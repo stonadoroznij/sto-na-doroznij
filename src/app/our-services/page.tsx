@@ -1,10 +1,11 @@
-import { PopUpFormButton, ServiceCard } from '@/components'
-import { Button } from '@/ui'
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
+
+import { PopUpFormButton, ServiceCard } from '@/components'
+import { Urls } from '@/consts'
 import { ButtonText, Services as ServicesText } from '@/i18n/uk'
 import { serviceRepo } from '@/repository'
-import { Urls } from '@/consts'
+import { Button } from '@/ui'
 
 const OurServices = async () => {
   const services = await serviceRepo.getAll()

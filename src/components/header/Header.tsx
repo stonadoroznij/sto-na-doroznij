@@ -1,13 +1,16 @@
 'use client'
-import LocationIcon from '../../../public/icons/location.svg'
+
 import Image from 'next/image'
-import { SocialMedia, SocialMediaBig } from '@/components'
-import MenuItem from './MenuItem'
-import { Logo } from '@/ui'
-import { useEffect, useState } from 'react'
-import { Header as HeaderText } from '@/i18n/uk'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+import { SocialMedia, SocialMediaBig } from '@/components'
 import { Urls } from '@/consts'
+import { Header as HeaderText } from '@/i18n/uk'
+import { Logo } from '@/ui'
+
+import LocationIcon from '../../../public/icons/location.svg'
+import MenuItem from './MenuItem'
 
 const Header = () => {
   return (

@@ -1,11 +1,14 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { FormValues } from '@/schemas/zod-schemas'
-import { Control, useController } from 'react-hook-form'
+
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { Control, useController } from 'react-hook-form'
+
+import { FormValues } from '@/schemas/zod-schemas'
+
 import ArrowIcon from '../../../public/icons/arrow.svg'
-import Tab from './Tab'
 import MultiSelectOptions from './MultiSelectOptions'
+import Tab from './Tab'
 
 export interface Option {
   id: number
@@ -37,8 +40,8 @@ const MultiSelect = ({
     if (serviceIndex === -1) {
       changeHandler([...values, newId])
     } else {
-      const newvalues = values.filter((id) => id !== newId)
-      changeHandler(newvalues)
+      const newValues = values.filter((id) => id !== newId)
+      changeHandler(newValues)
     }
   }
 

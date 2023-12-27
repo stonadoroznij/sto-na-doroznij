@@ -1,5 +1,6 @@
 import { createTransport } from 'nodemailer'
 import { Transporter } from 'nodemailer'
+
 import { EmailData } from '@/types'
 
 class Mailer {

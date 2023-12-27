@@ -1,11 +1,14 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+
 import Image from 'next/image'
-import PhoneIcon from '../../../public/icons/phone.svg'
-import CloseIcon from '../../../public/icons/close.svg'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+
 import { QuickForm } from '@/components'
 import { Forms } from '@/i18n/uk'
-import { usePathname } from 'next/navigation'
+
+import CloseIcon from '../../../public/icons/close.svg'
+import PhoneIcon from '../../../public/icons/phone.svg'
 
 const PopUpFormButtonFixed = () => {
   const [opened, setOpened] = useState(false)

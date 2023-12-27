@@ -1,9 +1,11 @@
-import React from 'react'
 import Image from 'next/image'
-import { Button } from '@/ui'
-import AboutUsImage1 from '../../../public/images/about-us/about-us-2.jpg'
 import Link from 'next/link'
+import React from 'react'
+
 import { Urls } from '@/consts'
+import { Button } from '@/ui'
+
+import AboutUsImage1 from '../../../public/images/about-us/about-us-2.jpg'
 
 const AboutUs = () => {
   return (

@@ -1,7 +1,8 @@
-import React from 'react'
 import Image from 'next/image'
-import LogoImg from '../../../public/logo.svg'
 import Link from 'next/link'
+import React from 'react'
+
+import LogoImg from '../../../public/logo.svg'
 
 const Logo = () => {
   return (
