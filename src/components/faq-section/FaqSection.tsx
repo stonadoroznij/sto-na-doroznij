@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaqCards } from '..'
+import { FaqCards } from '@/components'
 import faqText from '@/i18n/uk/Faq'
 
 const { faqList } = faqText

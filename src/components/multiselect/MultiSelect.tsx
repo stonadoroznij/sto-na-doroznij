@@ -1,9 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { FormValues } from '../../schemas/zod-schemas'
+import { FormValues } from '@/schemas/zod-schemas'
 import { Control, useController } from 'react-hook-form'
 import Image from 'next/image'
-import ArrowIcon from '../../../public/arrow_icon.svg'
+import ArrowIcon from '../../../public/icons/arrow.svg'
 import Tab from './Tab'
 import MultiSelectOptions from './MultiSelectOptions'
 

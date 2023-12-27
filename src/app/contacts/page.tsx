@@ -1,6 +1,7 @@
 import { GoogleMap, SocialMediaBig } from '@/components'
 import { Contacts as ContactsText } from '@/i18n/uk'
 import Link from 'next/link'
+import { Urls } from '@/consts'
 
 const Contacts = () => {
   return (
@@ -26,7 +27,7 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col gap-2 items-center lg:items-start">
             <h3 className="text-2xl font-semibold">{ContactsText.driveToUs}</h3>
-            <Link href="/contacts#map">
+            <Link href={`${Urls.Contacts}#map`}>
               <div className="text-lg">{ContactsText.address}</div>
             </Link>
           </div>

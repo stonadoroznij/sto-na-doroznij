@@ -1,13 +1,11 @@
 'use client'
-import YellowCar from '../../../public/YellowCar.svg'
+import YellowCar from '../../../public/yellow-car.svg'
 import Image from 'next/image'
-import { PopUpFormButton, Step } from '..'
-import { Button } from '@/ui'
-import { ButtonType } from '@/ui/buttons/Button'
+import { PopUpFormButton, Step } from '@/components'
 import { useInView } from 'react-intersection-observer'
 import { useEffect, useRef, useState } from 'react'
 
-const ProcesSection = () => {
+const ProcessSection = () => {
   const { ref, inView } = useInView({
     threshold: 0.75,
   })
@@ -113,10 +111,10 @@ const ProcesSection = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <PopUpFormButton type={ButtonType.outline} />
+        <PopUpFormButton type="outline" />
       </div>
     </div>
   )
 }
 
-export default ProcesSection
+export default ProcessSection

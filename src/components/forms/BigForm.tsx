@@ -1,11 +1,11 @@
 'use client'
-import { FormValues, formSchema } from '../../schemas/zod-schemas'
-import { Button, PhoneInput, TextArea, TextInput } from '../../ui'
+import { FormValues, formSchema } from '@/schemas/zod-schemas'
+import { Button, PhoneInput, TextArea, TextInput } from '@/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMemo, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { FormRequest } from '../../app/actions'
-import { MultiSelect, Select } from '..'
+import { FormRequest } from '@/app/actions'
+import { MultiSelect, Select } from '@/components'
 import { Forms, ButtonText } from '@/i18n/uk'
 import { useSearchParams } from 'next/navigation'
 
@@ -21,8 +21,8 @@ interface PropsType {
 const BigForm = ({ services }: PropsType) => {
   const [responseData, setResponseData] = useState<{
     message: string
-    sucsses: boolean
-  }>({ message: '', sucsses: true })
+    success: boolean
+  }>({ message: '', success: true })
   const searchParams = useSearchParams()
   const defaultService = searchParams.get('service')
 
@@ -49,10 +49,10 @@ const BigForm = ({ services }: PropsType) => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const response = await FormRequest(data)
-    if (response.message && response.sucsses) {
+    if (response.message && response.success) {
       setResponseData(response)
     }
-    setTimeout(() => setResponseData({ message: '', sucsses: true }), 4000)
+    setTimeout(() => setResponseData({ message: '', success: true }), 4000)
     reset()
   }
 
@@ -150,12 +150,12 @@ const BigForm = ({ services }: PropsType) => {
           <Button>{ButtonText.send}</Button>
         </div>
         {!responseData.message && <div className="w-full h-6" />}
-        {responseData.message && responseData.sucsses && (
+        {responseData.message && responseData.success && (
           <div className="w-full h-6 text-center text-base text-green-400">
             {responseData.message}
           </div>
         )}
-        {responseData.message && !responseData.sucsses && (
+        {responseData.message && !responseData.success && (
           <div className="w-full h-6 text-center text-base text-red-400">
             {responseData.message}
           </div>

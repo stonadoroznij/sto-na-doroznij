@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import AboutUsImage1 from '../../../public/images/aboutus/about-us-1.jpg'
-import AboutUsImage2 from '../../../public/images/aboutus/about-us-2.jpg'
+import AboutUsImage1 from '../../../public/images/about-us/about-us-1.jpg'
+import AboutUsImage2 from '../../../public/images/about-us/about-us-2.jpg'
 import { Button } from '@/ui'
-import { ButtonType } from '@/ui/buttons/Button'
 import Link from 'next/link'
 import { AboutUs as AboutUsText, ButtonText } from '@/i18n/uk'
 import { PopUpFormButton } from '@/components'
+import { Urls } from '@/consts'
 
 const AboutUs = () => {
   return (
@@ -24,10 +24,8 @@ const AboutUs = () => {
             <p>{AboutUsText.paragraphs.second}</p>
             <div className="flex gap-4 flex-wrap">
               <PopUpFormButton />
-              <Link href={'/serviceform'}>
-                <Button type={ButtonType.outline}>
-                  {ButtonText.orderService}
-                </Button>
+              <Link href={Urls.ServiceForm}>
+                <Button type="outline">{ButtonText.orderService}</Button>
               </Link>
             </div>
           </div>

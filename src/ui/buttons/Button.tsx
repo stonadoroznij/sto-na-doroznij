@@ -1,16 +1,13 @@
 import React from 'react'
 
-export enum ButtonType {
-  fill = 'fill',
-  outline = 'outline',
-}
+type ButtonType = 'fill' | 'outline'
 
 interface PropsType {
   children: string
   type?: ButtonType
 }
 
-const Button = ({ children, type = ButtonType.fill }: PropsType) => {
+const Button = ({ children, type = 'fill' }: PropsType) => {
   if (type === 'outline') {
     return (
       <button className="btn text-accent-yellow border border-accent-yellow transition-all duration-500 ease-in-out hover:bg-accent-yellow hover:text-coal-800 hover:shadow-accent-30">

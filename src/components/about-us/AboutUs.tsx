@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/ui'
-import AboutUsImage1 from '../../../public/images/aboutus/about-us-1.jpg'
-import { ButtonType } from '@/ui/buttons/Button'
+import AboutUsImage1 from '../../../public/images/about-us/about-us-2.jpg'
 import Link from 'next/link'
+import { Urls } from '@/consts'
 
 const AboutUs = () => {
   return (
@@ -20,8 +20,8 @@ const AboutUs = () => {
           будь-якої марки авто.
         </p>
         <div className="flex justify-end">
-          <Link href="/aboutus">
-            <Button type={ButtonType.outline}>Читати повністю</Button>
+          <Link href={Urls.AboutUs}>
+            <Button type="outline">Читати повністю</Button>
           </Link>
         </div>
       </div>

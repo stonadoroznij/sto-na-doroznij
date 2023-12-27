@@ -10,7 +10,7 @@ export async function FormRequest(formData: FormValues) {
   const parse = formSchema.safeParse(formData)
 
   const errorMessage = {
-    sucsses: false,
+    success: false,
     message: Actions.form.errorMessages,
   }
 
@@ -33,8 +33,8 @@ export async function FormRequest(formData: FormValues) {
     })
 
     return {
-      sucsses: true,
-      message: Actions.form.sucssesMessages,
+      success: true,
+      message: Actions.form.successMessages,
     }
   } catch (e) {
     console.log(e)
