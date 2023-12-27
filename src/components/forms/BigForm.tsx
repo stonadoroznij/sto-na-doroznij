@@ -7,7 +7,6 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { FormRequest } from '@/app/actions'
 import { MultiSelect, Select } from '@/components'
-import { ButtonText, Forms } from '@/i18n/uk'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { Button, PhoneInput, TextArea, TextInput } from '@/ui'
 
@@ -72,21 +71,21 @@ const BigForm = ({ services }: PropsType) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
-        <div className="font-bold">{Forms.bigForm.sectionFirst}</div>
+        <div className="font-bold">Що вас цікавить?</div>
         <MultiSelect
           name="services"
-          placeholder={Forms.fields.services}
+          placeholder="Оберіть послуги"
           options={services}
           defaultOption={defaultService}
           control={control}
         />
       </div>
       <div className="flex flex-col gap-4">
-        <div className="font-bold">{Forms.bigForm.sectionSecond}</div>
+        <div className="font-bold">Контактні дані</div>
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder={Forms.fields.name}
+              placeholder="Iм'я"
               label="name"
               register={register}
               error={errors.name?.message}
@@ -94,7 +93,7 @@ const BigForm = ({ services }: PropsType) => {
           </div>
           <div className="flex-1">
             <PhoneInput<FormValues>
-              placeholder={Forms.fields.phone}
+              placeholder="Телефон"
               label="phone"
               register={register}
               error={errors.phone?.message}
@@ -103,11 +102,11 @@ const BigForm = ({ services }: PropsType) => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="font-bold">{Forms.bigForm.sectionThird}</div>
+        <div className="font-bold">Автомобіль</div>
         <div className="flex flex-col gap-6 md:flex-row md:justify-between">
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder={Forms.fields.carBrand}
+              placeholder="Марка"
               label="carBrand"
               register={register}
               error={errors.carBrand?.message}
@@ -115,7 +114,7 @@ const BigForm = ({ services }: PropsType) => {
           </div>
           <div className="flex-1">
             <TextInput<FormValues>
-              placeholder={Forms.fields.carModel}
+              placeholder="Модель"
               label="carModel"
               register={register}
               error={errors.carModel?.message}
@@ -124,7 +123,7 @@ const BigForm = ({ services }: PropsType) => {
           <div className="flex-1">
             <Select
               name="carYear"
-              placeholder={Forms.fields.carYear}
+              placeholder="Рік"
               options={years}
               control={control}
             />
@@ -132,7 +131,7 @@ const BigForm = ({ services }: PropsType) => {
         </div>
         <div className="mt-2">
           <TextInput<FormValues>
-            placeholder={Forms.fields.vinCode}
+            placeholder="VIN-Code"
             label="vinCode"
             register={register}
             error={errors.vinCode?.message}
@@ -142,14 +141,14 @@ const BigForm = ({ services }: PropsType) => {
           <TextArea<FormValues>
             name="message"
             control={control}
-            placeholder={Forms.fields.message}
+            placeholder="Напишіть повідомлення"
             error={errors.message?.message}
           />
         </div>
       </div>
       <div className="flex flex-col items-center gap-2">
         <div className="flex justify-center">
-          <Button>{ButtonText.send}</Button>
+          <Button>Надіслати</Button>
         </div>
         {!responseData.message && <div className="w-full h-6" />}
         {responseData.message && responseData.success && (
