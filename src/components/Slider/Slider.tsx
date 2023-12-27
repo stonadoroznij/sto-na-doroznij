@@ -1,12 +1,15 @@
 'use client'
+
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { Pagination, Navigation } from 'swiper/modules'
+import 'swiper/css/pagination'
+import { Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import { ServiceCard } from '@/components'
 import { Service } from '@/types'
+
 interface PropsType {
   services: Service[]
 }

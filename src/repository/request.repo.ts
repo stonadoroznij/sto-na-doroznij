@@ -1,5 +1,5 @@
-import { prisma } from '@/services/db'
 import { FormValues } from '@/schemas/zod-schemas'
+import { prisma } from '@/services/db'
 
 class Request {
   public async add(formData: FormValues) {

@@ -1,9 +1,10 @@
-import React from 'react'
-import { QuickForm, SocialMediaBig } from '@/components'
-import { Logo } from '@/ui'
-import { Footer as FooterText } from '@/i18n/uk'
 import Link from 'next/link'
+import React from 'react'
+
+import { QuickForm, SocialMediaBig } from '@/components'
 import { Urls } from '@/consts'
+import { Footer as FooterText } from '@/i18n/uk'
+import { Logo } from '@/ui'
 
 const Footer = () => {
   return (

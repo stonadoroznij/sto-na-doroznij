@@ -1,10 +1,13 @@
 'use client'
+
 import Image from 'next/image'
-import CloseIcon from '../../../public/icons/close.svg'
+import { useEffect, useState } from 'react'
+
 import { QuickForm } from '@/components'
 import { ButtonText, Forms } from '@/i18n/uk'
-import { useEffect, useState } from 'react'
 import { Button } from '@/ui'
+
+import CloseIcon from '../../../public/icons/close.svg'
 
 const PopUpFormButton = ({ type = 'fill' }: { type?: 'fill' | 'outline' }) => {
   const [opened, setOpened] = useState<boolean>(false)

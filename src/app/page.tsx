@@ -1,21 +1,24 @@
 'use server'
+
 import Image from 'next/image'
-import BgImage from '../../public/images/main-banner-desktop.jpg'
-import BgImageMobile from '../../public/images/main-banner-mobile.jpg'
-import { Button } from '@/ui'
+import Link from 'next/link'
+
 import {
-  ProcessSection,
   AboutUs,
   FaqSection,
   GoogleMap,
-  Slider,
   PopUpFormButton,
+  ProcessSection,
+  Slider,
 } from '@/components'
 import { AdvantageSection } from '@/components'
-import BusImg from '../../public/bus.svg'
-import Link from 'next/link'
-import { serviceRepo } from '@/repository'
 import { Urls } from '@/consts'
+import { serviceRepo } from '@/repository'
+import { Button } from '@/ui'
+
+import BusImg from '../../public/bus.svg'
+import BgImage from '../../public/images/main-banner-desktop.jpg'
+import BgImageMobile from '../../public/images/main-banner-mobile.jpg'
 
 export default async function Home() {
   const services = await serviceRepo.getAll()

@@ -1,12 +1,13 @@
-import React from 'react'
 import Image from 'next/image'
-import AboutUsImage1 from '../../../public/images/about-us/about-us-1.jpg'
-import AboutUsImage2 from '../../../public/images/about-us/about-us-2.jpg'
-import { Button } from '@/ui'
 import Link from 'next/link'
-import { AboutUs as AboutUsText, ButtonText } from '@/i18n/uk'
+
 import { PopUpFormButton } from '@/components'
 import { Urls } from '@/consts'
+import { AboutUs as AboutUsText, ButtonText } from '@/i18n/uk'
+import { Button } from '@/ui'
+
+import AboutUsImage1 from '../../../public/images/about-us/about-us-1.jpg'
+import AboutUsImage2 from '../../../public/images/about-us/about-us-2.jpg'
 
 const AboutUs = () => {
   return (

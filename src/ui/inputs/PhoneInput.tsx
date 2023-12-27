@@ -1,7 +1,8 @@
 'use client'
-import { FieldValues, Path, UseFormRegister } from 'react-hook-form'
+
 import { InputMask } from '@react-input/mask'
 import { useState } from 'react'
+import { FieldValues, Path, UseFormRegister } from 'react-hook-form'
 
 type PropsType<T extends FieldValues> = {
   label: Path<T>

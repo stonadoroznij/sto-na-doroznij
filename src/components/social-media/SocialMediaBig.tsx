@@ -1,10 +1,12 @@
-import React from 'react'
-import TikTokIcon from '../../../public/social-media-icons/tik-tok-32.svg'
-import InstagramIcon from '../../../public/social-media-icons/instagram-32.svg'
-import FacebookIcon from '../../../public/social-media-icons/facebook-32.svg'
-import TelegramIcon from '../../../public/social-media-icons/telegram-32.svg'
 import Image from 'next/image'
+import React from 'react'
+
 import { SocialMediaLinks } from '@/i18n/uk'
+
+import FacebookIcon from '../../../public/social-media-icons/facebook-32.svg'
+import InstagramIcon from '../../../public/social-media-icons/instagram-32.svg'
+import TelegramIcon from '../../../public/social-media-icons/telegram-32.svg'
+import TikTokIcon from '../../../public/social-media-icons/tik-tok-32.svg'
 
 const SocialMediaBig = () => {
   return (

@@ -1,5 +1,6 @@
-import { BigForm } from '@/components'
 import React from 'react'
+
+import { BigForm } from '@/components'
 import { Forms } from '@/i18n/uk'
 import { serviceRepo } from '@/repository'
 

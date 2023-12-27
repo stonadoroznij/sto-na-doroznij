@@ -1,7 +1,8 @@
-import { GoogleMap, SocialMediaBig } from '@/components'
-import { Contacts as ContactsText } from '@/i18n/uk'
 import Link from 'next/link'
+
+import { GoogleMap, SocialMediaBig } from '@/components'
 import { Urls } from '@/consts'
+import { Contacts as ContactsText } from '@/i18n/uk'
 
 const Contacts = () => {
   return (
