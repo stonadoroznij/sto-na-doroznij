@@ -48,6 +48,16 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-coal-300;
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+  }
 }
 
 @layer components {
@@ -88,7 +98,7 @@
   }
 
   .animate-car {
-    animation: ride 3s ease-in-out 0s normal forwards;
+    animation: ride 4s ease-in-out 0s normal forwards;
   }
 
   @keyframes ride {
@@ -104,16 +114,16 @@
     animation: appear 0.5s ease-out 0s normal forwards;
   }
   .animate-point-2 {
-    animation: appear 0.5s ease-out 1s normal forwards;
+    animation: appear 0.5s ease-out 1.25s normal forwards;
   }
   .animate-point-3 {
-    animation: appear 0.5s ease-out 1.5s normal forwards;
-  }
-  .animate-point-4 {
     animation: appear 0.5s ease-out 2s normal forwards;
   }
+  .animate-point-4 {
+    animation: appear 0.5s ease-out 2.75s normal forwards;
+  }
   .animate-point-5 {
-    animation: appear 0.5s ease-out 3s normal forwards;
+    animation: appear 0.5s ease-out 4s normal forwards;
   }
 
   @keyframes appear {
@@ -124,19 +134,8 @@
       @apply bg-accent-yellow;
     }
   }
-  .icon-1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  .icon-2 {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-  }
-  .icon-3 {
-    position: absolute;
-    top: 50%;
-    left: 45%;
+
+  .overflow-hidden {
+    overflow: hidden;
   }
 }

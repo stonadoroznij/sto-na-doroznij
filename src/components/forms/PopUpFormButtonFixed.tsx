@@ -1,17 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+
 import Image from 'next/image'
-import PhoneIcon from '../../../public/phone_icon.svg'
-import CloseIcon from '../../../public/close_icon.svg'
-import { QuickForm } from '..'
-import { Forms } from '@/i18n/uk'
+import { usePathname } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+
+import { QuickForm } from '@/components'
+
+import CloseIcon from '../../../public/icons/close.svg'
+import PhoneIcon from '../../../public/icons/phone.svg'
 
 const PopUpFormButtonFixed = () => {
   const [opened, setOpened] = useState(false)
+  const pathName = usePathname()
 
   const toggleOpened = () => {
     setOpened((prev) => !prev)
   }
+
+  useEffect(() => {
+    setOpened(false)
+  }, [pathName])
 
   return (
     <>
@@ -26,9 +34,9 @@ const PopUpFormButtonFixed = () => {
           <div className="relative bg-coal-800 p-8 pr-12 pl-12 w-[calc(100vw-64px)] rounded-lg border border-coal-600 shadow-dark xs:mr-12 xs:w-fit">
             <div className="flex flex-col gap-8">
               <div className="text-2xl font-semibold text-white text-center">
-                {Forms.popUpForm.title}
+                Замовити зворотній зв’язок
               </div>
-              <QuickForm />
+              <QuickForm close={toggleOpened} />
             </div>
             <div
               onClick={toggleOpened}

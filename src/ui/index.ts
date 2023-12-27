@@ -1,7 +1,8 @@
 import Button from './buttons/Button'
-import TextInput from './inputs/TextInput'
-import Logo from './logo/Logo'
+import PhoneInput from './inputs/PhoneInput'
 import TextArea from './inputs/TextArea'
+import TextInput from './inputs/TextInput'
 import Loader from './loader/Loader'
+import Logo from './logo/Logo'
 
-export { Button, TextInput, Logo, TextArea, Loader }
+export { Button, TextInput, PhoneInput, Logo, TextArea, Loader }

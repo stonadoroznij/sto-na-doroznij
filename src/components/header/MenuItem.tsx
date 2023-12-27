@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
-import { usePathname } from 'next/navigation'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
 
 interface PropsType {
   href: string

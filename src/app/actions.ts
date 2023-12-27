@@ -1,16 +1,17 @@
 'use server'
-import { bot } from '@/services/telegram'
-import { mailer } from '@/services/email'
-import { RequestMessage } from '@/services/utils'
-import { FormValues, formSchema } from '@/schemas/zod-schemas'
-import { requestRepo } from '@/repository'
+
 import { Actions, Email } from '@/i18n/uk'
+import { requestRepo, serviceRepo } from '@/repository'
+import { FormValues, formSchema } from '@/schemas/zod-schemas'
+import { mailer } from '@/services/email'
+import { bot } from '@/services/telegram'
+import { RequestMessage } from '@/services/utils'
 
 export async function FormRequest(formData: FormValues) {
   const parse = formSchema.safeParse(formData)
 
   const errorMessage = {
-    sucsses: false,
+    success: false,
     message: Actions.form.errorMessages,
   }
 
@@ -20,7 +21,8 @@ export async function FormRequest(formData: FormValues) {
 
   try {
     const res = await requestRepo.add(formData)
-    const services = formData.services || []
+    const servicesList = await serviceRepo.getByIdList(formData.services || [])
+    const services = servicesList.map((s) => s.name)
 
     const message = new RequestMessage(res, services)
 
@@ -32,8 +34,8 @@ export async function FormRequest(formData: FormValues) {
     })
 
     return {
-      sucsses: true,
-      message: Actions.form.sucssesMessages,
+      success: true,
+      message: Actions.form.successMessages,
     }
   } catch (e) {
     console.log(e)
