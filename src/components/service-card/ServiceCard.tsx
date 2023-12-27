@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/ui'
-import { ButtonType } from '@/ui/buttons/Button'
 import { ButtonText, Services as ServicesText } from '@/i18n/uk'
-import { Service } from '../../types'
+import { Service } from '@/types'
+import { Urls } from '@/consts'
 
 interface PropsType {
   service: Service
@@ -36,13 +36,13 @@ const ServiceCard = ({ service }: PropsType) => {
       </div>
       <div className="flex flex-col gap-4 items-center">
         <Link
-          href={'/price'}
+          href={Urls.Price}
           className="text-sm text-coal-300 underline font-bold hover:text-accent-yellow"
         >
           {ButtonText.price}
         </Link>
-        <Link href={`/serviceform?service=${service.id}`}>
-          <Button type={ButtonType.outline}>{ButtonText.orderService}</Button>
+        <Link href={`${Urls.ServiceForm}?service=${service.id}`}>
+          <Button type="outline">{ButtonText.orderService}</Button>
         </Link>
       </div>
     </div>

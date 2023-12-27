@@ -1,7 +1,7 @@
-import { BigForm } from '../../components'
+import { BigForm } from '@/components'
 import React from 'react'
 import { Forms } from '@/i18n/uk'
-import { serviceRepo } from '../../repository'
+import { serviceRepo } from '@/repository'
 
 const ServiceForm = async () => {
   const services = await serviceRepo.getAll()

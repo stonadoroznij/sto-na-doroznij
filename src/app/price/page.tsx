@@ -1,4 +1,4 @@
-import { Price as Prices } from '../../i18n/uk'
+import { Price as Prices } from '@/i18n/uk'
 
 const Price = () => {
   return (

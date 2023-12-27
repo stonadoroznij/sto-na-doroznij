@@ -1,12 +1,13 @@
 'use client'
-import LocationIcon from '../../../public/LocationIcon.svg'
+import LocationIcon from '../../../public/icons/location.svg'
 import Image from 'next/image'
-import { SocialMedia, SocialMediaBig } from '..'
+import { SocialMedia, SocialMediaBig } from '@/components'
 import MenuItem from './MenuItem'
-import { Logo } from '../../ui'
+import { Logo } from '@/ui'
 import { useEffect, useState } from 'react'
-import { Header as HeaderText } from '../../i18n/uk'
+import { Header as HeaderText } from '@/i18n/uk'
 import Link from 'next/link'
+import { Urls } from '@/consts'
 
 const Header = () => {
   return (
@@ -16,10 +17,10 @@ const Header = () => {
           <Logo />
         </div>
         <div className="hidden lg:flex lg:gap-6">
-          <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
-          <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
-          <MenuItem href="/price">{HeaderText.price}</MenuItem>
-          <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
+          <MenuItem href={Urls.OurServices}>{HeaderText.services}</MenuItem>
+          <MenuItem href={Urls.AboutUs}>{HeaderText.aboutus}</MenuItem>
+          <MenuItem href={Urls.Price}>{HeaderText.price}</MenuItem>
+          <MenuItem href={Urls.Contacts}>{HeaderText.contacts}</MenuItem>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
           <SocialMedia />
@@ -34,7 +35,7 @@ const Header = () => {
           </div>
           <div className="flex justify-start items-center gap-2">
             <Image src={LocationIcon} alt="Location icon" />
-            <Link href="/contacts#map">
+            <Link href={`${Urls.Contacts}#map`}>
               <div className="w-[152px]">{HeaderText.address}</div>
             </Link>
           </div>
@@ -83,16 +84,16 @@ const BurgerMenu = () => {
             <MenuItem href="/">{HeaderText.main}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
+            <MenuItem href={Urls.OurServices}>{HeaderText.services}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
+            <MenuItem href={Urls.AboutUs}>{HeaderText.aboutus}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/price">{HeaderText.price}</MenuItem>
+            <MenuItem href={Urls.Price}>{HeaderText.price}</MenuItem>
           </div>
           <div onClick={toggleOpen}>
-            <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
+            <MenuItem href={Urls.Contacts}>{HeaderText.contacts}</MenuItem>
           </div>
         </div>
         <div className="flex flex-col items-center gap-6 text-xl">
@@ -109,7 +110,7 @@ const BurgerMenu = () => {
             onClick={toggleOpen}
             className="flex justify-start items-center gap-2"
           >
-            <Link href="/contacts#map">
+            <Link href={`${Urls.Contacts}#map`}>
               <div className="w-[152px] text-center">{HeaderText.address}</div>
             </Link>
           </div>

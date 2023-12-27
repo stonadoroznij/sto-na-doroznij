@@ -1,13 +1,12 @@
 'use client'
 import Image from 'next/image'
-import CloseIcon from '../../../public/close_icon.svg'
-import { QuickForm } from '..'
+import CloseIcon from '../../../public/icons/close.svg'
+import { QuickForm } from '@/components'
 import { ButtonText, Forms } from '@/i18n/uk'
 import { useEffect, useState } from 'react'
 import { Button } from '@/ui'
-import { ButtonType } from '@/ui/buttons/Button'
 
-const PopUpFormButton = ({ type = ButtonType.fill }: { type?: ButtonType }) => {
+const PopUpFormButton = ({ type = 'fill' }: { type?: 'fill' | 'outline' }) => {
   const [opened, setOpened] = useState<boolean>(false)
 
   const toggleOpened = () => {

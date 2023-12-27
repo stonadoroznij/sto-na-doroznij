@@ -1,11 +1,11 @@
 import React from 'react'
-import Advantages1 from '../../../public/AdvantagesIcons/Advantages-1.svg'
-import Advantages2 from '../../../public/AdvantagesIcons/Advantages-2.svg'
-import Advantages3 from '../../../public/AdvantagesIcons/Advantages-3.svg'
-import Advantages4 from '../../../public/AdvantagesIcons/Advantages-4.svg'
-import Advantages5 from '../../../public/AdvantagesIcons/Advantages-5.svg'
-import Advantages6 from '../../../public/AdvantagesIcons/Advantages-6.svg'
-import { AdvantagesCard } from '..'
+import Advantages1 from '../../../public/advantages-icons/advantages-1.svg'
+import Advantages2 from '../../../public/advantages-icons/advantages-2.svg'
+import Advantages3 from '../../../public/advantages-icons/advantages-3.svg'
+import Advantages4 from '../../../public/advantages-icons/advantages-4.svg'
+import Advantages5 from '../../../public/advantages-icons/advantages-5.svg'
+import Advantages6 from '../../../public/advantages-icons/advantages-6.svg'
+import { AdvantagesCard } from '@/components'
 
 const AdvantageSection = () => {
   return (

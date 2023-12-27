@@ -6,15 +6,15 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Forms, ButtonText } from '@/i18n/uk'
-import GoodResponseIcon from '../../../public/good_response.svg'
-import BadResponseIcon from '../../../public/bad_response.svg'
+import SuccessResponseIcon from '../../../public/icons/success-response.svg'
+import FailedResponseIcon from '../../../public/icons/failed-response.svg'
 import Image from 'next/image'
 
 const QuickForm = ({ close }: { close?: () => void }) => {
   const [responseData, setResponseData] = useState<{
     message: string
-    sucsses: boolean
-  }>({ message: '', sucsses: true })
+    success: boolean
+  }>({ message: '', success: true })
 
   const {
     register,
@@ -27,11 +27,11 @@ const QuickForm = ({ close }: { close?: () => void }) => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const response = await FormRequest(data)
-    if (response.message && response.sucsses) {
+    if (response.message && response.success) {
       setResponseData(response)
     }
     setTimeout(() => {
-      setResponseData({ message: '', sucsses: true })
+      setResponseData({ message: '', success: true })
       if (close) {
         close()
       }
@@ -42,16 +42,16 @@ const QuickForm = ({ close }: { close?: () => void }) => {
   return (
     <>
       {responseData.message ? (
-        responseData.sucsses ? (
+        responseData.success ? (
           <div className="flex flex-col gap-4 items-center">
-            <Image src={GoodResponseIcon} alt="good response" />
+            <Image src={SuccessResponseIcon} alt="good response" />
             <div className="w-full text-center text-lg text-green-400">
               {responseData.message}
             </div>
           </div>
         ) : (
           <div className="flex flex-col gap-4 items-center">
-            <Image src={BadResponseIcon} alt="bad response" />
+            <Image src={FailedResponseIcon} alt="bad response" />
             <div className="w-full text-center text-lg text-red-400">
               {responseData.message}
             </div>

@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="uk-UA"
       className={`${montserrat.variable} ${exo.variable} bg-coal-800`}
     >
       <body>

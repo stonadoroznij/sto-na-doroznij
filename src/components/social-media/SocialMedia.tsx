@@ -1,10 +1,10 @@
 import React from 'react'
-import TikTokIcon from '../../../public/socialMediaIcons/TikTok.svg'
-import InstagramIcon from '../../../public/socialMediaIcons/Instagram.svg'
-import FacebookIcon from '../../../public/socialMediaIcons/Facebook.svg'
-import TelegramIcon from '../../../public/socialMediaIcons/Telegram.svg'
+import TikTokIcon from '../../../public/social-media-icons/tik-tok.svg'
+import InstagramIcon from '../../../public/social-media-icons/instagram.svg'
+import FacebookIcon from '../../../public/social-media-icons/facebook.svg'
+import TelegramIcon from '../../../public/social-media-icons/telegram.svg'
 import Image from 'next/image'
-import { SocialMediaLinks } from '../../i18n/uk'
+import { SocialMediaLinks } from '@/i18n/uk'
 
 const SocialMedia = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import CheckIcon from '../../../public/check_icon.svg'
+import CheckIcon from '../../../public/icons/check.svg'
 import { Option } from './MultiSelect'
 
 const MultiSelectOptions = ({

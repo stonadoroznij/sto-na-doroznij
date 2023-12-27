@@ -1,10 +1,10 @@
-import { ButtonType } from '@/ui/buttons/Button'
-import { PopUpFormButton, ServiceCard } from '../../components'
-import { Button } from '../../ui'
+import { PopUpFormButton, ServiceCard } from '@/components'
+import { Button } from '@/ui'
 import React from 'react'
 import Link from 'next/link'
 import { ButtonText, Services as ServicesText } from '@/i18n/uk'
-import { serviceRepo } from '../../repository'
+import { serviceRepo } from '@/repository'
+import { Urls } from '@/consts'
 
 const OurServices = async () => {
   const services = await serviceRepo.getAll()
@@ -20,8 +20,8 @@ const OurServices = async () => {
         </div>
         <div className="flex justify-center mt-12 flex-wrap gap-4">
           <PopUpFormButton />
-          <Link href={'/serviceform'}>
-            <Button type={ButtonType.outline}>{ButtonText.orderService}</Button>
+          <Link href={Urls.ServiceForm}>
+            <Button type="outline">{ButtonText.orderService}</Button>
           </Link>
         </div>
       </section>
