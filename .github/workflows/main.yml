@@ -1,0 +1,11 @@
+name: CI/CD Workflow
+on:
+  push:
+    branches:
+      - feature/docker-compose
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: bash deploy.sh
