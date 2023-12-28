@@ -1,25 +1,21 @@
 {
-  "name": "cto-na-dorozhniy",
+  "name": "sto-na-dorozhniy",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "dotenv -e .env.development.local -- npx prisma migrate dev",
     "format": "prettier . --write",
     "prepare": "husky install",
     "commit": "cz"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
-    "@prisma/client": "^5.6.0",
     "@react-input/mask": "^1.0.20",
-    "@vercel/postgres": "^0.5.1",
     "classnames": "^2.4.0",
     "next": "14.0.2",
-    "nodemailer": "^6.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
@@ -27,13 +23,11 @@
     "react-intersection-observer": "^9.5.3",
     "swiper": "^11.0.5",
     "swiper-react": "^1.0.0",
-    "telegraf": "^4.15.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20",
-    "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
@@ -43,7 +37,6 @@
     "eslint-config-next": "14.0.2",
     "husky": "^8.0.3",
     "postcss": "^8",
-    "prisma": "^5.6.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
