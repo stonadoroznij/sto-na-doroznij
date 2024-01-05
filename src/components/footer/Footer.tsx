@@ -1,8 +1,9 @@
-import React from 'react'
-import { QuickForm, SocialMediaBig } from '..'
-import { Logo } from '../../ui'
-import { Footer as FooterText } from '@/i18n/uk'
 import Link from 'next/link'
+import React from 'react'
+
+import { QuickForm, SocialMediaBig } from '@/components'
+import { Contacts, Urls } from '@/consts'
+import { Logo } from '@/ui'
 
 const Footer = () => {
   return (
@@ -19,31 +20,27 @@ const Footer = () => {
             <div className="flex flex-col justify-start items-center gap-12 md:flex-row md:justify-between">
               <div className="flex-1 flex flex-col gap-8 max-w-xs">
                 <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">
-                    {FooterText.contacts}
-                  </div>
-                  <div className="">
-                    <Link href="/contacts#map">{FooterText.address}</Link>
+                  <div className="text-2xl font-semibold">Контакти</div>
+                  <div>
+                    <Link href={`${Urls.Contacts}#map`}>
+                      {Contacts.Address}
+                    </Link>
                     <br />
-                    <a href={`tel:${FooterText.phone.replaceAll(' ', '-')}`}>
-                      {FooterText.phone}
+                    <a href={`tel:${Contacts.Phone.replaceAll(' ', '-')}`}>
+                      {Contacts.Phone}
                     </a>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">
-                    {FooterText.workingTime.title}
-                  </div>
+                  <div className="text-2xl font-semibold">Графік роботи</div>
                   <div className="">
-                    {FooterText.workingTime.first}
+                    {Contacts.WorkingHours[0]}
                     <br />
-                    {FooterText.workingTime.second}
+                    {Contacts.WorkingHours[1]}
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <div className="text-2xl font-semibold">
-                    {FooterText.socialMedia}
-                  </div>
+                  <div className="text-2xl font-semibold">Соціальні мережі</div>
                   <SocialMediaBig />
                 </div>
               </div>

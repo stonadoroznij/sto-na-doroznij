@@ -1,4 +1,4 @@
-import { MessageData, MessageConfig } from '@/types'
+import { MessageConfig, MessageData } from '@/types'
 
 const TelegramBot = {
   writePassword: 'Введіть пароль!',

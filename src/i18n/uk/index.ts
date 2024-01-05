@@ -1,29 +1,6 @@
-import TelegramBot from './telegramBot'
-import Email from './Email'
 import Actions from './actions'
-import Header from './Header'
-import Footer from './Footer'
-import AboutUs from './AboutUs'
-import ButtonText from './ButtonText'
-import Contacts from './Contacts'
-import Services from './Services'
-import Forms from './Forms'
-import FormError from './FormError'
-import Price from './Price'
-import SocialMediaLinks from './SocialMediaLinks'
+import Email from './email'
+import FormError from './formError'
+import TelegramBot from './telegramBot'
 
-export {
-  TelegramBot,
-  Email,
-  Actions,
-  Header,
-  Footer,
-  AboutUs,
-  ButtonText,
-  Contacts,
-  Services,
-  Forms,
-  FormError,
-  Price,
-  SocialMediaLinks,
-}
+export { TelegramBot, Email, Actions, FormError }

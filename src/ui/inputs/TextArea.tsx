@@ -1,13 +1,9 @@
 'use client'
-import { FormValues } from '@/schemas/zod-schemas'
+
 import { useState } from 'react'
-import {
-  Control,
-  FieldValues,
-  Path,
-  UseFormRegister,
-  useController,
-} from 'react-hook-form'
+import { Control, FieldValues, useController } from 'react-hook-form'
+
+import { FormValues } from '@/schemas/zod-schemas'
 
 type PropsType<T extends FieldValues> = {
   name: keyof FormValues

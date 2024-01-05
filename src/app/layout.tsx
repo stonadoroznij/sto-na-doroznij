@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import { Montserrat, Exo_2 } from 'next/font/google'
+import { Exo_2, Montserrat } from 'next/font/google'
+
+import { Footer, Header, PopUpFormButtonFixed } from '@/components'
+
 import './globals.css'
-import { Header, Footer, PopUpFormButtonFixed } from '../components'
 
 const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
@@ -29,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="uk-UA"
       className={`${montserrat.variable} ${exo.variable} bg-coal-800`}
     >
       <body>

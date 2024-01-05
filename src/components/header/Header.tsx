@@ -1,12 +1,15 @@
 'use client'
-import LocationIcon from '../../../public/LocationIcon.svg'
+
 import Image from 'next/image'
-import { SocialMedia, SocialMediaBig } from '..'
-import MenuItem from './MenuItem'
-import { Logo } from '../../ui'
-import { useEffect, useState } from 'react'
-import { Header as HeaderText } from '../../i18n/uk'
 import Link from 'next/link'
+
+import { SocialMedia } from '@/components'
+import { Contacts, Urls } from '@/consts'
+import { Logo } from '@/ui'
+
+import LocationIcon from '../../../public/icons/location.svg'
+import BurgerMenu from './BurgerMenu'
+import MenuItem from './MenuItem'
 
 const Header = () => {
   return (
@@ -16,26 +19,26 @@ const Header = () => {
           <Logo />
         </div>
         <div className="hidden lg:flex lg:gap-6">
-          <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
-          <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
-          <MenuItem href="/price">{HeaderText.price}</MenuItem>
-          <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
+          <MenuItem href={Urls.OurServices}>Послуги</MenuItem>
+          <MenuItem href={Urls.AboutUs}>Про нас</MenuItem>
+          <MenuItem href={Urls.Price}>Прайс</MenuItem>
+          <MenuItem href={Urls.Contacts}>Контакти</MenuItem>
         </div>
         <div className="hidden lg:flex lg:gap-4 lg:justify-start lg:items-center">
           <SocialMedia />
           <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
-              <div className="min-w-[160px]">{HeaderText.phone}</div>
+            <a href={`tel:${Contacts.Phone.replaceAll(' ', '-')}`}>
+              <div className="min-w-[160px]">{Contacts.Phone}</div>
             </a>
             <div className="flex flex-col justify-center items-center">
-              <div className="text-center">{HeaderText.workingTime.first}</div>
-              <div className="text-center">{HeaderText.workingTime.second}</div>
+              <div className="text-center">{Contacts.WorkingHours[0]}</div>
+              <div className="text-center">{Contacts.WorkingHours[1]}</div>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2">
             <Image src={LocationIcon} alt="Location icon" />
-            <Link href="/contacts#map">
-              <div className="w-[152px]">{HeaderText.address}</div>
+            <Link href={`${Urls.Contacts}#map`}>
+              <div className="w-[152px]">{Contacts.Address}</div>
             </Link>
           </div>
         </div>
@@ -44,83 +47,6 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
-
-const BurgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleOpen = () => {
-    setIsOpen((prev) => !prev)
-  }
-
-  useEffect(() => {
-    const body = document.getElementsByTagName('body')[0]
-    if (isOpen) {
-      body.classList.add('overflow-hidden')
-    } else {
-      body.classList.remove('overflow-hidden')
-    }
-  }, [isOpen])
-
-  const style = isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-
-  return (
-    <>
-      <div
-        onClick={toggleOpen}
-        className="flex flex-col justify-between items-center w-8 h-6"
-      >
-        <div className="w-8 h-1 bg-white" />
-        <div className="w-8 h-1 bg-white" />
-        <div className="w-8 h-1 bg-white" />
-      </div>
-      <div
-        className={`fixed top-0 left-0 h-screen w-screen bg-coal-800 z-30 flex flex-col justify-between p-16 transition-opacity duration-300 ease-in-out ${style}`}
-      >
-        <div className="flex flex-col items-center gap-8">
-          <div onClick={toggleOpen}>
-            <MenuItem href="/">{HeaderText.main}</MenuItem>
-          </div>
-          <div onClick={toggleOpen}>
-            <MenuItem href="/ourservices">{HeaderText.services}</MenuItem>
-          </div>
-          <div onClick={toggleOpen}>
-            <MenuItem href="/aboutus">{HeaderText.aboutus}</MenuItem>
-          </div>
-          <div onClick={toggleOpen}>
-            <MenuItem href="/price">{HeaderText.price}</MenuItem>
-          </div>
-          <div onClick={toggleOpen}>
-            <MenuItem href="/contacts">{HeaderText.contacts}</MenuItem>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-6 text-xl">
-          <div className="flex flex-col justify-start items-center xl:flex-row xl:gap-4">
-            <a href={`tel:${HeaderText.phone.replaceAll(' ', '-')}`}>
-              <div className="min-w-[160px]">{`+38 (096) 973 37 54`}</div>
-            </a>
-            <div className="flex flex-col justify-center items-center">
-              <div className="text-center">{HeaderText.workingTime.first}</div>
-              <div className="text-center">{HeaderText.workingTime.second}</div>
-            </div>
-          </div>
-          <div
-            onClick={toggleOpen}
-            className="flex justify-start items-center gap-2"
-          >
-            <Link href="/contacts#map">
-              <div className="w-[152px] text-center">{HeaderText.address}</div>
-            </Link>
-          </div>
-          <SocialMediaBig />
-        </div>
-        <div onClick={toggleOpen} className="absolute top-8 right-8 w-8 h-6">
-          <div className="absolute top-1/2 w-6 h-1 bg-coal-300 rotate-45" />
-          <div className="absolute top-1/2 w-6 h-1 bg-coal-300 -rotate-45" />
-        </div>
-      </div>
-    </>
   )
 }
 

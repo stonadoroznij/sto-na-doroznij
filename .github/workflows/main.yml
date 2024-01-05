@@ -24,4 +24,3 @@ jobs:
             cd /srv/sto/server
             docker compose up --build -d next-app
             docker system prune -af
-     

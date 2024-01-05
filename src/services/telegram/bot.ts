@@ -1,8 +1,9 @@
+import { timingSafeEqual } from 'crypto'
 import { Telegraf } from 'telegraf'
 import { message } from 'telegraf/filters'
-import { chatRepo } from '@/repository'
+
 import { TelegramBot } from '@/i18n/uk'
-import { timingSafeEqual } from 'crypto'
+import { chatRepo } from '@/repository'
 
 class Bot {
   private bot: Telegraf
