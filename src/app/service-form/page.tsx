@@ -1,10 +1,10 @@
 import React from 'react'
 
+import { ServicesApi } from '@/api'
 import { BigForm } from '@/components'
-import { serviceRepo } from '@/repository'
 
 const ServiceForm = async () => {
-  const services = await serviceRepo.getAll()
+  const services = await ServicesApi.FindAll()
 
   return (
     <main className="max-w-171 m-auto p-6">

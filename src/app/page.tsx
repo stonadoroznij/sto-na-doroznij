@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { ServicesApi } from '@/api'
 import {
   AboutUs,
   FaqSection,
@@ -13,7 +14,6 @@ import {
 } from '@/components'
 import { AdvantageSection } from '@/components'
 import { Urls } from '@/consts'
-import { serviceRepo } from '@/repository'
 import { Button } from '@/ui'
 
 import BusImg from '../../public/bus.svg'
@@ -21,7 +21,7 @@ import BgImage from '../../public/images/main-banner-desktop.jpg'
 import BgImageMobile from '../../public/images/main-banner-mobile.jpg'
 
 export default async function Home() {
-  const services = await serviceRepo.getAll()
+  const services = await ServicesApi.FindAll()
 
   return (
     <main className="max-w-352 m-auto p-6 flex-col flex gap-16 lg:gap-24">

@@ -5,15 +5,12 @@ import { useSearchParams } from 'next/navigation'
 import { useMemo, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { FormRequest } from '@/app/actions'
+import { ServiceRequestApi } from '@/api'
 import { MultiSelect, Select } from '@/components'
+import { Actions } from '@/i18n/uk'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
+import { Service } from '@/types'
 import { Button, PhoneInput, TextArea, TextInput } from '@/ui'
-
-interface Service {
-  id: number
-  name: string
-}
 
 interface PropsType {
   services: Service[]
@@ -48,12 +45,25 @@ const BigForm = ({ services }: PropsType) => {
     mode: 'onChange',
   })
 
+  const errorMessage = {
+    success: false,
+    message: Actions.form.errorMessages,
+  }
+
+  const successMessage = {
+    success: true,
+    message: Actions.form.successMessages,
+  }
+
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    const response = await FormRequest(data)
-    if (response.message && response.success) {
-      setResponseData(response)
-    }
-    setTimeout(() => setResponseData({ message: '', success: true }), 4000)
+    const response = await ServiceRequestApi.Create(data)
+
+    const message = response.ok ? successMessage : errorMessage
+
+    setResponseData(message)
+
+    setTimeout(() => setResponseData({ message: '', success: true }), 5000)
+
     reset()
   }
 

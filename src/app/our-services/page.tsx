@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { ServicesApi } from '@/api'
 import { PopUpFormButton, ServiceCard } from '@/components'
 import { Urls } from '@/consts'
-import { serviceRepo } from '@/repository'
 import { Button } from '@/ui'
 
 const OurServices = async () => {
-  const services = await serviceRepo.getAll()
+  const services = await ServicesApi.FindAll()
 
   return (
     <main className="max-w-352 m-auto p-6">

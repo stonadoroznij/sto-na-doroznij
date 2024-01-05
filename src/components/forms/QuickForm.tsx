@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { FormRequest } from '@/app/actions'
+import { ServiceRequestApi } from '@/api'
+import { Actions } from '@/i18n/uk'
 import { FormValues, formSchema } from '@/schemas/zod-schemas'
 import { Button, PhoneInput, TextInput } from '@/ui'
 
@@ -27,17 +28,30 @@ const QuickForm = ({ close }: { close?: () => void }) => {
     resolver: zodResolver(formSchema),
   })
 
+  const errorMessage = {
+    success: false,
+    message: Actions.form.errorMessages,
+  }
+
+  const successMessage = {
+    success: true,
+    message: Actions.form.successMessages,
+  }
+
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    const response = await FormRequest(data)
-    if (response.message && response.success) {
-      setResponseData(response)
-    }
+    const response = await ServiceRequestApi.Create(data)
+
+    const message = response.ok ? successMessage : errorMessage
+
+    setResponseData(message)
+
     setTimeout(() => {
       setResponseData({ message: '', success: true })
       if (close) {
         close()
       }
-    }, 3000)
+    }, 5000)
+
     reset()
   }
 
