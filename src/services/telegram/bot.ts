@@ -27,7 +27,7 @@ class Bot {
     this.bot = new Telegraf(this.token)
 
     this.setup()
-    this.start()
+    // this.start()
   }
 
   public async sendMessage(text: string) {
@@ -116,7 +116,7 @@ class Bot {
     })
   }
 
-  private async start() {
+  public async start() {
     await this.bot.launch()
   }
 }

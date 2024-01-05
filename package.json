@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "migrate": "dotenv -e .env.development.local -- npx prisma migrate dev",
@@ -25,6 +25,7 @@
     "react-hook-form": "^7.48.2",
     "react-in-viewport": "^1.0.0-alpha.30",
     "react-intersection-observer": "^9.5.3",
+    "sharp": "^0.33.1",
     "swiper": "^11.0.5",
     "swiper-react": "^1.0.0",
     "telegraf": "^4.15.0",

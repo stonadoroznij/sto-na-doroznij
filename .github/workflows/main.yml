@@ -2,10 +2,25 @@ name: CI/CD Workflow
 on:
   push:
     branches:
-      - feature/docker-compose
+      - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - run: bash deploy.sh
+
+      - uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /srv/sto/next-app
+            git checkout main
+            git pull origin main
+            cd /srv/sto/server
+            docker compose up --build -d next-app
+            docker system prune -af
